@@ -87,6 +87,7 @@ public class levelOrderInsertionNull{
         Scanner sc = new Scanner(System.in);
         String[] arr = sc.nextLine().split(" ");
         if(arr.length == 0){
+            sc.close();
             return ;
         }
         BinaryTree root = new BinaryTree(Integer.parseInt(arr[0]));
