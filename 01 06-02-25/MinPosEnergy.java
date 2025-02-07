@@ -63,12 +63,8 @@ public class MinPosEnergy{
         for(int i = l; i<=r; i++){
             for(int j = 0;j<=n-i;j++){
                 long prod = 1;
-                boolean positive = false;
                 for(int k = j;k<j+i;k++){
                     prod *= arr[k];
-                    if(arr[k]>0){
-                        positive = true;
-                    }
                 }
                 if(prod>0){
                     minEnergy = Math.min(minEnergy,prod);
