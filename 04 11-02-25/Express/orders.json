@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "customerName": "Azar",
+        "totalPrice": 150.0
+    },
+    {
+        "id": 2,
+        "customerName": "Babar",
+        "totalPrice": 450.0
+    },
+    {
+        "id": 3,
+        "customerName": "Varun",
+        "totalPrice": 1150.0
+    },
+    {
+        "id": 4,
+        "customerName": "Kiran",
+        "totalPrice": 10.0
+    },
+    {
+        "id": 5,
+        "customerName": "Deepak",
+        "totalPrice": 50.0
+    }
+]
