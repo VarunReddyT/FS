@@ -65,7 +65,7 @@ public class Subnet5{
         int c = Integer.parseInt(parts[2]);
         int d = Integer.parseInt(parts[3]);
         return (a<<24) | (b<<16) | (c<<8) | (d);
-    }
+    }z
     public static int calcSubnetMask(int n){
         return n == 0 ? 0 : ~((1<<(32-n))-1);
     }
