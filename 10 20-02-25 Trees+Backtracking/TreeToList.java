@@ -55,8 +55,6 @@
 
 import java.util.*;
 
-import javax.swing.tree.TreeNode;
-
 class BinaryTree{
     int data;
     BinaryTree left;
@@ -120,7 +118,7 @@ public class TreeToList{
     //         if(node.left!=null) st.push(node.left);
     //         node.right = st.isEmpty()? null : st.peek();
     //         node.left = null;
-        }
+        // }
     public static void display(BinaryTree root){
         if(root == null){
             return;
