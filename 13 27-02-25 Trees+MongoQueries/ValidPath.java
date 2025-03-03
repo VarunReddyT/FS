@@ -43,6 +43,7 @@
 
 
 import java.util.*;
+import java.util.LinkedList;
 
 class BinaryTree{
     int data;
@@ -57,7 +58,7 @@ class BinaryTree{
 public class ValidPath{
     public static BinaryTree buildTree(int[] levelorder){
         BinaryTree root = new BinaryTree(levelorder[0]);
-        Queue<BinaryTree> queue = new LinkedList<BinaryTree>();
+        Queue<BinaryTree> queue = new LinkedList<>();
         queue.add(root);
         int i = 1;
         while(!queue.isEmpty() && i<levelorder.length){
