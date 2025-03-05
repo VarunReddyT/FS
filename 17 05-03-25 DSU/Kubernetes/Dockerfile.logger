@@ -1,0 +1,19 @@
+# Use a minimal Python image
+
+FROM python:3.9
+
+# Set working directory
+
+WORKDIR /logger
+
+# Copy the logger script
+
+COPY logger.py /logger/
+
+# Create a log directory
+
+RUN mkdir -p /logs && chmod 777 /logs
+
+# Run log monitoring script
+
+CMD ["python", "logger.py"]

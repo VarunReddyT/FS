@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: flask-app
+
+spec:
+
+  replicas: 1
+
+  selector:
+
+    matchLabels:
+
+      app: flask-app
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: flask-app
+
+    spec:
+
+      containers:
+
+      - name: flask-app
+
+        image: localhost:5000/flask-app:latest  # Pull from local registry
+
+        ports:
+
+        - containerPort: 80
+
+        volumeMounts:
+
+        - name: log-volume
+
+          mountPath: /logs  # Shared log directory
+
+      - name: logger
+
+        image: localhost:5000/log-monitor:latest  # Pull from local registry
+
+        volumeMounts:
+
+        - name: log-volume
+
+          mountPath: /logs  # Shared log directory
+
+      volumes:
+
+      - name: log-volume
+
+        emptyDir: {}  # Shared volume for logs
