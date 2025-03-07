@@ -78,5 +78,6 @@ public class EmphaticWord{
             }
         }
         System.out.println(count);
+        sc.close();
     }
 }
