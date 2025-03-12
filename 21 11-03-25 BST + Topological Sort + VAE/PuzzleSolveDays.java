@@ -109,5 +109,6 @@ public class PuzzleSolveDays{
             addEdge(arr[i][0],arr[i][1],map);
         }
         System.out.println(getDays(arr,n,m,k,map));
+        sc.close();
     }
 }
