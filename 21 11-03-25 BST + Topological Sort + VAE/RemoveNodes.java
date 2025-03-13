@@ -77,7 +77,7 @@ class BST{
         right = null;
     }
 }
-public class Solution{
+public class RemoveNodes{
     static BST root;
     public static BST insert(BST curr, int val){
         if(curr == null){
