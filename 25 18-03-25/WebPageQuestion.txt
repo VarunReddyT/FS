@@ -1,0 +1,34 @@
+<!--
+
+Exercise:
+---------
+In this exercise, students will create an HTML page containing a parent div 
+that spans the entire screen and a child div that is centered within it. 
+The goal is to structure and style these elements using inline CSS and ensure 
+that their properties and positions are correctly validated
+
+Objective:
+----------
+1. HTML Structure & Styling
+
+The parent div should:(class is parent)
+    - Occupy 100% of the viewport width (100vw) and height (100vh).
+    - Have a navy blue (#000080) background color.
+    - Contain a text label "OUTER-DIV", placed inside a <p> tag.
+    - The label should be positioned at the top-center of the div.
+    - Use flexbox to align its content to the center.
+    - Use inline CSS for all styles.
+
+The child div should:(class is child)
+    - Be centered inside the parent div.
+    - Have a width of 60vw and a height of 60vh.
+    - Have a deepskyblue (#00BFFF) background color.
+    - Contain a text label "INNER-DIV", placed inside a <p> tag.
+    - The label should be positioned at the top-center of the child div.
+    - Use inline CSS for all styles..
+
+-->
+
+<config>
+    <url value="http://10.11.13.224:5500/25%2018-03-25/index.html"></url>
+</config>

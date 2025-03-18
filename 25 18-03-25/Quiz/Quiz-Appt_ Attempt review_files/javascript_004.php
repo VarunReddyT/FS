@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',function(){var homeNode=document.querySelector('.nav-item[data-key="home"]');if(homeNode){homeNode.parentNode.removeChild(homeNode)}})
