@@ -47,7 +47,7 @@
 // Agent 6 with subordinates 5 and 7 forms the right branch.
 
 import java.util.*;
-
+import java.util.LinkedList;
 class BinaryTree{
     int data;
     BinaryTree left;
