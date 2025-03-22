@@ -1,0 +1,211 @@
+What does the `typeof` operator in JavaScript return?
+A. The type of a variable
+B. The value of a variable
+C. The length of a variable
+D. The name of a variable
+ANSWER: A
+
+How do you write an IF statement in JavaScript?
+A. if (x === 5) { ... }
+B. if x === 5 then { ... }
+C. if x = 5 { ... }
+D. if x = 5 then { ... }
+ANSWER: A
+
+What does the `innerHTML` property do in JavaScript?
+A. Changes the content of an HTML element
+B. Gets the content of an HTML element
+C. Adds a new HTML element
+D. Removes an HTML element
+ANSWER: A
+
+Which operator is used to assign a value to a variable in JavaScript?
+A. =
+B. ==
+C. ===
+D. !=
+ANSWER: A
+
+What is the correct way to write a JavaScript array?
+A. var colors = ["red", "green", "blue"];
+B. colors = "red", "green", "blue";
+C. colors = ["red", "green", "blue"];
+D. var colors = "red", "green", "blue";
+ANSWER: A
+
+What does the CSS property `flex-grow` do?
+A. Sets the initial size of a flex item
+B. Specifies the order of a flex item
+C. Defines the flexibility of a flex item
+D. Determines the size of a flex container
+ANSWER: C
+
+How do you center an element horizontally in CSS?
+A. text-align: center;
+B. align: center;
+C. center: horizontal;
+D. horizontal-align: center;
+ANSWER: A
+
+What is the purpose of the CSS property `box-shadow`?
+A. Adds a shadow to an element
+B. Changes the color of an element
+C. Sets the size of an element
+D. Adds a border to an element
+ANSWER: A
+
+Which CSS property is used to create a transition effect?
+A. transition-property
+B. transition-duration
+C. transition-effect
+D. transition
+ANSWER: A
+
+How do you make text italic in CSS?
+A. font-style: italic;
+B. text-decoration: italic;
+C. italic: true;
+D. style: italic;
+ANSWER: A
+
+What is the purpose of media queries in CSS?
+A. To change the font size of an element
+B. To add animations to an element
+C. To apply styles based on screen size
+D. To modify the HTML structure
+ANSWER: C
+
+How do you make a website responsive using CSS Grid?
+A. By using the grid property
+B. By setting a fixed width for all elements
+C. By using only percentages for dimensions
+D. By setting the viewport width to 100%
+ANSWER: D
+
+What is the purpose of the `viewport` meta tag in HTML?
+A. To define the width of the viewport
+B. To set the initial scale of the viewport
+C. To disable zooming on the webpage
+D. To specify the browser's rendering engine
+ANSWER: B
+
+Which CSS property is used to change the layout of elements based on the viewport width?
+A. flex-direction
+B. media-query
+C. grid-template-columns
+D. viewport-layout
+ANSWER: B
+
+What does the `alt` attribute in an `<img>` tag specify?
+A. Image size
+B. Image alignment
+C. Image source
+D. Alternative text for the image
+ANSWER: D
+
+Which HTML tag is used to create a hyperlink?
+A. <a>
+B. <link>
+C. <href>
+D. <hyperlink>
+ANSWER: A
+
+What is the purpose of the `title` attribute in an `<a>` tag?
+A. Specifies the target of the hyperlink
+B. Provides a title for the hyperlink
+C. Defines alternative text for the hyperlink
+D. Sets the text color of the hyperlink
+ANSWER: B
+
+Which CSS property is used to control the order of overlapping elements?
+A. z-index
+B. order
+C. stacking-order
+D. layer
+ANSWER: A
+
+How do you include a JavaScript file in an HTML document?
+A. <script src="script.js"></script>
+B. <script>script.js</script>
+C. <js src="script.js"></js>
+D. <javascript>script.js</javascript>
+ANSWER: A
+
+What does the CSS property `overflow: hidden;` do?
+A. Hides the overflow content of an element
+B. Displays the overflow content of an element
+C. Clips the content without adding scrollbars
+D. Resizes the element dynamically
+ANSWER: A
+
+In a web application, which data structure is ideal for implementing a breadcrumb navigation?
+A. Stack
+B. Queue
+C. Array
+D. Linked List
+ANSWER: A
+
+What is the primary advantage of using a binary heap?
+A. Faster searching
+B. Simple implementation
+C. Efficiently implements priority queues
+D. Lower memory consumption
+ANSWER: C
+
+Which of the following is NOT a characteristic of a queue?
+A. FIFO (First In First Out)
+B. LIFO (Last In First Out)
+C. Enqueue operation
+D. Dequeue operation
+ANSWER: B
+
+In JavaScript, which method would you use to merge two arrays?
+A. concat()
+B. merge()
+C. join()
+D. combine()
+ANSWER: A
+
+What will the following JavaScript code output?
+let nums = [1, 2, 3, 4, 5]; console.log(nums.slice(1, 3));
+A. [2, 3]
+B. [1, 2]
+C. [2, 3, 4]
+D. [1, 2, 3]
+ANSWER: A
+
+Which data structure allows duplicate elements?
+A. Set
+B. Dictionary
+C. Array
+D. Stack
+ANSWER: C
+
+Which algorithm is commonly used for sorting an array in place?
+A. Merge Sort
+B. Bubble Sort
+C. Quick Sort
+D. Selection Sort
+ANSWER: C
+
+Which method can be used to remove the last element from an array in JavaScript?
+A. pop()
+B. delete()
+C. remove()
+D. shift()
+ANSWER: A
+
+Which algorithm is generally used to traverse a binary tree?
+A. Breadth-First Search
+B. Depth-First Search
+C. Both A and B
+D. None of the above
+ANSWER: C
+
+What is the output of the following code?
+let a = [1, 2, 3]; let b = [...a, 4]; console.log(b);
+A. [1, 2, 3]
+B. [1, 2, 3, 4]
+C. [4, 1, 2, 3]
+D. [2, 3, 4]
+ANSWER: B

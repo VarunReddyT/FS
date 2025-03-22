@@ -1,0 +1,149 @@
+An operating system allows users to switch between open applications using a 
+custom Application Switcher. The switcher follows the Most Recently Used (MRU) 
+principle, meaning that the last accessed application moves to the front of the queue.
+
+When a user presses the Switch Key (SK) K times, the K-th application in the list 
+becomes the most recently used. Your task is to determine the final arrangement 
+of applications after K switches.
+
+Constraints
+------------
+N - The number of applications currently open (1 ≤ N ≤ 100).
+K - The number of times the user presses the Switch Key (SK) (0 ≤ K ≤ 10^5).
+An array of N unique integers representing application identifiers.
+
+Operations
+------------
+Each time the user presses the switch key, the next application moves to the front of the list.
+The order of other applications remains unchanged.
+
+Input Format
+---------------
+An integer N - number of applications.
+An integer K - number of switch operations.
+An array of N integers representing application identifiers.
+
+Output Format
+----------------
+An array of N integers representing the new order of applications.
+
+
+Sample Input:
+---------------
+5
+2
+10 20 30 40 50
+
+Sample Output:
+---------------
+[30, 10, 20, 40, 50]
+
+Explanation:
+-----------
+Initial list: [10, 20, 30, 40, 50]
+Press Switch Key once → Moves to 20 → [20, 10, 30, 40, 50]
+Press Switch Key twice → Moves to 30 → [30, 10, 20, 40, 50]
+
+Sample Input:
+---------------
+7
+5
+5 15 25 35 45 55 65
+
+Sample Output:
+----------------
+[55, 5, 15, 25, 35, 45, 65]
+
+
+
+case =1
+input =5
+52
+10 20 30 40 50
+output =[30, 10, 20, 40, 50]
+
+case =2
+input =7
+75
+5 15 25 35 45 55 65
+output =[55, 5, 15, 25, 35, 45, 65]
+
+case =3
+input =6
+65
+1 2 3 4 5 6
+output =[6, 1, 2, 3, 4, 5]
+
+case =4
+input =8
+81
+8 7 6 5 4 3 2 1
+output =[7, 8, 6, 5, 4, 3, 2, 1]
+
+case =5
+input =10
+120
+100 200 300 400 500 600 700 800 900 1000
+output =[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+
+case =6
+input =4
+45
+50 60 70 80
+output =[60, 50, 70, 80]
+
+case =7
+input =5
+53
+9 8 7 6 5
+output =[6, 9, 8, 7, 5]
+
+case =8
+input =6
+153
+101 202 303 404 505 606
+output =[404, 101, 202, 303, 505, 606]
+
+
+====================================
+import java.util.*;
+
+public class Main {
+    public static List<Integer> switchApplications(int N, int K, List<Integer> apps) {
+        // Find the application to be moved to the front
+        int switchIndex = K % N; // Handle large K cases
+        int topApp = apps.get(switchIndex); 
+
+        // Remove the application from its current position
+        apps.remove(switchIndex);
+        // Insert it at the beginning
+        apps.add(0, topApp);
+
+        return apps;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: number of applications
+        
+        int N = scanner.nextInt();
+
+        // Input: number of switch operations
+        
+        int K = scanner.nextInt();
+
+        // Input: applications list
+        List<Integer> applications = new ArrayList<>();
+        
+        for (int i = 0; i < N; i++) {
+            applications.add(scanner.nextInt());
+        }
+
+        // Process and output the final list
+        List<Integer> result = switchApplications(N, K, applications);
+        System.out.println(result);
+
+        scanner.close();
+    }
+}

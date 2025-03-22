@@ -1,0 +1,247 @@
+1. What is the maximum number of nodes in a binary tree of height `h` (where height is counted as the number of edges from root to the deepest node)?
+A. (2^h - 1)  
+B. (2^{h+1} - 1)  
+C. (h^2)  
+D. (h log h)  
+ANSWER: B
+
+Explanation:  
+A perfect binary tree of height `h` has (2^{h+1} - 1) nodes.
+
+2. Consider the following pseudo-code for a function `func(Node root)` applied to a binary tree. What does it compute?
+
+Function func(Node root):
+    if root is NULL:
+        return 0
+    return 1 + func(root.left) + func(root.right)
+
+A. Number of nodes in the tree  
+B. Height of the tree  
+C. Maximum depth of the tree  
+D. Sum of all node values  
+ANSWER: A
+
+Explanation:  
+This function recursively counts all nodes in the binary tree.
+
+3. Which of the following is always true for a full binary tree with `n` nodes?
+A. Every node has either 0 or 2 children  
+B. Every level is completely filled  
+C. The height of the tree is always `log n`  
+D. The tree is always balanced  
+ANSWER: A
+
+Explanation:  
+A full binary tree has nodes where each node has either 0 or 2 children.
+
+4. Given a BST, which of the following elements will always be found in the left subtree of a node with value `x`?
+A. Elements greater than `x`  
+B. Elements less than `x`  
+C. Elements equal to `x`  
+D. All elements in the tree  
+ANSWER: B
+
+Explanation:  
+In a BST, all nodes less than `x` are in the left subtree.
+
+5. What is the output of the following function when applied to a BST?
+
+Function findMin(Node root):
+    if root is NULL:
+        return NULL
+    if root.left is NULL:
+        return root.data
+    return findMin(root.left)
+
+A. The maximum value in the BST  
+B. The minimum value in the BST  
+C. The height of the BST  
+D. The sum of all nodes  
+ANSWER: B
+
+Explanation:  
+This function recursively moves left until it reaches the minimum value in the BST.
+
+6. What is the worst-case time complexity of deleting a node in an unbalanced BST with `n` nodes?
+A. O(1)  
+B. O(log n)  
+C. O(n)  
+D. O(n log n)  
+ANSWER: C
+
+Explanation:  
+In an unbalanced BST, deletion may require traversing all nodes, leading to O(n) complexity.
+
+7. Which of the following statements is true for Dijkstra’s Algorithm?
+A. It finds the shortest path between all pairs of nodes  
+B. It works only for graphs with non-negative weights  
+C. It guarantees the shortest path in all cases  
+D. It works correctly with negative-weight cycles  
+ANSWER: B
+
+Explanation:  
+Dijkstra’s Algorithm fails for negative-weight edges due to its greedy nature.
+
+8. What is the time complexity of Depth-First Search (DFS) on a graph with `V` vertices and `E` edges using an adjacency matrix?
+A. O(V)  
+B. O(V + E)  
+C. O(V²)  
+D. O(E log V)  
+ANSWER: C
+
+Explanation:  
+Using an adjacency matrix, checking neighbors takes O(V) time per vertex, leading to O(V²) complexity.
+
+9. Which traversal method should be used to determine if a directed graph contains a cycle?
+A. Breadth-First Search (BFS)  
+B. Depth-First Search (DFS) with recursion stack  
+C. Dijkstra’s Algorithm  
+D. Kruskal’s Algorithm  
+ANSWER: B
+
+Explanation:  
+DFS detects cycles by identifying back edges in the recursion stack.
+
+10. What is the output of the following function when applied to an undirected graph represented as an adjacency list?
+
+Function BFS(Node start):
+    Queue Q
+    Add start to Q
+    While Q is not empty:
+        Node u = Q.dequeue()
+        print u
+        For each neighbor v of u:
+            If v is not visited:
+                Mark v as visited
+                Add v to Q
+
+A. Breadth First Traversal
+B. Depth-First Traversal  
+C. Detection of cycles  
+D. Finding the minimum spanning tree  
+ANSWER: A
+
+Explanation:  
+BFS explores level by level, ensuring it finds the shortest path in an unweighted graph.
+
+11. Which of the following SQL statements is used to remove an entire table including its structure?
+A. `DELETE TABLE Employees;`  
+B. `DROP TABLE Employees;`  
+C. `REMOVE TABLE Employees;`  
+D. `TRUNCATE TABLE Employees;`  
+ANSWER: B) `DROP TABLE Employees;`  
+Explanation:  
+- `DROP TABLE` completely deletes the table along with its structure.  
+- `TRUNCATE TABLE` removes only the data but retains the table structure.  
+
+12. Which of the following SQL commands can be used to modify the structure of an existing table?
+A. `UPDATE`  
+B. `ALTER`  
+C. `MODIFY`  
+D. `CHANGE`  
+ANSWER: B
+
+Explanation:  
+- The `ALTER TABLE` command modifies the structure of a table, such as adding or removing columns.
+
+13. What will happen if we execute the following command?
+
+TRUNCATE TABLE Orders;
+
+A. Deletes all rows but retains the table structure.  
+B. Deletes all rows and removes the table structure.  
+C. Deletes selected rows only.  
+D. Returns an error if there are foreign key constraints.  
+ANSWER: A
+
+Explanation:  
+- `TRUNCATE` removes all records but preserves the table definition.
+
+14. Which SQL command is used to modify existing data in a table?
+A. `ALTER`  
+B. `UPDATE`  
+C. `INSERT`  
+D. `MODIFY`  
+ANSWER: B
+
+Explanation:  
+- `UPDATE` modifies existing records in a table.  
+- `INSERT` adds new records.  
+
+15. Consider the following SQL query:
+
+UPDATE Employees 
+SET Salary = Salary + 5000
+WHERE Department = 'HR';
+
+What does this query do?
+A. Increases all employees’ salary by 5000.  
+B. Increases salary of only HR department employees by 5000.  
+C. Decreases salary of HR department employees by 5000.  
+D. Throws an error due to the `WHERE` clause.  
+ANSWER: B
+
+Explanation:  
+- The `WHERE` clause ensures that only HR employees are affected.
+
+16. What will happen if you execute the following SQL statement?
+
+INSERT INTO Students (ID, Name) VALUES (101, 'John');
+INSERT INTO Students (ID, Name) VALUES (101, 'Mike');
+
+A. Both rows will be inserted successfully.  
+B. Only the first row is inserted; the second one causes a Primary Key violation.  
+C. The second statement overwrites the first one.  
+D. Error due to missing `VALUES` keyword.  
+ANSWER: B
+
+Explanation:  
+- If `ID` is a PRIMARY KEY, inserting a duplicate violates integrity constraints.
+
+17. Which SQL statement is used to give a user access to a database?
+A. `GRANT`  
+B. `REVOKE`  
+C. `ALTER`  
+D. `ACCESS`  
+ANSWER: A
+
+Explanation:  
+- `GRANT` assigns privileges to users, while `REVOKE` removes privileges.
+
+18. What will be the result of the following SQL statement?
+REVOKE INSERT, UPDATE ON Employees FROM user1;
+
+A. `user1` loses all privileges on `Employees`.  
+B. `user1` loses INSERT and UPDATE privileges on `Employees`.  
+C. `user1` loses SELECT privilege on `Employees`.  
+D. Nothing happens.  
+ANSWER: B
+
+Explanation:  
+- `REVOKE` removes specific privileges assigned by `GRANT`.
+
+19. Which SQL command is used to permanently save a transaction?
+A. `ROLLBACK`  
+B. `COMMIT`  
+C. `SAVEPOINT`  
+D. `UPDATE`  
+ANSWER: B
+
+Explanation:  
+- `COMMIT` saves all changes made in the transaction permanently.
+
+20. Consider the following SQL sequence:
+
+BEGIN;
+UPDATE Employees SET Salary = Salary + 5000 WHERE Department = 'IT';
+ROLLBACK;
+
+What will be the final effect of the transaction?
+A. The salaries of IT employees will increase by 5000.  
+B. No change will happen in the Employees table.  
+C. An error occurs because `ROLLBACK` cannot undo an `UPDATE`.  
+D. Only half the rows get updated.  
+ANSWER: B
+
+Explanation:  
+- `ROLLBACK` undoes all changes made since `BEGIN;` was executed.

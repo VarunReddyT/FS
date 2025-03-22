@@ -1,0 +1,125 @@
+A bookstore manager is analyzing the best-selling books from their records. 
+Each record contains a book title, author, and publishing date in the format 
+"DD-MM-YYYY".
+
+Your task is to extract and count the number of distinct publishing years from 
+the given list of best-selling books.
+
+Input Format
+------------
+A string containing multiple book records, where each book entry includes a 
+publishing date in "DD-MM-YYYY" format.
+
+Output Format
+--------------
+Return an integer representing the total number of distinct publishing years 
+in the given records.
+
+
+Sample Input:
+--------------
+The Great Gatsby by F. Scott Fitzgerald was published on 10-04-1925. To Kill a Mockingbird by Harper Lee was published on 11-07-1960.
+
+Sample Output:
+----------------
+2
+
+Explanation:
+--------------
+The books were published in 1925 and 1960.
+Total distinct years = 2.
+
+
+Sample Input:
+-------------
+1984 by George Orwell was published on 08-06-1949. Animal Farm by George Orwell was published on 17-08-1945. The Catcher in the Rye by J.D. Salinger was published on 16-07-1951
+
+Sample Output:
+---------------
+3
+
+Explanation:
+-------------
+The books were published in 1945, 1949, and 1951.
+Total distinct years = 3.
+
+
+Sample Input:
+---------------
+Pride and Prejudice by Jane Austen was published on 28-01-1812. Sense and Sensibility by Jane Austen was published on 30-10-1812. Emma by Jane Austen was published on 23-12-1812.
+
+Sample Output:
+----------------
+1
+
+
+==========================================
+
+case =1
+input =Harry Potter and the Sorcerer's Stone by J.K. Rowling was published on 26-06-1997. The Hobbit by J.R.R. Tolkien was published on 21-09-1937. The Lord of the Rings by J.R.R. Tolkien was published on 29-07-1951. A Game of Thrones by George R.R. Martin was published on 06-08-1996. The Catcher in the Rye by J.D. Salinger was published on 16-07-1951. The Hunger Games by Suzanne Collins was published on 2008-09-14. Catching Fire by Suzanne Collins was published on 01-09-2009. Mockingjay by Suzanne Collins was published on 24-08-2010. Divergent by Veronica Roth was published on 25-04-2011. Insurgent by Veronica Roth was published on 01-05-2012. Allegiant by Veronica Roth was published on 22-10-2013.
+output =9
+
+case =2
+input =The Hunger Games by Suzanne Collins was published on 2008-09-14. Catching Fire by Suzanne Collins was published on 01-09-2009. Mockingjay by Suzanne Collins was published on 24-08-2010. Divergent by Veronica Roth was published on 25-04-2011. Insurgent by Veronica Roth was published on 01-05-2012. Allegiant by Veronica Roth was published on 22-10-2013.
+output =5
+
+case =3
+input =Pride and Prejudice by Jane Austen was published on 28-01-1813. Sense and Sensibility by Jane Austen was published on 30-10-1811. Emma by Jane Austen was published on 23-12-1814. Frankenstein by Mary Shelley was published on 01-01-1813. Dracula by Bram Stoker was published on 26-05-1813. Moby Dick by Herman Melville was published on 18-10-1814.
+output =3
+
+case =4
+input =To Kill a Mockingbird by Harper Lee was published on 11-07-1983. 1984 by George Orwell was published on 08-06-1945. Animal Farm by George Orwell was published on 17-08-1945. Brave New World by Aldous Huxley was published on 01-09-1925. Fahrenheit 451 by Ray Bradbury was published on 19-10-1925. The Great Gatsby by F. Scott Fitzgerald was published on 10-04-1925. The Grapes of Wrath by John Steinbeck was published on 14-04-1939.
+output =4
+
+case =5
+input =The Da Vinci Code by Dan Brown was published on 18-03-2013. Angels & Demons by Dan Brown was published on 01-05-2005. The Lost Symbol by Dan Brown was published on 15-09-2009. Inferno by Dan Brown was published on 14-05-2013. Origin by Dan Brown was published on 03-10-2007. The Girl with the Dragon Tattoo by Stieg Larsson was published on 27-08-2005. The Girl Who Played with Fire by Stieg Larsson was published on 21-07-2006. The Girl Who Kicked the Hornet’s Nest by Stieg Larsson was published on 01-06-2007.
+output =5
+
+case =6
+input =The Shining by Stephen King was published on 28-01-1977. It by Stephen King was published on 15-09-1986. Misery by Stephen King was published on 08-06-1987. The Stand by Stephen King was published on 03-10-1978. The Green Mile by Stephen King was published on 04-08-1996. The Outsider by Stephen King was published on 22-05-2018. The Institute by Stephen King was published on 10-09-2019. Carrie by Stephen King was published on 05-04-1974. Salem’s Lot by Stephen King was published on 17-10-1975. The Dark Tower: The Gunslinger by Stephen King was published on 10-06-1982.
+output =10
+
+case =7
+input =The Great Gatsby by F. Scott Fitzgerald was published on 10-04-1925. To Kill a Mockingbird by Harper Lee was published on 11-07-1960.
+output =2
+
+case =8
+input =Pride and Prejudice by Jane Austen was published on 28-01-1812. Sense and Sensibility by Jane Austen was published on 30-10-1812. Emma by Jane Austen was published on 23-12-1812.
+output =1
+
+===========================================================
+
+import java.util.*;
+import java.util.regex.*;
+
+public class Main {
+    public static int countDistinctPublishingYears(String records) {
+        // Regular expression to match dates in "DD-MM-YYYY" format
+        Pattern datePattern = Pattern.compile("\\b\\d{2}-\\d{2}-(\\d{4})\\b");
+        Matcher matcher = datePattern.matcher(records);
+
+        // HashSet to store unique publishing years
+        Set<String> uniqueYears = new HashSet<>();
+
+        // Extract years from matched dates
+        while (matcher.find()) {
+            uniqueYears.add(matcher.group(1)); // Group 1 captures the year
+        }
+
+        // Return the count of unique publishing years
+        return uniqueYears.size();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the book records
+        String records = scanner.nextLine();
+
+        // Calculate and print the number of distinct publishing years
+        int result = countDistinctPublishingYears(records);
+        System.out.println(result);
+
+        scanner.close();
+    }
+}
