@@ -1,0 +1,22 @@
+<!--
+
+Scrape the data from https://books.toscrape.com
+And store the follwong data in MongoDB:
+Database :  bookstore
+Collection: books
+
+Data to be extratcted and store in the following Document format:
+==================================================================
+{
+  "title": "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",
+  "price": "£17.93",
+  "availability": "In",
+  "rating": "Three",
+  "category": "Books"
+}
+
+-->
+
+<config>
+    <url value=""></url>
+</config>
