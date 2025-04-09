@@ -28,20 +28,20 @@ import java.util.*;
 class Segment{
     int[] tree;
     int n;
-    Segment(int[] arr){
-        this.n = arr.length;
+    Segment(int size){
+        this.n = size;
         tree = new int[4*n];
-        build(arr,0,0,n-1);
+        build(0,0,n-1);
     }
-    public void build(int[] arr, int node, int tl, int tr){
+    public void build(int node, int tl, int tr){
         if(tl == tr){
-            tree[node] = arr[tl];
+            tree[node] = tl;
         }
         else{
             int tm = (tl+tr)/2;
-            build(arr, 2*node+1, tl, tm);
-            build(arr, 2*node+2, tm+1, tr);
-            tree[node] = Math.max(tree[2*node+1], tree[2*node+2]);
+            build(2*node+1, tl, tm);
+            build(2*node+2, tm+1, tr);
+            tree[node] = Math.min(tree[2*node+1], tree[2*node+2]);
         }
     }
     public int query(int node, int tl, int tr, int start, int end){
@@ -52,7 +52,9 @@ class Segment{
             return tree[node];
         }
         int tm = (tl+tr)/2;
-        return Math.min(query(2*node+1, tl, tm, start, end),query(2*node+2, tm+1, tr, start, end));
+        int left = query(2*node+1, tl, tm, start, end);
+        int right = query(2*node+2, tm+1, tr, start, end);
+        return Math.min(left, right);
     }
     public void update(int node, int tl, int tr, int index, int value){
         if(tl == tr){
@@ -71,18 +73,21 @@ class Segment{
 }
 public class Segment_1d {
     public static int getMaxPrograms(int[][] arr, int n, int d){
-        Arrays.sort(arr,Comparator.comparingInt(a->a[1]));
-        int[] days = new int[n+1];
-        Segment st = new Segment(days);
+        Arrays.sort(arr, (a, b) -> {
+            if (a[1] == b[1]) {
+                return a[0] - b[0];
+            }
+            return a[1] - b[1];
+        });
+        Segment st = new Segment(n);
         int res = 0;
-        for(int i = 0;i<n;i++){
-            int[] curr = arr[i];
-            for(int j = curr[0];j<=curr[1];j++){
-                if(st.query(0, 0, n, j, j) == 0){
-                    st.update(0, 0, n, j, 1);
-                    res++;
-                    break;
-                }
+        for(int[] program : arr){
+            int start = program[0];
+            int end = program[1];
+            int earlistDay = st.query(0, 0, d-1, start-1, end-1);
+            if(earlistDay != Integer.MAX_VALUE){
+                res++;
+                st.update(0, 0, d-1, earlistDay, Integer.MAX_VALUE);
             }
         }
         return res;
