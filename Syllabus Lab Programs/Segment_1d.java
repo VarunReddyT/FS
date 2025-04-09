@@ -73,12 +73,7 @@ class Segment{
 }
 public class Segment_1d {
     public static int getMaxPrograms(int[][] arr, int n, int d){
-        Arrays.sort(arr, (a, b) -> {
-            if (a[1] == b[1]) {
-                return a[0] - b[0];
-            }
-            return a[1] - b[1];
-        });
+        Arrays.sort(arr, Comparator.comparingInt(a -> a[1]));
         Segment st = new Segment(n);
         int res = 0;
         for(int[] program : arr){
