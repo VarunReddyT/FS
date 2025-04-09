@@ -1,106 +1,111 @@
 import java.util.*;
 
 public class Treap_1e_2 {
-  static class TreapNode {
-    long key;
-    int priority, size;
-    TreapNode left, right;
+    class TreapNode {
+        int key, priority, size;
+        TreapNode left, right;
 
-    TreapNode(long key) {
-      this.key = key;
-      this.priority = new Random().nextInt();
-      this.size = 1;
-    }
-  }
-
-  static class Treap {
-    TreapNode root;
-
-    int size(TreapNode node) {
-      return node == null ? 0 : node.size;
-    }
-
-    void updateSize(TreapNode node) {
-      if (node != null) {
-        node.size = 1 + size(node.left) + size(node.right);
-      }
-    }
-
-    TreapNode rotateRight(TreapNode y) {
-      TreapNode x = y.left;
-      TreapNode T2 = x.right;
-      x.right = y;
-      y.left = T2;
-      updateSize(y);
-      updateSize(x);
-      return x;
-    }
-
-    TreapNode rotateLeft(TreapNode x) {
-      TreapNode y = x.right;
-      TreapNode T2 = y.left;
-      y.left = x;
-      x.right = T2;
-      updateSize(x);
-      updateSize(y);
-      return y;
-    }
-
-    TreapNode insert(TreapNode node, long key) {
-      if (node == null)
-        return new TreapNode(key);
-      if (key <= node.key) {
-        node.left = insert(node.left, key);
-        if (node.left.priority < node.priority) {
-          node = rotateRight(node);
+        TreapNode(int key) {
+            this.key = key;
+            this.priority = (int) (Math.random() * 100);
+            this.size = 1;
+            this.left = null;
+            this.right = null;
         }
-      } else {
-        node.right = insert(node.right, key);
-        if (node.right.priority < node.priority) {
-          node = rotateLeft(node);
+    }
+
+    class Treap {
+        TreapNode root;
+
+        int size(TreapNode node) {
+            if (node == null)
+                return 0;
+            return node.size;
         }
-      }
-      updateSize(node);
-      return node;
+
+        void updateSize(TreapNode node) {
+            if (node != null) {
+                node.size = 1 + size(node.left) + size(node.right);
+            }
+        }
+
+        TreapNode rotateRight(TreapNode node) {
+            TreapNode newNode = node.left;
+            TreapNode temp = newNode.right;
+            newNode.right = node;
+            node.left = temp;
+            updateSize(node);
+            updateSize(newNode);
+            return newNode;
+        }
+
+        TreapNode rotateLeft(TreapNode node) {
+            TreapNode newNode = node.right;
+            TreapNode temp = newNode.left;
+            newNode.left = node;
+            node.right = temp;
+            updateSize(node);
+            updateSize(newNode);
+            return newNode;
+        }
+
+        TreapNode insert(TreapNode node, int key) {
+            if (node == null) {
+                return new TreapNode(key);
+            }
+            if (key <= node.key) {
+                node.left = insert(node.left, key);
+                if (node.left.priority > node.priority) {
+                    node = rotateRight(node);
+                }
+            } else {
+                node.right = insert(node.right, key);
+                if (node.right.priority > node.priority) {
+                    node = rotateLeft(node);
+                }
+            }
+            updateSize(node);
+            return node;
+        }
+
+        void insert(int key) {
+            root = insert(root, key);
+        }
+
+        int countLessThanOrEqual(TreapNode node, int key) {
+            if (node == null)
+                return 0;
+            if (node.key <= key) {
+                return 1 + countLessThanOrEqual(node.right, key) + size(node.left);
+            } else {
+                return countLessThanOrEqual(node.left, key);
+            }
+        }
+
+        int countLessThanOrEqual(int key) {
+            return countLessThanOrEqual(root, key);
+        }
     }
 
-    void insert(long key) {
-      root = insert(root, key);
+    public static int countReversePairs(int[] nums) {
+        Treap treap = new Treap_1e_2().new Treap();
+        int count = 0;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            long target = nums[i] > 0 ? (nums[i] - 1) / 2 : nums[i] / 2 - 1;
+            count += treap.countLessThanOrEqual((int) target);
+            treap.insert(nums[i]);
+        }
+        return count;
     }
 
-    int countLessThan(TreapNode node, long val) {
-      if (node == null)
-        return 0;
-      if (val <= node.key) {
-        return countLessThan(node.left, val);
-      } else {
-        return 1 + countLessThan(node.right, val) + size(node.left);
-      }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int nums[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+        System.out.println(countReversePairs(nums));
+        sc.close();
     }
-
-    int countLessThan(long val) {
-      return countLessThan(root, val);
-    }
-  }
-
-  public static int reversePairs(int[] nums) {
-    Treap t = new Treap();
-    int cnt = 0;
-    for (int i = nums.length-1; i >= 0; i--) {
-      cnt += t.countLessThan((long) nums[i]);
-      t.insert(2L * nums[i]);
-    }
-    return cnt;
-  }
-
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    int nums[] = new int[n];
-    for (int i = 0; i < n; i++) {
-      nums[i] = sc.nextInt();
-    }
-    System.out.println(reversePairs(nums));
-    sc.close();
-  }
 }
