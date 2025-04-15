@@ -31,3 +31,20 @@
 // Sample output-2:
 // ----------------
 // 3
+
+import java.util.*;
+
+public class LargestHeight{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int p = sc.nextInt();
+        int[] heights = new int[n];
+        for(int i=0; i<n; i++){
+            heights[i] = sc.nextInt();
+        }
+        Arrays.sort(heights);
+        System.out.println(heights[n-p]);
+        sc.close();
+    }
+}

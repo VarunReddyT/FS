@@ -19,4 +19,4 @@ def home():
     return "<h1>iPhone Price Comparison API</h1><p>Use /compare/&lt;model_name&gt; to get prices.</p>"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')

@@ -34,3 +34,31 @@
 // Constraints:
 // - 1 ≤ crystals.length ≤ 5 × 10^4
 // - -2^31 ≤ crystals[i] ≤ 2^31 - 1
+
+import java.util.*;
+
+public class WizardPairs{
+    public static int solve(int[] crystals) {
+        int count = 0;
+        for (int i = 0; i < crystals.length; i++) {
+            for (int j = i + 1; j < crystals.length; j++) {
+                if (crystals[i] > 2 * crystals[j]) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        String[] parts = input.split(" ");
+        int[] crystals = new int[parts.length];
+        for (int i = 0; i < parts.length; i++) {
+            crystals[i] = Integer.parseInt(parts[i]);
+        }
+        System.out.println(solve(crystals));
+        sc.close();
+    }
+
+}
