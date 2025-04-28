@@ -1,0 +1,3 @@
+Services - AWS Lambda, SNS, SQS
+
+Trigger an AWS lambda function with order details. Use AWS SNS to publish data to two SQS queues (Inventory and Billing) which trigger two more lambda functions which log the inventory and billing details. Access the logs from Cloudwatch.
