@@ -1,92 +1,291 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #1e1e2f, #2c3e50);
-  color: #fff;
+/* Add these styles to your App.css */
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.clock-container {
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay span {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
 }
 
-.clock-box {
-  background-color: #2c2f40;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
-.title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+.lightbox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.time {
-  font-size: 2.5rem;
-  margin: 1rem 0;
-  background: #00000050;
-  padding: 0.8rem;
-  border-radius: 10px;
-  font-family: monospace;
-  letter-spacing: 3px;
-}
-
-.countdown {
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
-}
-
-.controls {
+.lightbox-content {
+  position: relative;
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  width: 90%;
+  height: 90%;
+  max-width: 1200px;
 }
 
-.controls input {
-  padding: 0.5rem;
-  width: 100px;
-  border-radius: 6px;
-  border: 1px solid #555;
-  background-color: #1e1e2f;
-  color: white;
+.image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: default;
 }
 
-.controls input:disabled {
-  opacity: 0.5;
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease-out;
+  transform-origin: center center;
 }
 
-.controls button {
-  padding: 0.5rem 1rem;
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  border-radius: 6px;
-  background-color: #3498db;
+  border-radius: 50%;
   color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s;
+  z-index: 10;
+  transition: all 0.2s ease;
+  opacity: 0.7;
 }
 
-.controls button:hover {
-  background-color: #2980b9;
+.nav-btn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
 }
 
-.controls button:nth-child(3) {
-  background-color: #e74c3c;
+.nav-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
-.controls button:nth-child(3):hover {
-  background-color: #c0392b;
+.prev-btn {
+  left: 20px;
 }
 
-.note {
-  font-size: 0.85rem;
-  color: #aaa;
+.next-btn {
+  right: 20px;
+}
+
+.lightbox-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  padding: 8px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lightbox-controls button {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-controls button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-controls button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.image-counter {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.close-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Keyboard hints */
+.keyboard-hints {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.keyboard-hints div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+kbd {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.2em 0.5em;
+  font-family: inherit;
+  font-size: 0.85em;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .lightbox-controls {
+    bottom: 20px;
+  }
 }
