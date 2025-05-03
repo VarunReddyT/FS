@@ -43,3 +43,43 @@ In the above structure,  6 units of water (w represents the water in the structu
 can be stored.
 
  */
+
+ import java.util.*;
+
+public class WaterStore {
+    public static int getWater(int[] arr) {
+        int n = arr.length;
+        if (n == 0){
+            return 0;
+        }
+        int[] leftMax = new int[n];
+        int[] rightMax = new int[n];
+        leftMax[0] = arr[0];
+        rightMax[n - 1] = arr[n - 1];
+
+        for (int i = 1; i < n; i++) {
+            leftMax[i] = Math.max(leftMax[i - 1], arr[i]);
+        }
+        for (int i = n - 2; i >= 0; i--) {
+            rightMax[i] = Math.max(rightMax[i + 1], arr[i]);
+        }
+
+        int trappedWater = 0;
+        for (int i = 0; i < n; i++) {
+            trappedWater += Math.min(leftMax[i], rightMax[i]) - arr[i];
+        }
+
+        return trappedWater;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] input = sc.nextLine().split(" ");
+        int[] arr = new int[input.length];
+        for (int i = 0; i < input.length; i++) {
+            arr[i] = Integer.parseInt(input[i]);
+        }
+        System.out.println(getWater(arr));
+        sc.close();
+    }
+
+}
