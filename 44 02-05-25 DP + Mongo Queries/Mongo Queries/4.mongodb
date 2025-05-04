@@ -29,6 +29,26 @@ printjson() : JS library function to display the JSON Object data.
 
 */
 
+use("hospitalDB");
 printjson(
-
+    db.patients.aggregate([
+      {
+        $group : {
+          _id : {
+            patientType : "$patientType",
+            insuranceCoverage : "$insurance.coverage"
+          },
+          patientCount : {$sum : 1}
+        }
+      },
+      {
+        $project : {
+          _id : 0,
+          patientCount : 1,
+          patientType : "$_id.patientType",
+          insuranceCoverage : "$_id.insuranceCoverage"
+        }
+      },
+      {$sort : {patientType : 1, patientCount : -1}}
+    ])
 )
