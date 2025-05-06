@@ -23,14 +23,9 @@ use("hospitalDB");
 printjson(
     db.billings.aggregate([
         {
-            $addFields: {
-              billingDateObj: { $toDate: "$billingDate" }
-            }
-          },
-        {
             $group : {
                 _id : {
-                    month : {$month : "$billingDateObj"}
+                    month : {$month : {$toDate : "$billingDate"}},
                 },
                 totalRevenue : {$sum : "$totalAmount"}
             }
