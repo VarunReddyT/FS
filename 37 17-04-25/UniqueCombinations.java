@@ -41,17 +41,12 @@ public class UniqueCombinations{
             }
             return;
         }
-        for(int i = start;i<=Math.sqrt(n);i++){
+        for(int i = start;i<=n;i++){
             if(n%i == 0){
                 temp.add(i);
                 backtrack(res,temp,n/i,i);
                 temp.remove(temp.size()-1);
             }
-        }
-        if(n >= start){
-            temp.add(n);
-            backtrack(res,temp,1,n);
-            temp.remove(temp.size()-1);
         }
     }
     public static List<List<Integer>> getUniqueCombinations(int n){
