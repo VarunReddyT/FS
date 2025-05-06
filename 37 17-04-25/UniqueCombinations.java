@@ -30,3 +30,40 @@
 // Constraints:
 // - 1 <= n <= 10^4
 // - Only shards with energy between 2 and n - 1 can be used.
+
+import java.util.*;
+
+public class UniqueCombinations{
+    public static void backtrack(List<List<Integer>> res, List<Integer> temp, int n, int start){
+        if(n == 1){
+            if(temp.size() > 1){
+                res.add(new ArrayList<>(temp));
+            }
+            return;
+        }
+        for(int i = start;i<=Math.sqrt(n);i++){
+            if(n%i == 0){
+                temp.add(i);
+                backtrack(res,temp,n/i,i);
+                temp.remove(temp.size()-1);
+            }
+        }
+        if(n >= start){
+            temp.add(n);
+            backtrack(res,temp,1,n);
+            temp.remove(temp.size()-1);
+        }
+    }
+    public static List<List<Integer>> getUniqueCombinations(int n){
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
+        backtrack(res, temp, n, 2);
+        return res;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(getUniqueCombinations(n));
+        sc.close();
+    }
+}
