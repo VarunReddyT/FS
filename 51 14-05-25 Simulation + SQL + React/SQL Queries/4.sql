@@ -72,7 +72,7 @@ join Customers c on c.CustomerID = o.CustomerID
 group by oi.OrderID,c.Name,o.CustomerID
 having ItemCount > all
 (select count(*) from OrderItems oi2 
-join Orders o2 using(OrderID) where 
+join Orders o2 on oi2.OrderID=o2.OrderID where 
 o2.customerID = o.CustomerID and 
 oi2.OrderID!=oi.OrderID group by 
 oi2.OrderID)
