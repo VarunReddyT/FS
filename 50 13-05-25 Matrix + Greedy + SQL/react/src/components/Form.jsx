@@ -13,7 +13,7 @@ export default function Form() {
     const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
-    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
+    if (!/^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
         setEmailError("Email must contain letters, numbers, dots, underscores and follow format: example@domain.com");
     } else {
         setEmailError("");
