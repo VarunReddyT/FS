@@ -16,9 +16,9 @@ export default function Login() {
         if (user) {
             sessionStorage.setItem('user', JSON.stringify(user));
             if (user.role === 'admin') {
-                navigate('/adminpanel');
+                navigate('/admin');
             } else if (user.role === 'hr') {
-                navigate('/hrpanel');
+                navigate('/hr');
             }
         } else {
             alert('Invalid credentials');
@@ -27,15 +27,15 @@ export default function Login() {
     return (
         <form onSubmit={handleSubmit} className="container mt-5">
             <h1 className="text-center">Login</h1>
-            <div class="mb-3">
-                <label for="exampleUsername" class="form-label">Username</label>
-                <input type="email" class="form-control" id="exampleUsername" onChange={(e) => setUsername(e.target.value)} required/>
+            <div className="mb-3">
+                <label htmlFor="exampleUsername" className="form-label">Username</label>
+                <input type="text" className="form-control" id="exampleUsername" onChange={(e) => setUsername(e.target.value)} required/>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" onChange={(e) => setPassword(e.target.value)} required/>
+            <div className="mb-3">
+                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                <input type="password" className="form-control" id="exampleInputPassword1" onChange={(e) => setPassword(e.target.value)} required/>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     )
 }
