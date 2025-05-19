@@ -1,0 +1,938 @@
+[
+    {
+        "id": 4,
+        "code": "AF",
+        "name": "Afghanistan",
+        "region": "Asia"
+    },
+    {
+        "id": 8,
+        "code": "AL",
+        "name": "Albania",
+        "region": "Europe"
+    },
+    {
+        "id": 12,
+        "code": "DZ",
+        "name": "Algeria",
+        "region": "Africa"
+    },
+    {
+        "id": 16,
+        "code": "AS",
+        "name": "American Samoa",
+        "region": "Oceania"
+    },
+    {
+        "id": 20,
+        "code": "AD",
+        "name": "Andorra",
+        "region": "Europe"
+    },
+    {
+        "id": 24,
+        "code": "AO",
+        "name": "Angola",
+        "region": "Africa"
+    },
+    {
+        "id": 28,
+        "code": "AG",
+        "name": "Antigua and Barbuda",
+        "region": "Americas"
+    },
+    {
+        "id": 32,
+        "code": "AR",
+        "name": "Argentina",
+        "region": "Americas"
+    },
+    {
+        "id": 36,
+        "code": "AU",
+        "name": "Australia",
+        "region": "Oceania"
+    },
+    {
+        "id": 40,
+        "code": "AT",
+        "name": "Austria",
+        "region": "Europe"
+    },
+    {
+        "id": 44,
+        "code": "BS",
+        "name": "Bahamas",
+        "region": "Americas"
+    },
+    {
+        "id": 48,
+        "code": "BH",
+        "name": "Bahrain",
+        "region": "Asia"
+    },
+    {
+        "id": 50,
+        "code": "BD",
+        "name": "Bangladesh",
+        "region": "Asia"
+    },
+    {
+        "id": 51,
+        "code": "AM",
+        "name": "Armenia",
+        "region": "Asia"
+    },
+    {
+        "id": 52,
+        "code": "BB",
+        "name": "Barbados",
+        "region": "Americas"
+    },
+    {
+        "id": 56,
+        "code": "BE",
+        "name": "Belgium",
+        "region": "Europe"
+    },
+    {
+        "id": 60,
+        "code": "BM",
+        "name": "Bermuda",
+        "region": "Americas"
+    },
+    {
+        "id": 64,
+        "code": "BT",
+        "name": "Bhutan",
+        "region": "Asia"
+    },
+    {
+        "id": 68,
+        "code": "BO",
+        "name": "Bolivia (Plurinational State of)",
+        "region": "Americas"
+    },
+    {
+        "id": 70,
+        "code": "BA",
+        "name": "Bosnia and Herzegovina",
+        "region": "Europe"
+    },
+    {
+        "id": 72,
+        "code": "BW",
+        "name": "Botswana",
+        "region": "Africa"
+    },
+    {
+        "id": 76,
+        "code": "BR",
+        "name": "Brazil",
+        "region": "Americas"
+    },
+    {
+        "id": 84,
+        "code": "BZ",
+        "name": "Belize",
+        "region": "Americas"
+    },
+    {
+        "id": 96,
+        "code": "BN",
+        "name": "Brunei Darussalam",
+        "region": "Asia"
+    },
+    {
+        "id": 100,
+        "code": "BG",
+        "name": "Bulgaria",
+        "region": "Europe"
+    },
+    {
+        "id": 104,
+        "code": "MM",
+        "name": "Myanmar",
+        "region": "Asia"
+    },
+    {
+        "id": 108,
+        "code": "BI",
+        "name": "Burundi",
+        "region": "Africa"
+    },
+    {
+        "id": 112,
+        "code": "BY",
+        "name": "Belarus",
+        "region": "Europe"
+    },
+    {
+        "id": 116,
+        "code": "KH",
+        "name": "Cambodia",
+        "region": "Asia"
+    },
+    {
+        "id": 120,
+        "code": "CM",
+        "name": "Cameroon",
+        "region": "Africa"
+    },
+    {
+        "id": 124,
+        "code": "CA",
+        "name": "Canada",
+        "region": "Americas"
+    },
+    {
+        "id": 132,
+        "code": "CV",
+        "name": "Cabo Verde",
+        "region": "Africa"
+    },
+    {
+        "id": 136,
+        "code": "KY",
+        "name": "Cayman Islands",
+        "region": "Americas"
+    },
+    {
+        "id": 140,
+        "code": "CF",
+        "name": "Central African Republic",
+        "region": "Africa"
+    },
+    {
+        "id": 144,
+        "code": "LK",
+        "name": "Sri Lanka",
+        "region": "Asia"
+    },
+    {
+        "id": 148,
+        "code": "TD",
+        "name": "Chad",
+        "region": "Africa"
+    },
+    {
+        "id": 152,
+        "code": "CL",
+        "name": "Chile",
+        "region": "Americas"
+    },
+    {
+        "id": 156,
+        "code": "CN",
+        "name": "China",
+        "region": "Asia"
+    },
+    {
+        "id": 170,
+        "code": "CO",
+        "name": "Colombia",
+        "region": "Americas"
+    },
+    {
+        "id": 174,
+        "code": "KM",
+        "name": "Comoros",
+        "region": "Africa"
+    },
+    {
+        "id": 178,
+        "code": "CG",
+        "name": "Congo",
+        "region": "Africa"
+    },
+    {
+        "id": 180,
+        "code": "CD",
+        "name": "Congo (Democratic Republic of the)",
+        "region": "Africa"
+    },
+    {
+        "id": 188,
+        "code": "CR",
+        "name": "Costa Rica",
+        "region": "Americas"
+    },
+    {
+        "id": 191,
+        "code": "HR",
+        "name": "Croatia",
+        "region": "Europe"
+    },
+    {
+        "id": 192,
+        "code": "CU",
+        "name": "Cuba",
+        "region": "Americas"
+    },
+    {
+        "id": 196,
+        "code": "CY",
+        "name": "Cyprus",
+        "region": "Asia"
+    },
+    {
+        "id": 203,
+        "code": "CZ",
+        "name": "Czechia",
+        "region": "Europe"
+    },
+    {
+        "id": 208,
+        "code": "DK",
+        "name": "Denmark",
+        "region": "Europe"
+    },
+    {
+        "id": 214,
+        "code": "DO",
+        "name": "Dominican Republic",
+        "region": "Americas"
+    },
+    {
+        "id": 218,
+        "code": "EC",
+        "name": "Ecuador",
+        "region": "Americas"
+    },
+    {
+        "id": 222,
+        "code": "SV",
+        "name": "El Salvador",
+        "region": "Americas"
+    },
+    {
+        "id": 226,
+        "code": "GQ",
+        "name": "Equatorial Guinea",
+        "region": "Africa"
+    },
+    {
+        "id": 231,
+        "code": "ET",
+        "name": "Ethiopia",
+        "region": "Africa"
+    },
+    {
+        "id": 233,
+        "code": "EE",
+        "name": "Estonia",
+        "region": "Europe"
+    },
+    {
+        "id": 242,
+        "code": "FJ",
+        "name": "Fiji",
+        "region": "Oceania"
+    },
+    {
+        "id": 246,
+        "code": "FI",
+        "name": "Finland",
+        "region": "Europe"
+    },
+    {
+        "id": 250,
+        "code": "FR",
+        "name": "France",
+        "region": "Europe"
+    },
+    {
+        "id": 268,
+        "code": "GE",
+        "name": "Georgia",
+        "region": "Asia"
+    },
+    {
+        "id": 276,
+        "code": "DE",
+        "name": "Germany",
+        "region": "Europe"
+    },
+    {
+        "id": 300,
+        "code": "GR",
+        "name": "Greece",
+        "region": "Europe"
+    },
+    {
+        "id": 320,
+        "code": "GT",
+        "name": "Guatemala",
+        "region": "Americas"
+    },
+    {
+        "id": 324,
+        "code": "GN",
+        "name": "Guinea",
+        "region": "Africa"
+    },
+    {
+        "id": 340,
+        "code": "HN",
+        "name": "Honduras",
+        "region": "Americas"
+    },
+    {
+        "id": 344,
+        "code": "HK",
+        "name": "Hong Kong",
+        "region": "Asia"
+    },
+    {
+        "id": 348,
+        "code": "HU",
+        "name": "Hungary",
+        "region": "Europe"
+    },
+    {
+        "id": 352,
+        "code": "IS",
+        "name": "Iceland",
+        "region": "Europe"
+    },
+    {
+        "id": 356,
+        "code": "IN",
+        "name": "India",
+        "region": "Asia"
+    },
+    {
+        "id": 360,
+        "code": "ID",
+        "name": "Indonesia",
+        "region": "Asia"
+    },
+    {
+        "id": 364,
+        "code": "IR",
+        "name": "Iran (Islamic Republic of)",
+        "region": "Asia"
+    },
+    {
+        "id": 368,
+        "code": "IQ",
+        "name": "Iraq",
+        "region": "Asia"
+    },
+    {
+        "id": 372,
+        "code": "IE",
+        "name": "Ireland",
+        "region": "Europe"
+    },
+    {
+        "id": 376,
+        "code": "IL",
+        "name": "Israel",
+        "region": "Asia"
+    },
+    {
+        "id": 380,
+        "code": "IT",
+        "name": "Italy",
+        "region": "Europe"
+    },
+    {
+        "id": 388,
+        "code": "JM",
+        "name": "Jamaica",
+        "region": "Americas"
+    },
+    {
+        "id": 392,
+        "code": "JP",
+        "name": "Japan",
+        "region": "Asia"
+    },
+    {
+        "id": 398,
+        "code": "KZ",
+        "name": "Kazakhstan",
+        "region": "Asia"
+    },
+    {
+        "id": 400,
+        "code": "JO",
+        "name": "Jordan",
+        "region": "Asia"
+    },
+    {
+        "id": 404,
+        "code": "KE",
+        "name": "Kenya",
+        "region": "Africa"
+    },
+    {
+        "id": 410,
+        "code": "KR",
+        "name": "Korea (Republic of)",
+        "region": "Asia"
+    },
+    {
+        "id": 414,
+        "code": "KW",
+        "name": "Kuwait",
+        "region": "Asia"
+    },
+    {
+        "id": 417,
+        "code": "KG",
+        "name": "Kyrgyzstan",
+        "region": "Asia"
+    },
+    {
+        "id": 418,
+        "code": "LA",
+        "name": "Lao People's Democratic Republic",
+        "region": "Asia"
+    },
+    {
+        "id": 422,
+        "code": "LB",
+        "name": "Lebanon",
+        "region": "Asia"
+    },
+    {
+        "id": 426,
+        "code": "LS",
+        "name": "Lesotho",
+        "region": "Africa"
+    },
+    {
+        "id": 428,
+        "code": "LV",
+        "name": "Latvia",
+        "region": "Europe"
+    },
+    {
+        "id": 430,
+        "code": "LR",
+        "name": "Liberia",
+        "region": "Africa"
+    },
+    {
+        "id": 434,
+        "code": "LY",
+        "name": "Libya",
+        "region": "Africa"
+    },
+    {
+        "id": 440,
+        "code": "LT",
+        "name": "Lithuania",
+        "region": "Europe"
+    },
+    {
+        "id": 442,
+        "code": "LU",
+        "name": "Luxembourg",
+        "region": "Europe"
+    },
+    {
+        "id": 446,
+        "code": "MO",
+        "name": "Macao",
+        "region": "Asia"
+    },
+    {
+        "id": 450,
+        "code": "MG",
+        "name": "Madagascar",
+        "region": "Africa"
+    },
+    {
+        "id": 454,
+        "code": "MW",
+        "name": "Malawi",
+        "region": "Africa"
+    },
+    {
+        "id": 458,
+        "code": "MY",
+        "name": "Malaysia",
+        "region": "Asia"
+    },
+    {
+        "id": 462,
+        "code": "MV",
+        "name": "Maldives",
+        "region": "Asia"
+    },
+    {
+        "id": 466,
+        "code": "ML",
+        "name": "Mali",
+        "region": "Africa"
+    },
+    {
+        "id": 470,
+        "code": "MT",
+        "name": "Malta",
+        "region": "Europe"
+    },
+    {
+        "id": 478,
+        "code": "MR",
+        "name": "Mauritania",
+        "region": "Africa"
+    },
+    {
+        "id": 480,
+        "code": "MU",
+        "name": "Mauritius",
+        "region": "Africa"
+    },
+    {
+        "id": 484,
+        "code": "MX",
+        "name": "Mexico",
+        "region": "Americas"
+    },
+    {
+        "id": 498,
+        "code": "MD",
+        "name": "Moldova (Republic of)",
+        "region": "Europe"
+    },
+    {
+        "id": 504,
+        "code": "MA",
+        "name": "Morocco",
+        "region": "Africa"
+    },
+    {
+        "id": 508,
+        "code": "MZ",
+        "name": "Mozambique",
+        "region": "Africa"
+    },
+    {
+        "id": 512,
+        "code": "OM",
+        "name": "Oman",
+        "region": "Asia"
+    },
+    {
+        "id": 516,
+        "code": "NA",
+        "name": "Namibia",
+        "region": "Africa"
+    },
+    {
+        "id": 520,
+        "code": "NR",
+        "name": "Nauru",
+        "region": "Oceania"
+    },
+    {
+        "id": 524,
+        "code": "NP",
+        "name": "Nepal",
+        "region": "Asia"
+    },
+    {
+        "id": 528,
+        "code": "NL",
+        "name": "Netherlands",
+        "region": "Europe"
+    },
+    {
+        "id": 532,
+        "code": "CW",
+        "name": "Curaçao",
+        "region": "Americas"
+    },
+    {
+        "id": 533,
+        "code": "AW",
+        "name": "Aruba",
+        "region": "Americas"
+    },
+    {
+        "id": 540,
+        "code": "NC",
+        "name": "New Caledonia",
+        "region": "Oceania"
+    },
+    {
+        "id": 548,
+        "code": "VU",
+        "name": "Vanuatu",
+        "region": "Oceania"
+    },
+    {
+        "id": 554,
+        "code": "NZ",
+        "name": "New Zealand",
+        "region": "Oceania"
+    },
+    {
+        "id": 558,
+        "code": "NI",
+        "name": "Nicaragua",
+        "region": "Americas"
+    },
+    {
+        "id": 562,
+        "code": "NE",
+        "name": "Niger",
+        "region": "Africa"
+    },
+    {
+        "id": 566,
+        "code": "NG",
+        "name": "Nigeria",
+        "region": "Africa"
+    },
+    {
+        "id": 578,
+        "code": "NO",
+        "name": "Norway",
+        "region": "Europe"
+    },
+    {
+        "id": 586,
+        "code": "PK",
+        "name": "Pakistan",
+        "region": "Asia"
+    },
+    {
+        "id": 591,
+        "code": "PA",
+        "name": "Panama",
+        "region": "Americas"
+    },
+    {
+        "id": 598,
+        "code": "PG",
+        "name": "Papua New Guinea",
+        "region": "Oceania"
+    },
+    {
+        "id": 600,
+        "code": "PY",
+        "name": "Paraguay",
+        "region": "Americas"
+    },
+    {
+        "id": 604,
+        "code": "PE",
+        "name": "Peru",
+        "region": "Americas"
+    },
+    {
+        "id": 608,
+        "code": "PH",
+        "name": "Philippines",
+        "region": "Asia"
+    },
+    {
+        "id": 616,
+        "code": "PL",
+        "name": "Poland",
+        "region": "Europe"
+    },
+    {
+        "id": 620,
+        "code": "PT",
+        "name": "Portugal",
+        "region": "Europe"
+    },
+    {
+        "id": 634,
+        "code": "QA",
+        "name": "Qatar",
+        "region": "Asia"
+    },
+    {
+        "id": 642,
+        "code": "RO",
+        "name": "Romania",
+        "region": "Europe"
+    },
+    {
+        "id": 643,
+        "code": "RU",
+        "name": "Russian Federation",
+        "region": "Europe"
+    },
+    {
+        "id": 646,
+        "code": "RW",
+        "name": "Rwanda",
+        "region": "Africa"
+    },
+    {
+        "id": 682,
+        "code": "SA",
+        "name": "Saudi Arabia",
+        "region": "Asia"
+    },
+    {
+        "id": 686,
+        "code": "SN",
+        "name": "Senegal",
+        "region": "Africa"
+    },
+    {
+        "id": 688,
+        "code": "RS",
+        "name": "Serbia",
+        "region": "Europe"
+    },
+    {
+        "id": 690,
+        "code": "SC",
+        "name": "Seychelles",
+        "region": "Africa"
+    },
+    {
+        "id": 702,
+        "code": "SG",
+        "name": "Singapore",
+        "region": "Asia"
+    },
+    {
+        "id": 703,
+        "code": "SK",
+        "name": "Slovakia",
+        "region": "Europe"
+    },
+    {
+        "id": 704,
+        "code": "VN",
+        "name": "Viet Nam",
+        "region": "Asia"
+    },
+    {
+        "id": 705,
+        "code": "SI",
+        "name": "Slovenia",
+        "region": "Europe"
+    },
+    {
+        "id": 706,
+        "code": "SO",
+        "name": "Somalia",
+        "region": "Africa"
+    },
+    {
+        "id": 710,
+        "code": "ZA",
+        "name": "South Africa",
+        "region": "Africa"
+    },
+    {
+        "id": 716,
+        "code": "ZW",
+        "name": "Zimbabwe",
+        "region": "Africa"
+    },
+    {
+        "id": 724,
+        "code": "ES",
+        "name": "Spain",
+        "region": "Europe"
+    },
+    {
+        "id": 752,
+        "code": "SE",
+        "name": "Sweden",
+        "region": "Europe"
+    },
+    {
+        "id": 756,
+        "code": "CH",
+        "name": "Switzerland",
+        "region": "Europe"
+    },
+    {
+        "id": 764,
+        "code": "TH",
+        "name": "Thailand",
+        "region": "Asia"
+    },
+    {
+        "id": 768,
+        "code": "TG",
+        "name": "Togo",
+        "region": "Africa"
+    },
+    {
+        "id": 784,
+        "code": "AE",
+        "name": "United Arab Emirates",
+        "region": "Asia"
+    },
+    {
+        "id": 792,
+        "code": "TR",
+        "name": "Türkiye",
+        "region": "Asia"
+    },
+    {
+        "id": 804,
+        "code": "UA",
+        "name": "Ukraine",
+        "region": "Europe"
+    },
+    {
+        "id": 807,
+        "code": "MK",
+        "name": "North Macedonia",
+        "region": "Europe"
+    },
+    {
+        "id": 818,
+        "code": "EG",
+        "name": "Egypt",
+        "region": "Africa"
+    },
+    {
+        "id": 826,
+        "code": "GB",
+        "name": "United Kingdom",
+        "region": "Europe"
+    },
+    {
+        "id": 840,
+        "code": "US",
+        "name": "United States of America",
+        "region": "Americas"
+    },
+    {
+        "id": 858,
+        "code": "UY",
+        "name": "Uruguay",
+        "region": "Americas"
+    },
+    {
+        "id": 860,
+        "code": "UZ",
+        "name": "Uzbekistan",
+        "region": "Asia"
+    },
+    {
+        "id": 882,
+        "code": "WS",
+        "name": "Samoa",
+        "region": "Oceania"
+    },
+    {
+        "id": 887,
+        "code": "YE",
+        "name": "Yemen",
+        "region": "Asia"
+    },
+    {
+        "id": 894,
+        "code": "ZM",
+        "name": "Zambia",
+        "region": "Africa"
+    }
+]
