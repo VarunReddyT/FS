@@ -1,0 +1,111 @@
+.block_navigation{
+display:none;
+}
+.block_settings {
+display:none;
+}
+#region-main.span8 {
+    width: 99% !important;
+}
+.breadcrumb-nav {
+display:none;
+}
+#vpl_ide_about,#vpl_ide_fullscreen{
+display:none !important;
+
+}
+.ui-menu .ui-menu-item {
+list-style-image:none !important; 
+list-style:none !important;
+
+}
+
+/******** USER PROFILE PAGE ***********/
+#page-user-profile .breadcrumb-button .singlebutton{
+display:none !important;
+}
+#page-user-profile  .node_category:first-child ul li:first-child{
+display:none;
+}
+#page-user-profile  .node_category:nth-child(2){
+display:none;
+}
+#page-user-profile  .node_category:nth-child(3){
+display:none;
+}
+#page-user-profile  .node_category:nth-child(4){
+display:none;
+}
+/******** FOR HEADER ************/
+ .usermenu .moodle-actionmenu ul:nth-child(2) li:nth-child(2) {
+display:none;
+}
+.usermenu .moodle-actionmenu ul:nth-child(2) li:nth-child(3) {
+display:none;
+}
+.usermenu .moodle-actionmenu ul:nth-child(2) li:nth-child(4) {
+display:none;
+}
+ .usermenu .moodle-actionmenu ul:nth-child(2) li:nth-child(5) {
+display:none;
+}
+ .usermenu .moodle-actionmenu ul:nth-child(2) li:nth-child(6) {
+display:none;
+}
+/*********** VPL CSS *************/
+.path-mod-vpl .vpl_ide .ui-menu>li:nth-child(3) {
+display:none;
+}
+
+.path-mod-vpl .vpl_ide .ui-menu>li:last-child {
+   display:none;
+}
+
+.path-mod-vpl .vpl_ide .ui-menu>li #vpl_ide_find
+{
+    display:none;
+}
+
+.path-mod-vpl .vpl_ide .ui-menu>li #vpl_ide_find_replace
+{
+    display:none;
+}
+#page-footer {
+        display: block !important;
+    }
+
+/*changed by mahesh start*/
+
+.vpl_ide_tr,.box .generalbox{
+    border: 1px solid #aaaaaa !important;
+}
+#vpl_ide_download,#vpl_ide_delete,#vpl_ide_resetfiles,#vpl_ide_rename,#vpl_ide_sort,#vpl_ide_select_all,
+#vpl_ide_find,#vpl_ide_find_replace,#vpl_ide_next,#vpl_ide_comments,#vpl_ide_console{
+    display: none;
+}
+#vpl_ide_timeleft{
+    display: none !important;
+}
+.nav-tabs{
+    display:none !important;
+}
+/*quiz*/
+
+.page-context-header{
+    display: none;
+}
+#page-header {
+    display: block;
+}
+ #page-mod-quiz-review .submitbtns{
+    display: none;
+}
+/*changed by mahesh end*/
+
+#page-navbar{
+    margin-left: 5% !important;
+    MARGIN-TOP: 2% !important;
+}
+
+
+
