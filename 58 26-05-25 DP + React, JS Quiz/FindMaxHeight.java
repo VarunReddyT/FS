@@ -57,23 +57,27 @@
 import java.util.*;
 
 public class FindMaxHeight{
-    public static int getMaxHeight(int[][] arr, int n, int w){
-        int res = 0;
-        int width = 0;
-        int height = Integer.MIN_VALUE;
-        for(int i[] : arr){
-            if(width+i[0] <= w){
-                height = Math.max(height,i[1]);
-                width += i[0];
-            }
-            else{
-                res += height;
-                width = i[0];
-                height = i[1];
-            }
+    public static int solve(int[][] arr, int w, int[][] dp, int i, int remainingWidth, int currMaxHeight){
+        if(i == arr.length){
+            return currMaxHeight;
         }
-        res += height;
-        return res;
+        if(dp[i][remainingWidth] != -1){
+            return dp[i][remainingWidth];
+        }
+        int[] currBook = arr[i];
+        int nottake = currMaxHeight + solve(arr,w,dp,i+1,w-currBook[0],currBook[1]);
+        int take = Integer.MAX_VALUE;
+        if(remainingWidth>=arr[i][0]){
+            take = solve(arr,w,dp,i+1,remainingWidth-currBook[0],Math.max(currMaxHeight,currBook[1]));
+        }
+        return dp[i][remainingWidth] = Math.min(take,nottake);
+    }
+    public static int getMaxHeight(int[][] arr, int n, int w){
+        int[][] dp = new int[n][w+1];
+        for(int[] i : dp){
+            Arrays.fill(i,-1);
+        }
+        return solve(arr,w,dp,0,w,0);
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
