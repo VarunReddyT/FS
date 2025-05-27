@@ -57,7 +57,7 @@
 
 import java.util.*;
 
-public class GetMaxProfit {
+public class FindMaxProfit {
     public static int solve(int[][] dp, int[] arr, int index, int currStock){
         if(index >= arr.length){
             return 0;
@@ -91,5 +91,6 @@ public class GetMaxProfit {
             arr[i] = Integer.parseInt(input[i]);
         }
         System.out.println(getMaxProfit(arr));
+        sc.close();
     }
 }
