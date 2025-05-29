@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://10.11.7.73:4000/api/products';
+const API_URL = 'http://10.11.18.16:4000/api/products';
 
 export const getProducts = async () => {
   try {
