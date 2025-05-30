@@ -1,0 +1,302 @@
+[
+  {
+    "name": "UltraSharp Monitor",
+    "price": 627.5,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "Gaming Laptop",
+    "price": 1194.62,
+    "category": "Electronics",
+    "inStock": false
+  },
+  {
+    "name": "Bluetooth Keyboard",
+    "price": 1063.61,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "Wireless Mouse",
+    "price": 1491.15,
+    "category": "Electronics",
+    "inStock": false
+  },
+  {
+    "name": "4K Smart TV",
+    "price": 518.1,
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "name": "Portable SSD",
+    "price": 391.7,
+    "category": "Appliances",
+    "inStock": false
+  },
+  {
+    "name": "USB-C Hub",
+    "price": 774.24,
+    "category": "Wearables",
+    "inStock": true
+  },
+  {
+    "name": "Smartphone Stand",
+    "price": 162.13,
+    "category": "Appliances",
+    "inStock": false
+  },
+  {
+    "name": "Noise Cancelling Headphones",
+    "price": 654.95,
+    "category": "Appliances",
+    "inStock": true
+  },
+  {
+    "name": "Ergonomic Chair",
+    "price": 166.08,
+    "category": "Appliances",
+    "inStock": false
+  },
+  {
+    "name": "Mechanical Keyboard",
+    "price": 1491.75,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "Gaming Mouse",
+    "price": 472.61,
+    "category": "Accessories",
+    "inStock": false
+  },
+  {
+    "name": "Smart Thermostat",
+    "price": 1252.95,
+    "category": "Gadgets",
+    "inStock": true
+  },
+  {
+    "name": "Fitness Tracker",
+    "price": 152.96,
+    "category": "Gadgets",
+    "inStock": false
+  },
+  {
+    "name": "Wireless Charger",
+    "price": 455.92,
+    "category": "Wearables",
+    "inStock": true
+  },
+  {
+    "name": "Smart Lightbulb",
+    "price": 445.92,
+    "category": "Accessories",
+    "inStock": false
+  },
+  {
+    "name": "Portable Projector",
+    "price": 638.31,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "Action Camera",
+    "price": 500.13,
+    "category": "Gadgets",
+    "inStock": false
+  },
+  {
+    "name": "VR Headset",
+    "price": 438.35,
+    "category": "Gadgets",
+    "inStock": true
+  },
+  {
+    "name": "Smart Speaker",
+    "price": 797.79,
+    "category": "Appliances",
+    "inStock": false
+  },
+  {
+    "name": "Laptop Cooling Pad",
+    "price": 1282.46,
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "name": "WiFi Extender",
+    "price": 917.66,
+    "category": "Gadgets",
+    "inStock": false
+  },
+  {
+    "name": "E-Reader",
+    "price": 788.75,
+    "category": "Wearables",
+    "inStock": true
+  },
+  {
+    "name": "Smart Plug",
+    "price": 1022.1,
+    "category": "Gadgets",
+    "inStock": false
+  },
+  {
+    "name": "Bluetooth Tracker",
+    "price": 848.22,
+    "category": "Wearables",
+    "inStock": true
+  },
+  {
+    "name": "Dash Cam",
+    "price": 1103.92,
+    "category": "Appliances",
+    "inStock": false
+  },
+  {
+    "name": "Smartwatch",
+    "price": 1304.9,
+    "category": "Gadgets",
+    "inStock": true
+  },
+  {
+    "name": "Foldable Phone",
+    "price": 469.32,
+    "category": "Accessories",
+    "inStock": false
+  },
+  {
+    "name": "Tablet Stand",
+    "price": 1033.74,
+    "category": "Appliances",
+    "inStock": true
+  },
+  {
+    "name": "Streaming Stick",
+    "price": 945.08,
+    "category": "Wearables",
+    "inStock": false
+  },
+  {
+    "name": "Monitor Arm",
+    "price": 1224.77,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "Adjustable Desk",
+    "price": 650.82,
+    "category": "Electronics",
+    "inStock": false
+  },
+  {
+    "name": "Webcam",
+    "price": 1449.36,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "HD Microphone",
+    "price": 1387.32,
+    "category": "Wearables",
+    "inStock": false
+  },
+  {
+    "name": "Graphic Tablet",
+    "price": 903.07,
+    "category": "Gadgets",
+    "inStock": true
+  },
+  {
+    "name": "3D Printer",
+    "price": 398.38,
+    "category": "Wearables",
+    "inStock": false
+  },
+  {
+    "name": "Laptop Stand",
+    "price": 748.32,
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "name": "Cable Organizer",
+    "price": 129.32,
+    "category": "Gadgets",
+    "inStock": false
+  },
+  {
+    "name": "Phone Sanitizer",
+    "price": 849.2,
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "name": "AI Drone",
+    "price": 358.18,
+    "category": "Electronics",
+    "inStock": false
+  },
+  {
+    "name": "Smart Mirror",
+    "price": 1069.2,
+    "category": "Appliances",
+    "inStock": true
+  },
+  {
+    "name": "Pet Camera",
+    "price": 701.2,
+    "category": "Accessories",
+    "inStock": false
+  },
+  {
+    "name": "Robotic Vacuum",
+    "price": 551.83,
+    "category": "Appliances",
+    "inStock": true
+  },
+  {
+    "name": "Home Security Camera",
+    "price": 459.94,
+    "category": "Wearables",
+    "inStock": false
+  },
+  {
+    "name": "LED Strip Light",
+    "price": 364.19,
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "name": "Smart Lock",
+    "price": 1237.52,
+    "category": "Accessories",
+    "inStock": false
+  },
+  {
+    "name": "Fingerprint Scanner",
+    "price": 642.01,
+    "category": "Gadgets",
+    "inStock": true
+  },
+  {
+    "name": "Wireless Doorbell",
+    "price": 717.37,
+    "category": "Gadgets",
+    "inStock": false
+  },
+  {
+    "name": "Smart Irrigation Controller",
+    "price": 181.62,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "Solar Power Bank",
+    "price": 1258.7,
+    "category": "Electronics",
+    "inStock": false
+  }
+]
