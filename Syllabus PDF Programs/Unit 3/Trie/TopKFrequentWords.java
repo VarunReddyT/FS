@@ -51,60 +51,65 @@ class Trie {
         node.frequency = freq;
         node.word = word;
     }
-    public void collectWords(TrieNode node, PriorityQueue<StringFrequency> pq, int k){
-        if(node == null){
+
+    public void collectWords(TrieNode node, PriorityQueue<StringFrequency> pq, int k) {
+        if (node == null) {
             return;
         }
-        if(node.isEndOfWord){
+        if (node.isEndOfWord) {
             pq.offer(new StringFrequency(node.word, node.frequency));
-            if(pq.size()>k){
+            if (pq.size() > k) {
                 pq.poll();
             }
         }
-        for(TrieNode child : node.children){
-            if(child != null){
+        for (TrieNode child : node.children) {
+            if (child != null) {
                 collectWords(child, pq, k);
             }
         }
     }
 }
 
-class StringFrequency{
+class StringFrequency {
     String word;
     int freq;
-    StringFrequency(String word, int freq){
+
+    StringFrequency(String word, int freq) {
         this.word = word;
         this.freq = freq;
     }
 }
-    class WordComparator implements Comparator<StringFrequency>{
-        public int compare(StringFrequency a, StringFrequency b){
-            if(a.freq == b.freq){
-                return b.word.compareTo(a.word);
-            }
-            return Integer.compare(a.freq, b.freq);
+
+class WordComparator implements Comparator<StringFrequency> {
+    public int compare(StringFrequency a, StringFrequency b) {
+        if (a.freq == b.freq) {
+            return b.word.compareTo(a.word);
         }
+        return Integer.compare(a.freq, b.freq);
     }
+}
+
 public class TopKFrequentWords {
-    public List<String> topKFrequent(String[] words, int k){
-        Map<String,Integer> freqMap = new HashMap<>();
-        for(String word : words){
-            freqMap.put(word,freqMap.getOrDefault(word, 0)+1);
+    public List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> freqMap = new HashMap<>();
+        for (String word : words) {
+            freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
         }
         Trie trie = new Trie();
-        for(Map.Entry<String,Integer> entry : freqMap.entrySet()){
+        for (Map.Entry<String, Integer> entry : freqMap.entrySet()) {
             trie.insert(entry.getKey(), entry.getValue());
         }
         PriorityQueue<StringFrequency> pq = new PriorityQueue<>(new WordComparator());
         trie.collectWords(trie.root, pq, k);
 
         List<String> result = new ArrayList<>();
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             result.add(pq.poll().word);
         }
         Collections.reverse(result);
         return result;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String dict[] = sc.nextLine().split(",");
