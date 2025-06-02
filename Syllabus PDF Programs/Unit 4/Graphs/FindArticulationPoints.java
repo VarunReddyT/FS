@@ -8,8 +8,7 @@ public class FindArticulationPoints {
         adj.get(v).add(u);
     }
 
-    static void APUtil(ArrayList<ArrayList<Integer>> adj, int u, boolean[] visited, int[] disc, int[] low, int parent,
-            boolean isAP[]) {
+    static void APUtil(ArrayList<ArrayList<Integer>> adj, int u, boolean[] visited, int[] disc, int[] low, int parent, boolean isAP[]) {
         int children = 0;
         visited[u] = true;
         disc[u] = low[u] = ++time;
