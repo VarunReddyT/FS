@@ -1,3 +1,20 @@
+// 3. Top K frequent words.
+// We are given an array of strings words and an integer k, we have to return k strings which has 
+// highest frequency.
+// We need to return the answer which should be sorted by the frequency from highest to lowest and 
+// the words which has the same frequency sort them by their alphabetical order.
+// Example-1:
+// Input:
+// words = ["i","love","writing","i","love","coding"], k = 2
+// Output:
+// ["i","love"]
+// Explanation: "i" and "love" are the two most frequent words.
+// Example-2:
+// Input:
+// words = ["it","is","raining","it","it","raining","it","is","is"], k = 3
+// Output:
+// ["it","is","raining"]
+
 import java.util.*;
 
 class TrieNode {
