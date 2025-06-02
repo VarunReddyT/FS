@@ -76,6 +76,7 @@ class StringFrequency{
         this.word = word;
         this.freq = freq;
     }
+}
     class WordComparator implements Comparator<StringFrequency>{
         public int compare(StringFrequency a, StringFrequency b){
             if(a.freq == b.freq){
@@ -84,8 +85,6 @@ class StringFrequency{
             return Integer.compare(a.freq, b.freq);
         }
     }
-}
-
 public class TopKFrequentWords {
     public List<String> topKFrequent(String[] words, int k){
         Map<String,Integer> freqMap = new HashMap<>();
@@ -96,13 +95,14 @@ public class TopKFrequentWords {
         for(Map.Entry<String,Integer> entry : freqMap.entrySet()){
             trie.insert(entry.getKey(), entry.getValue());
         }
-        PriorityQueue<StringFrequency> pq = new PriorityQueue<>();
+        PriorityQueue<StringFrequency> pq = new PriorityQueue<>(new WordComparator());
         trie.collectWords(trie.root, pq, k);
 
         List<String> result = new ArrayList<>();
         while(!pq.isEmpty()){
             result.add(pq.poll().word);
         }
+        Collections.reverse(result);
         return result;
     }
     public static void main(String[] args) {
