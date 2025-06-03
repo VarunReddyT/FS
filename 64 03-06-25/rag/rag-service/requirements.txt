@@ -1,0 +1,11 @@
+Flask
+flask-cors
+pymongo
+langchain
+pypdf
+openai
+faiss-cpu
+python-dotenv
+tiktoken
+unstructured
+sentence-transformers
