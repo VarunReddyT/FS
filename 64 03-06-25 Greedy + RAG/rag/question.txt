@@ -1,0 +1,2 @@
+Admin uploads a PDF. User can chat with any of the pdfs content like a chatbot.
+Prepare a RAG model for this
