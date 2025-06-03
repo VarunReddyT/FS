@@ -1,3 +1,4 @@
 *.class
 *node_modules
 Practice
+*.env

@@ -15,7 +15,7 @@ CORS(app)
 
 # Configuration
 MONGO_URI = 'mongodb://localhost:27017/'
-GEMINI_API_KEY = 'AIzaSyBJbkyc9WiNaw--Sg0EL_dX0NtAAliE6Jw'
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 DB_NAME = 'pdf-chatbot'
 PDF_COLLECTION = 'pdfs'
 VECTOR_STORE_DIR = 'vector_store'
