@@ -75,9 +75,10 @@ public class SimpleHttpLogin {
         }
 
         private boolean checkCredentials(String username, String password) {
+            Dotenv dotenv = new Dotenv(".env");
             String url = "jdbc:mysql://localhost:3306/restdb";
             String dbUser = "root"; 
-            String dbPass = "";   
+            String dbPass = dotenv.get("MYSQL_PASSWORD");   
             String sql = "SELECT * FROM users WHERE username=? AND password=?";
             try (Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
                  PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -86,6 +87,7 @@ public class SimpleHttpLogin {
                 ResultSet rs = stmt.executeQuery();
                 return rs.next();
             } catch (SQLException e) {
+                System.out.println("Wrong creds");
                 e.printStackTrace();
                 return false;
             }
