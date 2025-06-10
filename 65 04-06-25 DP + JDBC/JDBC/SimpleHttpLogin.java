@@ -39,7 +39,6 @@ public class SimpleHttpLogin {
             Map<String, String> params = parseFormData(buf.toString());
             String username = params.get("username");
             String password = params.get("password");
-
             boolean valid = false;
             if (username != null && password != null) {
                 valid = checkCredentials(username, password);
