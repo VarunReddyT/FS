@@ -64,16 +64,36 @@ class Trie{
         }
         node.isEndOfWord = true;
     }
-    public String getMostRecentRelease() {
-        StringBuilder sb = new StringBuilder();
+    public String getMostRecentRelease(Set<String> uniqueReleases) {
+        List<Integer> parts = new ArrayList<>();
         TrieNode node = root;
         while (node != null && !node.children.isEmpty()) {
             int maxKey = Collections.max(node.children.keySet());
-            sb.append(maxKey).append("-");
+            parts.add(maxKey);
             node = node.children.get(maxKey);
         }
+        String original = trim(parts);
+        
+        while(!parts.isEmpty() && parts.get(parts.size() - 1) == 0) {
+            parts.remove(parts.size() - 1);
+        }
+
+        String trimmed = trim(parts);
+
+        if (uniqueReleases.contains(trimmed)) {
+            return trimmed;
+        }
+        else{
+            return original;
+        }
+    }
+    public String trim(List<Integer> parts) {
+        StringBuilder sb = new StringBuilder();
+        for (int part : parts) {
+            sb.append(part).append("-");
+        }
         if (sb.length() > 0) {
-            sb.setLength(sb.length() - 1); 
+            sb.setLength(sb.length() - 1);
         }
         return sb.toString();
     }
@@ -85,7 +105,8 @@ public class RecentRelease {
         for (String release : arr) {
             trie.insert(release);
         }
-        return trie.getMostRecentRelease();
+        Set<String> uniqueReleases = new HashSet<>(Arrays.asList(arr));
+        return trie.getMostRecentRelease(uniqueReleases);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
