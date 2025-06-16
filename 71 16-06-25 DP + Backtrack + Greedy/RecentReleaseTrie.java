@@ -99,7 +99,7 @@ class Trie{
     }
 }
 
-public class RecentRelease {
+public class RecentReleaseTrie {
     public static String getRecentRelease(String[] arr) {
         Trie trie = new Trie();
         for (String release : arr) {
