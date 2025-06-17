@@ -72,13 +72,13 @@ class Trie{
             parts.add(maxKey);
             node = node.children.get(maxKey);
         }
-        String original = trim(parts);
+        String original = buildPath(parts);
         
         while(!parts.isEmpty() && parts.get(parts.size() - 1) == 0) {
             parts.remove(parts.size() - 1);
         }
 
-        String trimmed = trim(parts);
+        String trimmed = buildPath(parts);
 
         if (uniqueReleases.contains(trimmed)) {
             return trimmed;
@@ -87,7 +87,7 @@ class Trie{
             return original;
         }
     }
-    public String trim(List<Integer> parts) {
+    public String buildPath(List<Integer> parts) {
         StringBuilder sb = new StringBuilder();
         for (int part : parts) {
             sb.append(part).append("-");
