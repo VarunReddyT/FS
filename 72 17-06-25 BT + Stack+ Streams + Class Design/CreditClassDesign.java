@@ -166,7 +166,7 @@ class CreditRiskAnalyzerImpl implements RiskAnalyzer {
 }
 
 
-public class Main {
+public class CreditClassDesign {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
