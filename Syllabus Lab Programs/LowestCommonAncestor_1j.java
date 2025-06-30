@@ -16,6 +16,7 @@
 // p and q are different and both values will exist in the binary tree.
 
 import java.util.*;
+import java.util.LinkedList;
 
 class Node {
     int data;
