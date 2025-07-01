@@ -57,16 +57,16 @@ public class LongestWordWithAllPrefixes {
             trie.insert(word);
         }
 
-        String result = "";
+        String longest = "";
         for (String word : words) {
             if (trie.allPrefixesExist(word)) {
-                if (word.length() > result.length() || (word.length() == result.length() && word.compareTo(result) < 0)) {
-                    result = word;
+                if (word.length() > longest.length() || (word.length() == longest.length() && word.compareTo(longest) < 0)) {
+                    longest = word;
                 }
             }
         }
 
-        return result.equals("") ? "None" : result;
+        return longest.equals("") ? "None" : longest;
     }
 
     public static void main(String[] args) {
