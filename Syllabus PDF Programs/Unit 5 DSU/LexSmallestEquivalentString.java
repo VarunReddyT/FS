@@ -44,22 +44,22 @@ public class LexSmallestEquivalentString {
             }
         }
 
-        private int getAbsoluteParent(int i) {
+        private int find(int i) {
             if (parent[i] == i) {
                 // absolute parent
                 return i;
             }
-            parent[i] = getAbsoluteParent(parent[i]);
+            parent[i] = find(parent[i]);
             return parent[i];
         }
 
-        private void unify(int i, int j) {
-            int absoluteParentI = getAbsoluteParent(i);
-            int absoluteParentJ = getAbsoluteParent(j);
-            if (absoluteParentI < absoluteParentJ) {
-                parent[absoluteParentJ] = absoluteParentI;
+        private void union(int i, int j) {
+            int p1 = find(i);
+            int p2 = find(j);
+            if (p1 < p2) {
+                parent[p2] = p1;
             } else {
-                parent[absoluteParentI] = absoluteParentJ;
+                parent[p1] = p2;
             }
         }
     }
@@ -70,10 +70,10 @@ public class LexSmallestEquivalentString {
         for (int i = 0; i < s1.length(); i++) {
             int charS1 = s1.charAt(i) - 'a';
             int charS2 = s2.charAt(i) - 'a';
-            uf.unify(charS1, charS2);
+            uf.union(charS1, charS2);
         }
         for (int i = 0; i < baseStr.length(); i++) {
-            int smallestMappedChar = uf.getAbsoluteParent(baseStr.charAt(i) - 'a');
+            int smallestMappedChar = uf.find(baseStr.charAt(i) - 'a');
             sb.append((char) (smallestMappedChar + 'a'));
         }
         return sb.toString();
