@@ -28,7 +28,7 @@ public class FordFulkersonDFS {
         int u, v;
         int[][] residualGraph = new int[V][V];
         for(u = 0;u<V;u++){
-            for(v = 0;v<v;v++){
+            for(v = 0;v<V;v++){
                 residualGraph[u][v] = graph[u][v];
             }
         }

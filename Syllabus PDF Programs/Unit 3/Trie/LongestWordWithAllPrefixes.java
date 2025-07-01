@@ -20,86 +20,58 @@
 
 import java.util.*;
 
-class Node{
-    Node[] links;
-    boolean flag;
-
-    public Node(){
-        links = new Node[26];
-        flag = false;
-    }
-
-    public boolean containsKey(char ch){
-        return links[ch-'a'] != null;
-    }
-    public Node get(char ch){
-        return links[ch-'a'];
-    }
-    public void put(char ch, Node node){
-        links[ch-'a'] = node;
-    }
-    public void setEnd(){
-        flag = true;
-    }
-    public boolean isEnd(){
-        return flag;
-    }
-}
-
-class Trie{
-    private Node root;
-    public Trie(){
-        root = new Node();
-    }
-    public void insert(String word){
-        Node node = root;
-        for(char ch : word.toCharArray()){
-            if(!node.containsKey(ch)){
-                node.put(ch,node);
-            }
-            node = node.get(ch);
-        }
-        node.setEnd();
-    }
-    public boolean checkIfAllPrefixes(String word){
-        Node node = root;
-        boolean flag = true;
-        for(char ch : word.toCharArray()){
-            if(node.containsKey(ch)){
-                node = node.get(ch);
-                flag = flag && node.isEnd();
-            }
-            else{
-                return false;
-            }
-        }
-        return flag;
-    }
-}
-
 public class LongestWordWithAllPrefixes {
+    static class TrieNode {
+        TrieNode[] children = new TrieNode[26];
+        boolean isEnd = false;
+    }
+    static class Trie {
+        TrieNode root = new TrieNode();
 
-    public static String completeString(int n, String[] dict){
-        Trie obj = new Trie();
-        for(String word : dict){
-            obj.insert(word);
+        public void insert(String word) {
+            TrieNode node = root;
+            for (char c : word.toCharArray()) {
+                if (node.children[c - 'a'] == null) {
+                    node.children[c - 'a'] = new TrieNode();
+                }
+                node = node.children[c - 'a'];
+            }
+            node.isEnd = true;
         }
-        String longest = "";
-        for(String word : dict){
-            if(obj.checkIfAllPrefixes(word)){
-                if(word.length() > longest.length() || (word.length() == longest.length() && word.compareTo(longest) < 0)){
-                    longest = word;
+
+        public boolean allPrefixesExist(String word) {
+            TrieNode node = root;
+            for (char c : word.toCharArray()) {
+                node = node.children[c - 'a'];
+                if (node == null || !node.isEnd) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    public static String completeString(int n, String[] words) {
+        Trie trie = new Trie();
+        for (String word : words) {
+            trie.insert(word);
+        }
+
+        String result = "";
+        for (String word : words) {
+            if (trie.allPrefixesExist(word)) {
+                if (word.length() > result.length() || (word.length() == result.length() && word.compareTo(result) < 0)) {
+                    result = word;
                 }
             }
         }
-        if(longest.equals("")){
-            return "None";
-        }
-        return longest;
+
+        return result.equals("") ? "None" : result;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String dict[] = sc.nextLine().split(" ");
+        String[] dict = sc.nextLine().split(" ");
         System.out.println(completeString(dict.length, dict));
         sc.close();
     }
