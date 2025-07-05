@@ -12,27 +12,17 @@ import java.util.*;
 
 public class ConnectedComponents {
     int[] parent;
-    int[] size;
     int countComponents(int n, int[][] edges){
         parent = new int[n];
-        size = new int[n];
         for(int i = 0; i < n; i++) {
-            parent[i] = -1;
-            size[i] = 1;
+            parent[i] = i;
         }
         int components = n;
         for(int[] e : edges){
             int p1 = find(e[0]);
             int p2 = find(e[1]);
             if(p1 != p2){
-                if(size[p1] < size[p2]){
-                    size[p2] += size[p1];
-                    parent[p1] = p2;
-                }
-                else{
-                    size[p1] += size[p2];
-                    parent[p2] = p1;
-                }
+                parent[p1] = p2;
                 components--;
             }
         }
