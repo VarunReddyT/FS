@@ -1,27 +1,21 @@
 import java.util.*;
 
 class SuffixTrie{
-    static final int NUM_CHARS=26;
     static class SuffixTrieNode{
-        SuffixTrieNode[] children = new SuffixTrieNode[NUM_CHARS];
+        SuffixTrieNode[] children = new SuffixTrieNode[26];
         boolean isEndOfWord;
         SuffixTrieNode(){
             isEndOfWord = false;
-            for(int i = 0;i<NUM_CHARS;i++){
+            for(int i = 0;i<26;i++){
                 children[i] = null;
             }
         }
         static SuffixTrieNode root;
 
         static void insert(String word){
-            System.out.println("word " + word);
-            int level;
-            int length = word.length(); 
-            int index;
-
             SuffixTrieNode currentNode = root;
-            for(level = 0;level<length;level++){
-                index = word.charAt(level) - 'a';
+            for(int level = 0;level<word.length();level++){
+                int index = word.charAt(level) - 'a';
                 if(currentNode.children[index] == null){
                     currentNode.children[index] = new SuffixTrieNode();
                 }
@@ -29,18 +23,14 @@ class SuffixTrie{
             }
             currentNode.isEndOfWord = true;
         }
-        static boolean isLeafNode(SuffixTrieNode root){
-            return root.isEndOfWord == true;
-        }
         static void print(SuffixTrieNode root, char[] str, int level){
-            if(isLeafNode(root)){
+            if(root.isEndOfWord){
                 for(int k = level;k<str.length;k++){
                     str[k] = 0;
                 }
                 System.out.println(str);
             }
-            int i;
-            for(i = 0;i<NUM_CHARS;i++){
+            for(int i = 0;i<26;i++){
                 if(root.children[i] != null){
                     str[level] = (char)(i+'a');
                     print(root.children[i], str, level+1);
