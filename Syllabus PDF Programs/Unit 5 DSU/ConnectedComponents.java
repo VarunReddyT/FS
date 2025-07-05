@@ -39,10 +39,10 @@ public class ConnectedComponents {
         return components;
     }
     private int find(int i){
-        while(parent[i] >= 0){
-            i = parent[i];
+        if(parent[i] != i){
+            parent[i] = find(parent[i]);
         }
-        return i;
+        return parent[i];
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
