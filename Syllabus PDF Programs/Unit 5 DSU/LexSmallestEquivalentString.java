@@ -45,11 +45,9 @@ public class LexSmallestEquivalentString {
         }
 
         private int find(int i) {
-            if (parent[i] == i) {
-                // absolute parent
-                return i;
+            if(parent[i] != i) {
+                parent[i] = find(parent[i]);
             }
-            parent[i] = find(parent[i]);
             return parent[i];
         }
 
