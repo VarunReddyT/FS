@@ -81,7 +81,7 @@ public class TrieSimple {
     }
 
     public static void main(String[] args) {
-        Trie trie = new Trie();
+        TrieSimple trie = new TrieSimple();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter strings:");
         String[] str = sc.nextLine().split(" ");
