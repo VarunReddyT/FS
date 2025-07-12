@@ -35,12 +35,7 @@ public class MaxOfAllSubarraysOfSizeK {
                 // the window ahead
                 int maxElement = q.peek();
                 maxOfSubarrays[idx++] = maxElement;
-                if (maxElement == a[windowStart]) {
-                    // Discard a[windowStart] since we are sliding the window now. So it is going
-                    // out
-                    // of the window.
-                    q.remove();
-                }
+                q.remove(a[windowStart]); // Remove the element going out of the window
                 windowStart++; // Slide the window ahead
             }
         }
