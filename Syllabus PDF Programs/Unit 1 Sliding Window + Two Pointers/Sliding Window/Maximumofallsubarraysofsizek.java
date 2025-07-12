@@ -34,14 +34,13 @@ public class Maximumofallsubarraysofsizek {
         // sorted in decreasing
         // order
         Deque<Integer> Qi = new LinkedList<Integer>();
-        int i;
-        for (i = 0; i < K; ++i) {
+        for (int i = 0; i < K; ++i) {
             while (!Qi.isEmpty() && arr[i] >= arr[Qi.peekLast()])
                 Qi.removeLast();
             Qi.addLast(i);
         }
         // Process rest of the elements, i.e., from arr[k] to arr[n-1]
-        for (i = K; i < N; ++i) {
+        for (int i = K; i < N; ++i) {
             // The element at the front of the queue is the largest element of previous
             // window, so print it
             System.out.print(arr[Qi.peek()] + " ");

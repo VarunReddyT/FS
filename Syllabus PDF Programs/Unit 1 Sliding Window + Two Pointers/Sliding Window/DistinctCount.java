@@ -24,20 +24,20 @@ import java.util.*;
 
 public class DistinctCount {
     public static void findDistinctCount(int arr[], int K) {
-        HashMap<Integer, Integer> hM = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < K; i++){
-            hM.put(arr[i], hM.getOrDefault(arr[i], 0) + 1);
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
-        System.out.print(hM.size() + " ");
+        System.out.print(map.size() + " ");
         for (int i = K; i < arr.length; i++) {
-            if (hM.get(arr[i - K]) == 1) {
-                hM.remove(arr[i - K]);
+            if (map.get(arr[i - K]) == 1) {
+                map.remove(arr[i - K]);
             } 
             else{
-                hM.put(arr[i - K], hM.get(arr[i - K]) - 1);
+                map.put(arr[i - K], map.get(arr[i - K]) - 1);
             }
-            hM.put(arr[i], hM.getOrDefault(arr[i], 0) + 1);
-            System.out.print(hM.size() + " ");
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+            System.out.print(map.size() + " ");
         }
     }
 
