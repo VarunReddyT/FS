@@ -64,12 +64,15 @@ public class TrieSimple {
 
     public boolean deleteHelper(Node current, String word, int index) {
         if (index == word.length()) {
+            if (!current.flag) {
+                return false; // Word not found
+            }
             current.flag = false;
             return current.isEmpty();
         }
         char ch = word.charAt(index);
         Node next = current.children[ch - 'a'];
-        if (next == null) {
+        if (next == null) { // If the next node doesn't exist, the word is not in the Trie
             return false;
         }
         boolean shouldDeleteNextNode = deleteHelper(next, word, index + 1);
