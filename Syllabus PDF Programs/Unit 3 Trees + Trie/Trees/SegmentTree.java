@@ -1,3 +1,16 @@
+// Sample input :-
+// 8 5
+// 4 2 13 4 25 16 17 8
+// 1 2 6
+// 1 0 7
+// 2 2 18
+// 2 4 17
+// 1 2 7
+// Output :-
+// 75
+// 89
+// 80
+
 import java.util.*;
 
 class SegmentTree {
@@ -9,10 +22,7 @@ class SegmentTree {
     public SegmentTree(int[] nums) {
         this.nums = nums;
         this.n = nums.length;
-        // The size of the segment tree is 2 * 2^ceil(log2(n)) - 1
-        int height = (int) Math.ceil(Math.log(n) / Math.log(2));
-        int maxSize = 2 * (int) Math.pow(2, height) - 1;
-        this.tree = new int[maxSize];
+        this.tree = new int[4 * n]; // Allocate enough space for the segment tree
         buildTree(0, 0, n - 1);
     }
 

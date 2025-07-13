@@ -1,3 +1,26 @@
+// Input:-
+// 6
+// 2 3 4 5 1 7
+// Output:-
+// key: 2 | priority: 94
+// key: 1 | priority: 47
+// key: 7 | priority: 85
+// key: 5 | priority: 23
+// key: 4 | priority: 14
+// key: 3 | priority: 6
+// Enter item to search
+// 2
+// Search result 2 94
+// Enter item to delete
+// 2
+// After delete
+// key: 7 | priority: 85
+// key: 1 | priority: 47
+// key: 5 | priority: 23
+// key: 4 | priority: 14
+// key: 3 | priority: 6
+// (note : here only partial output is shown this is for your understanding purpose)
+
 import java.util.*;
 
 class TreapNode {

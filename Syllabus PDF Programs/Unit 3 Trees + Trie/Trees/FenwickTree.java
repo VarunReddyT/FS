@@ -1,3 +1,16 @@
+// Sample input :-
+// 8 5
+// 1 2 13 4 25 16 17 8
+// 1 2 6
+// 1 0 7
+// 2 2 18
+// 2 4 17
+// 1 2 7
+// Output :
+// 75
+// 86
+// 80
+
 import java.util.*;
 
 class FenWickTree {
