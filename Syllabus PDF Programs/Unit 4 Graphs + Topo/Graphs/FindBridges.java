@@ -4,7 +4,6 @@ public class FindBridges {
     private int v;
     private LinkedList<Integer> adj[];
     private int time = 0;
-    private static int NIL = -1;
 
     @SuppressWarnings("unchecked")
     FindBridges(int v){
@@ -41,8 +40,6 @@ public class FindBridges {
         int[] disc = new int[v];
         int[] low = new int[v];
         int[] parent = new int[v];
-        Arrays.fill(parent, NIL);
-        Arrays.fill(visited, false);
 
         for(int i = 0;i<v;i++){
             if(!visited[i]){
