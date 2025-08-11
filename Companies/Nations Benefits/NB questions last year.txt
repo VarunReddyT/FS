@@ -1,0 +1,309 @@
+Multiple Choice Questions
+
+1.	What is the next number in the series: 2, 6, 12, 20, 30, …?
+o	A) 40
+o	B) 42
+o	C) 44
+o	D) 46
+o	Answer: B) 42
+2.	If the cost price of 15 items is equal to the selling price of 12 items, what is the profit percentage?
+o	A) 20%
+o	B) 25%
+o	C) 30%
+o	D) 35%
+o	Answer: B) 25%
+3.	A train 150 meters long is running at a speed of 60 km/hr. How long will it take to pass a platform 300 meters long?
+o	A) 20 seconds
+o	B) 25 seconds
+o	C) 30 seconds
+o	D) 35 seconds
+o	Answer: C) 30 seconds
+4.	In a class of 40 students, 25 play cricket, 20 play football, and 10 play both. How many students play neither cricket nor football?
+o	A) 5
+o	B) 10
+o	C) 15
+o	D) 20
+o	Answer: B) 5
+5.	A man can row 5 km/hr in still water. If the river is flowing at 3 km/hr, it takes him 1 hour to row to a place and come back. How far is the place?
+o	A) 2.4 km
+o	B) 2.5 km
+o	C) 3 km
+o	D) 3.6 km
+o	Answer: B) 2.5 km
+6.	What is the probability of getting a sum of 7 when two dice are thrown?
+o	A) 1/6
+o	B) 1/8
+o	C) 1/9
+o	D) 1/12
+o	Answer: A) 1/6
+7.	What is the least common multiple (LCM) of 12, 15, and 20?
+o	A) 60
+o	B) 120
+o	C) 180
+o	D) 240
+o	Answer: B) 120
+8.	If the perimeter of a rectangle is 60 cm and its length is twice its width, what is the area of the rectangle?
+o	A) 100 cm²
+o	B) 150 cm²
+o	C) 200 cm²
+o	D) 300 cm²
+o	Answer: C) 200 cm²
+9.	A sum of money doubles itself in 5 years at simple interest. What is the rate of interest?
+o	A) 10%
+o	B) 15%
+o	C) 20%
+o	D) 25%
+o	Answer: C) 20%
+
+10.	If the average of five consecutive odd numbers is 25, what is the smallest number?
+o	A) 19
+o	B) 21
+o	C) 23
+o	D) 25
+o	Answer: B) 21
+11.	A boat covers a certain distance downstream in 1 hour, while it takes 1.5 hours to cover the same distance upstream. If the speed of the boat in still water is 6 km/hr, what is the speed of the stream?
+o	A) 1 km/hr
+o	B) 2 km/hr
+o	C) 3 km/hr
+o	D) 4 km/hr
+o	Answer: B) 2 km/hr
+12.	If the sum of the ages of a father and son is 60 years and the father’s age is four times the son’s age, what is the son’s age?
+o	A) 10 years
+o	B) 12 years
+o	C) 15 years
+o	D) 18 years
+o	Answer: A) 12 years
+13.	A and B can complete a work in 12 days, B and C can complete it in 15 days, and A and C can complete it in 20 days. How long will it take for A, B, and C to complete the work together?
+o	A) 10 days
+o	B) 12 days
+o	C) 15 days
+o	D) 18 days
+o	Answer: A) 10 days
+14.	If the sum of the squares of two numbers is 130 and their product is 60, what is the sum of the two numbers?
+o	A) 10
+o	B) 12
+o	C) 14
+o	D) 16
+o	Answer: B) 12
+15.	A man spends 60% of his income. If his income increases by 20% and his expenditure increases by 10%, what is the percentage increase in his savings?
+o	A) 25%
+o	B) 30%
+o	C) 35%
+o	D) 40%
+o	Answer: D) 40%
+16.	If the sides of a triangle are 13 cm, 14 cm, and 15 cm, what is the area of the triangle?
+o	A) 84 cm²
+o	B) 90 cm²
+o	C) 96 cm²
+o	D) 100 cm²
+o	Answer: A) 84 cm²
+17.	A cylindrical tank has a radius of 7 meters and a height of 10 meters. What is the volume of the tank?
+o	A) 1540 m³
+o	B) 1540 π m³
+o	C) 490 π m³
+o	D) 490 m³
+o	Answer: B) 1540 π m³
+18.	If the difference between the compound interest and simple interest on a certain sum for 2 years at 10% per annum is ₹50, what is the principal amount?
+o	A) ₹5000
+o	B) ₹6000
+o	C) ₹7000
+o	D) ₹8000
+o	Answer: A) ₹5000
+19.	A person covers a certain distance at a speed of 60 km/hr and returns at a speed of 40 km/hr. What is the average speed for the entire journey?
+o	A) 48 km/hr
+o	B) 50 km/hr
+o	C) 52 km/hr
+o	D) 54 km/hr
+o	Answer: A) 48 km/hr
+20.	A mixture contains alcohol and water in the ratio 5:3. If 16 liters of water is added to the mixture, the ratio becomes 5:7. What is the quantity of alcohol in the mixture?
+o	A) 20 liters
+o	B) 24 liters
+o	C) 30 liters
+o	D) 36 liters
+o	Answer: B) 24 liters
+21.	If the ratio of the ages of two persons is 3:5 and the difference in their ages is 6 years, what are their ages?
+o	A) 3 Years and 12 years
+o	B) 6 Years and 18 years
+o	C) 9 Years and 15 years 
+o	D) 2 Years and 6 years
+Answer: C) 9 Years and 15 years
+
+22.	If A is the brother of B, B is the sister of C, and C is the son of D, how is A related to D?
+o	A) A is the Brother of D
+o	B) A is the Daughter of D
+o	C) A is the Father of D
+o	D) A is the son of D
+Answer: D) A is the son of D
+23.	If in a certain code language, 'ARISE' is written as 'BSJTF', how will 'CLEAR' be written in that language?
+o	A) RAELC
+o	B) DMFBS
+o	C) CRKOG
+o	D) DNFBR
+Answer: B) DMFBS
+24.	There are 5 people in a room. Each person shakes hands with every other person exactly once. How many handshakes occur in total?
+o	A) 8
+o	B) 10
+o	C) 20
+o	D) 4
+Answer: B) 10
+25.	Statement:
+1.	No students are teachers.
+2.	Some teachers are not researchers.
+3.	All researchers are professionals.
+Conclusions:
+1.	No students are researchers.
+2.	Some professionals are not teachers.
+3.	Some researchers are not students.
+Which of the conclusions logically follows from the given statements?
+o	A) Only conclusion 1 follows
+o	B) Only conclusions 2 and 3 follow
+o	C) Only conclusions 1 and 3 follow
+o	D) All conclusions 1, 2, and 3 follow
+Answer: B) Only conclusions 2 and 3 follow
+
+
+
+ Multiple Choice Questions
+Program Questions
+
+1.String Reversal
+Write a function void reverseString(char* str) to reverse a given string.
+Example:
+
+#include <stdio.h>
+#include <string.h>
+void reverseString(char* str) {
+    int n = strlen(str);
+    for (int i = 0; i < n / 2; i++) {
+        char temp = str[i];
+        str[i] = str[n - i - 1];
+        str[n - i - 1] = temp;
+    }
+}
+int main() {
+    char str[] = "Hello";
+    reverseString(str);
+    printf("%s\n", str); // Output: olleH
+    return 0;
+}
+
+2. Find Maximum and Minimum in an Array
+Write a function to find the maximum and minimum elements in an array.
+Example:
+
+#include <stdio.h>
+void findMaxMin(int arr[], int size, int* max, int* min) {
+    *max = arr[0];
+    *min = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > *max) {
+            *max = arr[i];
+        }
+        if (arr[i] < *min) {
+            *min = arr[i];
+        }
+    }
+}
+int main() {
+    int arr[] = {3, 5, 1, 8, 4};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int max, min;
+    findMaxMin(arr, size, &max, &min);
+    printf("Max: %d, Min: %d\n", max, min); // Output: Max: 8, Min: 1
+    return 0;
+}
+
+3. Find the Second Largest Element
+Write a function to find the second largest element in an array.
+Example:
+
+#include <stdio.h>
+#include <limits.h>
+int findSecondLargest(int arr[], int size) {
+    int first = INT_MIN, second = INT_MIN;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] < first) {
+            second = arr[i];
+        }
+    }
+    return second;
+}
+int main() {
+    int arr[] = {3, 5, 1, 8, 4};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int secondLargest = findSecondLargest(arr, size);
+    printf("Second Largest: %d\n", secondLargest); // Output: 5
+    return 0;
+}
+
+4. Remove Vowels from a String
+Write a function void removeVowels(char* str) to remove all vowels from a given string.
+Example:
+
+#include <stdio.h>
+#include <string.h>
+void removeVowels(char* str) {
+    int j = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] != 'a' && str[i] != 'e' && str[i] != 'i' && str[i] != 'o' && str[i] != 'u' &&
+            str[i] != 'A' && str[i] != 'E' && str[i] != 'I' && str[i] != 'O' && str[i] != 'U') {
+            str[j++] = str[i];
+        }
+    }
+    str[j] = '\0';
+}
+int main() {
+    char str[] = "Hello World";
+    removeVowels(str);
+    printf("%s\n", str); // Output: Hll Wrld
+    return 0;
+}
+
+5. Simple Calculator
+Write a C program to create a simple calculator that can perform basic arithmetic operations: addition, subtraction, multiplication, and division. The program should take two numbers and an operator (+, -, *, /) as input and output the result of the operation. Ensure to handle division by zero gracefully.
+Example:
+
+#include <stdio.h>
+int main() {
+    char operator;
+    double num1, num2;
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+    printf("Enter two operands: ");
+    scanf("%lf %lf", &num1, &num2);
+    switch (operator) {
+        case '+':
+            printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2);
+            break;
+        case '-':
+            printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2);
+            break;
+        case '*':
+            printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0)
+                printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
+            else
+                printf("Division by zero error.\n");
+            break;
+        default:
+            printf("Invalid operator.\n");
+    }
+    return 0;
+}
+
+6.	Design a class to represent a stack and implement its basic operations (push, pop, peek, isEmpty).
+
+7.	Write a program to Find the Longest Substring Without Repeating Characters
+Description: Given a string, find the length of the longest substring without repeating characters.
+Example: Input: “abcabcbbab”; Output: 3 (substring “abc”)
+8.	Write a program for Find non-repeating characters in each string
+Example Input: preparinginterviews
+9.	Write a Program to print the Maximum and Minimum elements in an array?
+Example Input: int arr[] = { 15, 14, 35, 2, 11, 83,100,85,86 };
+
+
