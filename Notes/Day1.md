@@ -1,6 +1,4 @@
-# Java Constructor Chaining, Static & Instance Initializers: Explained
-
-This note covers constructor chaining, static and instance initializer blocks, and their execution order in Java. It includes code examples, explanations, common errors, and best practices.
+# Java Constructor Chaining, Static & Instance Initializers, Anonymous Classes
 
 ---
 
@@ -368,3 +366,299 @@ new Thread(r).start();
 ---
 
 *Anonymous classes are a powerful feature for concise, one-off customizations in Java!*
+
+
+---
+
+## 12. Access Modifiers and Packages
+
+Access modifiers control the visibility of classes, methods, and variables in Java:
+- `public`: Accessible from anywhere.
+- `private`: Accessible only within the same class.
+- `protected`: Accessible within the same package and subclasses.
+- Default (no modifier): Accessible within the same package, but not from subclasses in other packages.
+
+**Example:**
+```java
+public class Access {
+    // ... see code above ...
+}
+```
+**Why:**
+- To encapsulate and protect data, and to control API exposure.
+
+---
+
+## 13. Covariant Return Types
+
+Java allows an overriding method to return a subtype (covariant type) of the return type declared in the original overridden method.
+
+**Example:**
+```java
+class Api {
+    Number value() { return 42; }
+}
+class Impl extends Api {
+    @Override
+    Integer value() { return 7; } // Integer is a subclass of Number
+}
+```
+**Why:**
+- Allows more specific return types in subclasses, improving type safety and usability.
+
+---
+
+## 14. Narrowing Visibility (Not Allowed)
+
+You cannot reduce the visibility of an inherited method when overriding.
+
+**Example (Error):**
+```java
+class Api {
+    protected Number value() { return 42; }
+}
+class Impl extends Api {
+    @Override
+    private Integer value() { return 7; } // ERROR: Cannot reduce visibility
+}
+```
+**Error:**
+- "Cannot reduce the visibility of the inherited method from Api."
+
+**Why:**
+- To ensure that the contract of the base class is preserved in subclasses.
+
+---
+
+## 15. Protected Methods and Package Access
+
+**Example:**
+```java
+// pkg1
+package pkg1;
+class Base {
+    protected void hook() { System.out.println("Base hook"); }
+}
+// pkg2
+package pkg2;
+import pkg1.Base;
+class Derived extends Base {
+    void test(Derived otherDerived, Base baseRef) {
+        this.hook(); // OK
+        otherDerived.hook(); // OK
+        baseRef.hook(); // ERROR: Not accessible if baseRef is not a Derived
+    }
+}
+```
+**Why:**
+- Protected methods are accessible in subclasses, but not via references of the base type from outside the package.
+
+---
+
+## 16. Method Overriding and Access
+
+### Public vs Private Methods
+- If a method is `public` in the base class, it can be overridden in the subclass.
+- If a method is `private`, it is not inherited and cannot be overridden.
+
+**Example:**
+```java
+class A {
+    public void f() { System.out.println("A.f"); }
+    public void call() { f(); }
+}
+class B extends A {
+    public void f() { System.out.println("B.f"); }
+}
+A x = new B();
+x.call(); // Prints B.f
+```
+
+**If f() is private in A:**
+- B's f() is a new method, not an override.
+- A.call() always calls A's own f().
+
+**Why:**
+- Private methods are statically bound; public/protected are dynamically bound (polymorphism).
+
+---
+
+## 17. Overriding with Different Return Types
+
+You can override a method and change the return type if the new return type is a subclass (covariant return type). You cannot change the access modifier to be more restrictive.
+
+**Example:**
+```java
+class A {
+    public void f() { System.out.println("A.f"); }
+    public void call() { f(); }
+}
+class B extends A {
+    public void f() { System.out.println("B.f"); }
+    // public int call() { f(); return 0; } // Allowed if return type is compatible
+}
+```
+
+---
+
+## 18. Overriding and Method Resolution
+
+If both base and derived classes define a method with the same signature, the method in the derived class overrides the base class method (unless the base method is private).
+
+**Example:**
+```java
+class A {
+    public void f() { System.out.println("A.f"); }
+    public void call() { f(); }
+}
+class B extends A {
+    public void f() { System.out.println("B.f"); }
+    public void call() { f(); }
+}
+A x = new B();
+x.call(); // Prints B.f
+```
+
+---
+
+## 19. Package-Private and Private Constructors
+
+- Classes or constructors with no modifier are package-private (accessible only within the same package).
+- Private constructors are not accessible outside the class.
+
+**Example:**
+```java
+// lib
+package lib;
+class Helper { public Helper(){} }
+// pkg2
+package pkg2;
+import lib.Helper;
+public class User {
+    public static void main(String[] args) {
+        new Helper(); // ERROR: Not accessible
+    }
+}
+```
+
+**Example (private constructor):**
+```java
+package lib;
+public class Helper { private Helper(){} }
+// ...
+new Helper(); // ERROR: Constructor is private
+```
+
+---
+
+## 20. Inner and Nested Classes
+
+- **Inner class**: Non-static, can access all members (even private) of the outer class.
+- **Static nested class**: Can only access static members of the outer class.
+
+**Example:**
+```java
+public class Outer {
+    private int secret = 99;
+    class Inner {
+        private int innerSecret = 7;
+        void show() {
+            System.out.println("Outer class secret: " + secret);
+            System.out.println("Inner class secret: " + innerSecret);
+        }
+    }
+    static class Nested {
+        void show() {
+            System.out.println("Outer class secret: " + new Outer().secret);
+        }
+    }
+    void probe() {
+        Inner inner = new Inner();
+        System.out.println(inner.innerSecret); // Accessible
+    }
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        outer.probe();
+        new Nested().show();
+        Inner inner = outer.new Inner();
+        inner.show();
+    }
+}
+```
+**Why:**
+- Inner classes are used for logically grouping classes and for accessing outer class members.
+
+---
+
+## 21. Method Overloading and Resolution
+
+Java resolves overloaded methods at compile time based on the argument types.
+
+**Example:**
+```java
+public class Outer {
+    static void f(long x) { System.out.println("long"); }
+    static void f(Integer x) { System.out.println("Integer"); }
+    static void f(int... x) { System.out.println("int..."); }
+    public static void main(String[] args) {
+        f(1); // int -> long (widening)
+        f((short)1); // short -> long (widening)
+        f(Integer.valueOf(1)); // Integer
+        f((byte)1); // byte -> long (widening)
+        f(new int[]{1}); // int[] -> int... (varargs)
+    }
+}
+```
+**Output:**
+```
+long
+long
+Integer
+long
+int...
+```
+**Why:**
+- Java chooses the most specific applicable method. Widening is preferred over boxing, and varargs is the least preferred.
+
+---
+
+## 22. Java’s Overload Resolution Priority
+
+When the compiler tries to pick the best match for a method call, it follows this order:
+
+1. **Exact primitive match (same type)** — ✅ highest priority
+2. **Primitive widening** (e.g., `int` → `long`)  byte → short → char → int → long → float → double
+3. **Boxing/unboxing** (primitive ↔ wrapper)
+4. **Varargs/Ellipsis** — ❌ lowest priority
+
+**Rule:**
+- Primitive widening beats boxing, and boxing beats varargs.
+
+### Example: Overload Resolution
+```java
+public class OverloadDemo {
+    static void f(long x) { System.out.println("long"); }
+    static void f(Integer x) { System.out.println("Integer"); }
+    static void f(int... x) { System.out.println("int..."); }
+    public static void main(String[] args) {
+        f(1); // int → long (widening)
+        f((short)1); // short → long (widening)
+        f(Integer.valueOf(1)); // Integer
+        f((byte)1); // byte → long (widening)
+        f(new int[]{1}); // int[] → int... (varargs)
+    }
+}
+```
+**Output:**
+```
+long
+long
+Integer
+long
+int...
+```
+
+**Why:**
+- Java chooses the most specific applicable method. Widening is preferred over boxing, and varargs is the least preferred.
+
+---
