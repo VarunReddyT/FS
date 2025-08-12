@@ -1,0 +1,125 @@
+1) Can you narrow visibility when overriding?
+Files / packages:
+
+// pkg1/Api.java
+package pkg1;
+public class Api {
+    protected Number value() { return 42; }
+}
+
+// pkg2/Impl.java
+package pkg2;
+import pkg1.Api;
+
+public class Impl extends Api {
+    @Override
+     Integer value() { return 7; } // Q: compile?
+}
+
+
+
+
+
+
+
+2) protected across packages: “via-subclass” vs “via-reference”
+Files / packages:
+
+// pkg1/Base.java
+package pkg1;
+public class Base {
+    protected void hook() { System.out.println("Base.hook"); }
+}
+
+// pkg2/Child.java
+package pkg2;
+import pkg1.Base;
+
+public class Child extends Base {
+    void test(Child otherChild, Base baseRef) {
+        this.hook();        // (A) ok?
+        otherChild.hook();  // (B) ok?
+        baseRef.hook();     // (C) ok?
+    }
+}
+Question: Which lines compile?
+
+
+
+
+
+
+
+
+3) “Private methods aren’t inherited” (so this isn’t overriding)
+
+class A {
+    private void f() { System.out.println("A.f"); }
+    public void call() { f(); }     // calls A.f
+}
+class B extends A {
+    public void f() { System.out.println("B.f"); }
+    public static void main(String[] args) {
+        A x = new B();
+        x.call();                   // what prints?
+    }
+}
+
+
+
+
+
+
+4) Public constructor, but class itself isn’t public
+Files / packages:
+
+// lib/Helper.java
+package lib;
+class Helper {          // package-private top-level class
+    public Helper() {}  // constructor is public
+}
+
+// app/App.java
+package app;
+import lib.Helper;
+
+public class App {
+    public static void main(String[] args) {
+        new Helper();   // Q: compile?
+    }
+}
+
+
+
+
+
+5) Private of inner vs outer; static nested vs inner
+
+public class Outer {
+    private int secret = 99;
+
+    class Inner {
+        private int innerSecret = 7;
+        void show() {
+            System.out.println(secret);       // (A) ok?
+        }
+    }
+    static class Nested {
+        void show(Outer o) {
+            System.out.println(o.secret);     // (B) ok?
+        }
+    }
+    void probe() {
+        Inner in = new Inner();
+        System.out.println(in.innerSecret);   // (C) ok?
+    }
+    public static void main(String[] args) {
+        new Outer().new Inner().show();
+        new Nested().show(new Outer());
+        new Outer().probe();
+    }
+}
+Question: Do (A), (B), and (C) compile and run?
+
+
+
