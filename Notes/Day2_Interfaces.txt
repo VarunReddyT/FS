@@ -1,0 +1,536 @@
+Question 1:
+
+interface A { default void ping() { System.out.println("A"); } }
+interface B { default void ping() { System.out.println("B"); } }
+
+class C implements A, B { }
+
+public class Test1 {
+  public static void main(String[] args) {
+    new C().ping();
+  }
+}
+What happens?
+
+
+
+
+
+
+
+Question 2:
+
+interface Util {
+  static String id() { return "I"; }
+}
+
+class X implements Util {
+  static String id() { return "X"; }
+}
+
+public class Test2 {
+  public static void main(String[] args) {
+    Util u = new X();
+    System.out.println(Util.id()); // line 1
+    System.out.println(X.id());    // line 2
+    System.out.println(u.id());    // line 3
+  }
+}
+What happens at runtime/compile-time?
+
+
+
+
+
+
+Question 3
+
+interface Parser {
+  default String sanitize(String s) { return trimAndLower(s); }
+  private static String trimAndLower(String s) { return s.trim().toLowerCase(); }
+}
+
+class Impl implements Parser {
+  String demo(String s) {
+    return Parser.trimAndLower(s); // line X
+  }
+}
+
+public class Test3 {
+  public static void main(String[] args) {
+    System.out.println(new Impl().sanitize("  HeLLo "));
+  }
+}
+What happens?
+
+
+
+
+
+Question 4:
+
+interface I { int X = 5; }
+
+class T implements I {
+  int X = 6;
+  void show() { System.out.println(X + " " + I.X); }
+}
+
+public class Test4 {
+  public static void main(String[] args) {
+    new T().show();
+  }
+}
+Output?
+
+
+
+
+
+
+
+Question 5:
+
+interface I { void m(Number n); }
+
+class A {
+  public void m(Integer i) { System.out.println("A"); }
+}
+
+class B extends A implements I {
+  @Override public void m(Number n) { System.out.println("B"); }
+}
+
+public class Test5 {
+  public static void main(String[] args) {
+    new B().m(10);	// prints B
+    ((I) new B()).m(10);	//prints A
+  }
+}
+Output?
+
+
+Question 6:
+class Shape { }
+class Circle extends Shape { }
+interface Factory {
+    Shape create();
+}
+class CircleFactory implements Factory {
+    @Override
+    public Circle create() {
+        return new Circle();
+    }
+}
+public class Test6 {
+    public static void main(String[] args) {
+        Factory f = new CircleFactory();
+        Shape s = f.create();
+        System.out.println(s.getClass().getSimpleName());
+    }
+}
+What will be printed?
+
+
+
+
+Question 7:
+import java.io.IOException;
+import java.sql.SQLException;
+
+abstract class A {
+    abstract void run() throws IOException;
+}
+interface I {
+    void run() throws SQLException;
+}
+class C extends A implements I {
+    @Override
+    public void run() { System.out.println("Run"); }
+}
+public class Test7 {
+    public static void main(String[] args) {
+        new C().run();
+    }
+}
+What happens?
+
+
+
+
+
+Question 8:
+
+sealed interface Animal permits Dog, Cat { }
+
+final class Dog implements Animal { }
+
+non-sealed class Cat implements Animal { }
+
+class Persian extends Cat { }
+
+public class Test8 {
+    public static void main(String[] args) {
+        Animal a = new Persian();
+        System.out.println(a.getClass().getSimpleName());
+    }
+}
+What will be printed?
+
+
+
+
+Question 9:
+
+class P {
+    static void hello() { System.out.println("P"); }
+}
+
+class Q extends P {
+    static void hello() { System.out.println("Q"); }
+}
+
+public class Test9 {
+    public static void main(String[] args) {
+        P p = new Q();
+        p.hello();
+        Q q = new Q();
+        q.hello();
+    }
+}
+What will be printed?
+
+
+
+
+
+
+Question 10:
+
+interface Box<T> {
+    T get();
+}
+
+class StringBox implements Box<String> {
+    @Override
+    public String get() { return "Hello"; }
+}
+
+public class Test10 {
+    public static void main(String[] args) {
+        Box b = new StringBox();
+        System.out.println(b.get());
+    }
+}
+What will be printed?
+
+
+
+
+Question 11:
+
+class Overload {
+    void test(String s) { System.out.println("String"); }
+    void test(Object o) { System.out.println("Object"); }
+}
+
+public class Test11 {
+    public static void main(String[] args) {
+        new Overload().test(null);
+    }
+}
+What will be printed?
+
+
+
+
+
+
+Question 12:
+
+class Parent {
+    void show(Number n) { System.out.println("Parent"); }
+}
+
+class Child extends Parent {
+    void show(Integer i) { System.out.println("Child"); }
+}
+
+public class Test12 {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.show(10);
+    }
+}
+What will be printed?
+
+
+
+
+
+Question 13:
+
+class Base {
+    public final void ping() { System.out.println("Base"); }
+}
+
+class Derived extends Base {
+    public void ping() { System.out.println("Derived"); }
+}
+
+public class Test13 {
+    public static void main(String[] args) {
+        new Derived().ping();
+    }
+}
+What happens?
+
+
+
+
+Question 14:
+
+interface I {
+    default void hello() { System.out.println("I"); }
+}
+
+class Super {
+    public void hello() { System.out.println("Super"); }
+}
+
+class Sub extends Super implements I { }
+
+public class Test14 {
+    public static void main(String[] args) {
+        new Sub().hello();
+    }
+}
+What will be printed?
+
+
+
+
+
+Question 15:
+
+class Demo {
+    void run(long x) { System.out.println("long"); }
+    void run(Integer x) { System.out.println("Integer"); }
+}
+
+public class Test15 {
+    public static void main(String[] args) {
+        int val = 5;
+        new Demo().run(val);
+    }
+}
+What will be printed?
+
+
+
+
+
+Question 16:
+
+class Demo {
+    static void f(Long x) { System.out.println("Long"); }
+    static void f(double x) { System.out.println("double"); }
+    public static void main(String[] args) {
+        long v = 5L;
+        f(v);
+    }
+}
+What prints?
+
+
+
+
+
+
+Question 17:
+
+interface I1 {
+    default void m() { System.out.println("I1"); }
+}
+interface I2 {
+    void m();  
+}
+class C implements I1, I2 { }
+
+public class Test17 {
+    public static void main(String[] args) {
+        new C().m();
+    }
+}
+What happens?
+
+
+
+
+
+
+
+Question 18:
+
+abstract class A {
+    abstract void m();
+}
+interface I {
+    default void m() { System.out.println("I"); }
+}
+class D extends A implements I { }
+
+public class Test18 {
+    public static void main(String[] args) {
+        new D().m();
+    }
+}
+What happens?
+
+
+
+
+
+Question 19:
+
+class Over {
+    void g(Integer x) { System.out.println("Integer"); }
+    void g(Long x)    { System.out.println("Long"); }
+    public static void main(String[] args) {
+        new Over().g(null);
+    }
+}
+What happens?
+
+
+
+
+
+
+
+
+Question 20:
+
+interface K { int X = 1; }
+class Impl implements K { public int X = 2; }
+
+public class Test20 {
+    public static void main(String[] args) {
+        K k = new Impl();
+        Impl i = new Impl();
+        System.out.println(k.X + " " + i.X);
+    }
+}
+What prints?
+
+
+
+
+
+
+Question 21:
+
+class V {
+    static void f(long x)        { System.out.println("long"); }
+    static void f(int... xs)     { System.out.println("int..."); }
+    static void f(Integer... xs) { System.out.println("Integer..."); }
+
+    public static void main(String[] args) {
+        int n = 5;
+        f(n);
+    }
+}
+What prints?
+
+
+
+
+
+Question 22:
+
+import java.util.function.Function;
+
+class S {
+    String m(Object o) { return "O"; }
+    String m(String s) { return "S"; }
+}
+
+public class Test22 {
+    public static void main(String[] args) {
+        Function<String, String> f = new S()::m;   // pick?
+        Function<Object, String> g = new S()::m;   // pick?
+
+        System.out.println(f.apply(null) + g.apply(null));
+    }
+}
+Output?
+
+
+
+
+
+Question 23:
+
+sealed interface A permits B, C {}
+
+interface B extends A {
+    default void hello() { System.out.println("B"); }
+}
+
+interface C extends A {
+    default void hello() { System.out.println("C"); }
+}
+
+class D implements B, C { }  // no override
+
+public class Test23 {
+    public static void main(String[] args) {
+        new D().hello();
+    }
+}
+What happens?
+
+
+
+
+
+Question 24:
+
+
+interface Box<T> {
+    T get();
+}
+
+class SBox implements Box<String> {
+    protected String get() { return "x"; } // line X
+}
+
+public class Test24 {
+    public static void main(String[] args) {
+        Box<String> b = new SBox();
+        System.out.println(b.get());
+    }
+}
+What happens?
+
+
+
+
+Question 25:
+
+class J {
+    static final int A = 1;       
+    static final Integer B = 1;  
+    static {
+        System.out.println("init");
+    }
+}
+
+public class Test25 {
+    public static void main(String[] args) {
+        System.out.println(J.A);
+        System.out.println(J.B);
+    }
+}
+What prints?
+

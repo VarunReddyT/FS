@@ -1,0 +1,102 @@
+MCQ 1:
+
+import java.io.*;
+
+class A {
+    void read() throws IOException { System.out.println("A"); }
+}
+class B extends A {
+    @Override
+    void read() throws FileNotFoundException { System.out.println("B"); }
+}
+public class TestE1 {
+    public static void main(String[] args) throws IOException {
+        A a = new B();
+        a.read();
+    }
+}
+What happens?
+
+
+
+MCQ 2:
+
+public class TestE2 {
+    public static void main(String[] args) {
+        try {
+            if (true) throw new IllegalArgumentException();
+        } catch (IllegalArgumentException | NullPointerException ex) {
+            ex = null; // line X
+            System.out.println("Caught");
+        }
+    }
+}
+What happens?
+
+
+
+
+
+
+
+
+
+MCQ 3:
+
+class R implements AutoCloseable {
+    @Override
+    public void close() {
+        throw new RuntimeException("close");
+    }
+}
+
+public class TestE3 {
+    public static void main(String[] args) {
+        try (R r = new R()) {
+            throw new RuntimeException("body");
+        }
+    }
+}
+What happens?
+
+
+
+
+MCQ 4:
+
+public class TestE4 {
+    static {
+        if (true) throw new RuntimeException("init");
+    }
+    public static void main(String[] args) {
+        System.out.println("Main");
+    }
+}
+
+What happens?
+
+
+
+
+
+
+
+MCQ 5:
+
+import java.util.*;
+
+public class TestE5 {
+    public static void main(String[] args) {
+        List<String> list = List.of("a","b");
+        list.forEach(s -> {
+            try {
+                throw new java.io.IOException();
+            } catch (java.io.IOException e) {
+                System.out.println(s);
+            }
+        });
+    }
+}
+What happens?
+
+
