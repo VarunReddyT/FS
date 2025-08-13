@@ -1,4 +1,4 @@
-# Java Advanced Interface and Inheritance Notes
+# Java Advanced Interface, Inheritance and Polymorphism Notes
 
 ---
 
