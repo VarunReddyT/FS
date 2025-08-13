@@ -18,9 +18,9 @@ class Derived extends Base {
         System.out.println("Derived class constructor called with value: " + x);
     }
 }
-public class Chaining {
+public class Main1 {
     public static void main(String[] args) {
-        Base obj1 = new Derived(10); // Compilation error if super(x) is not called
+        // Base obj1 = new Derived(10); // Compilation error if super(x) is not called
     }
 }
 ```
@@ -41,7 +41,7 @@ class Derived extends Base {
         System.out.println("Derived class constructor called with value: " + x);
     }
 }
-public class Chaining {
+public class Main2 {
     public static void main(String[] args) {
         Base obj1 = new Derived(10); // Output: Base... then Derived...
     }
@@ -60,7 +60,7 @@ class Derived extends Base {
         System.out.println("Derived class constructor called with value: " + x);
     }
 }
-public class Chaining {
+public class Main3 {
     public static void main(String[] args) {
         Base obj1 = new Derived(10); // Output: Base... then Derived...
     }
@@ -87,6 +87,11 @@ class Derived extends Base {
         System.out.println("Derived class constructor called with value: " + x);
     }
 }
+public class Main4 {
+    public static void main(String[] args) {
+        Base obj1 = new Derived(10);
+    }
+}
 ```
 
 ### Example 5: Chaining in Derived Class
@@ -99,6 +104,11 @@ class Derived extends Base {
     public Derived(int x, int y) {
         this(x); // Calls Derived(int x)
         System.out.println("Derived class constructor called with values: " + x + ", " + y);
+    }
+}
+public class Main5 {
+    public static void main(String[] args) {
+        Derived d = new Derived(10, 20);
     }
 }
 ```
@@ -117,6 +127,11 @@ class Base {
         System.out.println("Base class constructor called");
     }
 }
+public class Main6 {
+    public static void main(String[] args) {
+        Base b = new Base();
+    }
+}
 ```
 - Static blocks run once when the class is loaded.
 
@@ -128,6 +143,11 @@ class Base {
     }
     public Base() {
         System.out.println("Base class constructor called");
+    }
+}
+public class Main7 {
+    public static void main(String[] args) {
+        Base b = new Base();
     }
 }
 ```
@@ -149,7 +169,7 @@ class Derived extends Base {
     { System.out.println("Derived instance"); }
     public Derived() { System.out.println("Derived constructor"); }
 }
-public class Chaining {
+public class Main8 {
     public static void main(String[] args) {
         Base obj = new Derived();
     }
@@ -182,6 +202,12 @@ class Base {
         System.out.println("Static block 2: b=" + b);
     }
 }
+public class Main9 {
+    public static void main(String[] args) {
+        System.out.println(Base.a);
+        System.out.println(Base.b);
+    }
+}
 ```
 - Static variables are initialized in the order they appear.
 - Static blocks can access static variables, but variables declared after the block are not yet initialized.
@@ -208,7 +234,7 @@ class Example {
     public Example() { System.out.println("Default constructor"); }
     public Example(int x) { this(); System.out.println("Constructor with x: " + x); }
 }
-public class Test {
+public class Main10 {
     public static void main(String[] args) {
         Example e1 = new Example();
         Example e2 = new Example(5);
@@ -248,7 +274,6 @@ Constructor with x: 5
 
 ## 10. Practice: Predict the Output
 
-Try to predict the output for the following code:
 ```java
 class A {
     static { System.out.println("A static"); }
@@ -260,7 +285,7 @@ class B extends A {
     { System.out.println("B instance"); }
     public B() { System.out.println("B constructor"); }
 }
-public class Test {
+public class Main11 {
     public static void main(String[] args) {
         A obj = new B();
     }
@@ -280,13 +305,14 @@ Anonymous classes in Java are used for creating a one-time, unnamed subclass of 
 
 ### Example: Event Listener
 ```java
-Button btn = new Button();
-btn.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Button clicked!");
-    }
-});
+// This code requires a GUI framework like Swing or JavaFX to run.
+// Button btn = new Button();
+// btn.addActionListener(new ActionListener() {
+//     @Override
+//     public void actionPerformed(ActionEvent e) {
+//         System.out.println("Button clicked!");
+//     }
+// });
 ```
 
 ### Example: Anonymous Class Extending a Class
@@ -325,7 +351,7 @@ class Derived extends Base {
         System.out.println("Derived class constructor called with values: " + x + ", " + y);
     }
 }
-public class Chaining {
+public class Main12 {
     public static void main(String[] args) {
         // Anonymous class extending Derived for extra initialization
         Base obj1 = new Derived(10) {
@@ -337,63 +363,42 @@ public class Chaining {
 }
 ```
 
-#### Output Explanation
-- All static blocks execute first (Base, then Derived).
-- Instance initializer blocks execute before constructors.
-- The anonymous class block executes after the Derived constructor.
-
-#### Why Use Anonymous Classes?
-- To quickly override or extend behavior for a single use without creating a named class.
-- Useful for callbacks, event handling, or customizing library classes on the fly.
-
-#### Common Errors
-- Anonymous classes cannot have explicit constructors, but can use instance initializer blocks `{ ... }` for setup.
-- Cannot declare static initializers or static members (except static final constants) inside anonymous classes.
-
----
-
 ### Additional Example: Runnable
 ```java
-Runnable r = new Runnable() {
-    @Override
-    public void run() {
-        System.out.println("Running in a thread!");
+public class Main13 {
+    public static void main(String[] args) {
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Running in a thread!");
+            }
+        };
+        new Thread(r).start();
     }
-};
-new Thread(r).start();
+}
 ```
-
----
-
-*Anonymous classes are a powerful feature for concise, one-off customizations in Java!*
-
 
 ---
 
 ## 12. Access Modifiers and Packages
 
-Access modifiers control the visibility of classes, methods, and variables in Java:
-- `public`: Accessible from anywhere.
-- `private`: Accessible only within the same class.
-- `protected`: Accessible within the same package and subclasses.
-- Default (no modifier): Accessible within the same package, but not from subclasses in other packages.
-
-**Example:**
 ```java
-public class Access {
-    // ... see code above ...
+public class Main14 {
+    // public - accessible from anywhere
+    // private - accessible only within the same class
+    // protected - accessible within the same package and subclasses
+    // default (no modifier) - accessible within the same package and not subclasses
+    public static void main(String[] args) {
+        // Packages equivalent to namespaces in Java
+        // They help organize classes and avoid naming conflicts
+    }
 }
 ```
-**Why:**
-- To encapsulate and protect data, and to control API exposure.
 
 ---
 
 ## 13. Covariant Return Types
 
-Java allows an overriding method to return a subtype (covariant type) of the return type declared in the original overridden method.
-
-**Example:**
 ```java
 class Api {
     Number value() { return 42; }
@@ -402,66 +407,67 @@ class Impl extends Api {
     @Override
     Integer value() { return 7; } // Integer is a subclass of Number
 }
+public class Main15 {
+    public static void main(String[] args) {
+        Api api = new Impl();
+        System.out.println(api.value()); // 7
+    }
+}
 ```
-**Why:**
-- Allows more specific return types in subclasses, improving type safety and usability.
 
 ---
 
 ## 14. Narrowing Visibility (Not Allowed)
 
-You cannot reduce the visibility of an inherited method when overriding.
-
-**Example (Error):**
 ```java
 class Api {
     protected Number value() { return 42; }
 }
 class Impl extends Api {
-    @Override
-    private Integer value() { return 7; } // ERROR: Cannot reduce visibility
+    // @Override
+    // private Integer value() { return 7; } // ERROR: Cannot reduce visibility
+    public Integer value() { return 7; }
+}
+public class Main16 {
+    public static void main(String[] args) {
+        Api api = new Impl();
+        System.out.println(api.value()); // 7
+    }
 }
 ```
-**Error:**
-- "Cannot reduce the visibility of the inherited method from Api."
-
-**Why:**
-- To ensure that the contract of the base class is preserved in subclasses.
 
 ---
 
 ## 15. Protected Methods and Package Access
 
-**Example:**
 ```java
 // pkg1
-package pkg1;
+// package pkg1;
 class Base {
     protected void hook() { System.out.println("Base hook"); }
 }
 // pkg2
-package pkg2;
-import pkg1.Base;
+// package pkg2;
+// import pkg1.Base;
 class Derived extends Base {
     void test(Derived otherDerived, Base baseRef) {
         this.hook(); // OK
         otherDerived.hook(); // OK
-        baseRef.hook(); // ERROR: Not accessible if baseRef is not a Derived
+        // baseRef.hook(); // ERROR: Not accessible if baseRef is not a Derived
+    }
+}
+public class Main17 {
+    public static void main(String[] args) {
+        Derived d = new Derived();
+        d.test(d, d);
     }
 }
 ```
-**Why:**
-- Protected methods are accessible in subclasses, but not via references of the base type from outside the package.
 
 ---
 
 ## 16. Method Overriding and Access
 
-### Public vs Private Methods
-- If a method is `public` in the base class, it can be overridden in the subclass.
-- If a method is `private`, it is not inherited and cannot be overridden.
-
-**Example:**
 ```java
 class A {
     public void f() { System.out.println("A.f"); }
@@ -470,24 +476,18 @@ class A {
 class B extends A {
     public void f() { System.out.println("B.f"); }
 }
-A x = new B();
-x.call(); // Prints B.f
+public class Main18 {
+    public static void main(String[] args) {
+        A x = new B();
+        x.call(); // Prints B.f
+    }
+}
 ```
-
-**If f() is private in A:**
-- B's f() is a new method, not an override.
-- A.call() always calls A's own f().
-
-**Why:**
-- Private methods are statically bound; public/protected are dynamically bound (polymorphism).
 
 ---
 
 ## 17. Overriding with Different Return Types
 
-You can override a method and change the return type if the new return type is a subclass (covariant return type). You cannot change the access modifier to be more restrictive.
-
-**Example:**
 ```java
 class A {
     public void f() { System.out.println("A.f"); }
@@ -497,15 +497,18 @@ class B extends A {
     public void f() { System.out.println("B.f"); }
     // public int call() { f(); return 0; } // Allowed if return type is compatible
 }
+public class Main19 {
+    public static void main(String[] args) {
+        B b = new B();
+        b.call();
+    }
+}
 ```
 
 ---
 
 ## 18. Overriding and Method Resolution
 
-If both base and derived classes define a method with the same signature, the method in the derived class overrides the base class method (unless the base method is private).
-
-**Example:**
 ```java
 class A {
     public void f() { System.out.println("A.f"); }
@@ -515,48 +518,47 @@ class B extends A {
     public void f() { System.out.println("B.f"); }
     public void call() { f(); }
 }
-A x = new B();
-x.call(); // Prints B.f
+public class Main20 {
+    public static void main(String[] args) {
+        A x = new B();
+        x.call(); // Prints B.f
+    }
+}
 ```
 
 ---
 
 ## 19. Package-Private and Private Constructors
 
-- Classes or constructors with no modifier are package-private (accessible only within the same package).
-- Private constructors are not accessible outside the class.
-
-**Example:**
 ```java
 // lib
-package lib;
+// package lib;
 class Helper { public Helper(){} }
 // pkg2
-package pkg2;
-import lib.Helper;
-public class User {
+// package pkg2;
+// import lib.Helper;
+public class Main21 {
     public static void main(String[] args) {
-        new Helper(); // ERROR: Not accessible
+        // new Helper(); // ERROR: Not accessible if Helper is package-private and in a different package
     }
 }
 ```
 
-**Example (private constructor):**
 ```java
-package lib;
-public class Helper { private Helper(){} }
+// package lib;
+public class Helper2 { private Helper2(){} }
 // ...
-new Helper(); // ERROR: Constructor is private
+public class Main22 {
+    public static void main(String[] args) {
+        // new Helper2(); // ERROR: Constructor is private
+    }
+}
 ```
 
 ---
 
 ## 20. Inner and Nested Classes
 
-- **Inner class**: Non-static, can access all members (even private) of the outer class.
-- **Static nested class**: Can only access static members of the outer class.
-
-**Example:**
 ```java
 public class Outer {
     private int secret = 99;
@@ -585,18 +587,13 @@ public class Outer {
     }
 }
 ```
-**Why:**
-- Inner classes are used for logically grouping classes and for accessing outer class members.
 
 ---
 
 ## 21. Method Overloading and Resolution
 
-Java resolves overloaded methods at compile time based on the argument types.
-
-**Example:**
 ```java
-public class Outer {
+public class Main23 {
     static void f(long x) { System.out.println("long"); }
     static void f(Integer x) { System.out.println("Integer"); }
     static void f(int... x) { System.out.println("int..."); }
@@ -617,26 +614,13 @@ Integer
 long
 int...
 ```
-**Why:**
-- Java chooses the most specific applicable method. Widening is preferred over boxing, and varargs is the least preferred.
 
 ---
 
 ## 22. Java’s Overload Resolution Priority
 
-When the compiler tries to pick the best match for a method call, it follows this order:
-
-1. **Exact primitive match (same type)** — ✅ highest priority
-2. **Primitive widening** (e.g., `int` → `long`)  byte → short → char → int → long → float → double
-3. **Boxing/unboxing** (primitive ↔ wrapper)
-4. **Varargs/Ellipsis** — ❌ lowest priority
-
-**Rule:**
-- Primitive widening beats boxing, and boxing beats varargs.
-
-### Example: Overload Resolution
 ```java
-public class OverloadDemo {
+public class Main24 {
     static void f(long x) { System.out.println("long"); }
     static void f(Integer x) { System.out.println("Integer"); }
     static void f(int... x) { System.out.println("int..."); }
@@ -657,8 +641,5 @@ Integer
 long
 int...
 ```
-
-**Why:**
-- Java chooses the most specific applicable method. Widening is preferred over boxing, and varargs is the least preferred.
 
 ---
