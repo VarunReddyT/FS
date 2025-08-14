@@ -1,0 +1,202 @@
+Question-1:
+You have the following code:
+
+ExecutorService executor = Executors.newFixedThreadPool(1);
+
+Future<Integer> future = executor.submit(() -> {
+    Thread.sleep(1000);
+    return 42;
+});
+
+System.out.println(future.get());
+executor.shutdown();
+
+
+Which statement is true?
+
+
+
+
+Question-2:
+
+class Shared {
+    synchronized void doWork() throws InterruptedException {
+        System.out.print("Start ");
+        wait();
+        System.out.print("End ");
+    }
+}
+
+Shared s = new Shared();
+new Thread(() -> {
+    try { s.doWork(); } catch (Exception e) {}
+}).start();
+Thread.sleep(500);
+s.notify();
+
+What is the output?
+
+
+
+Question-3:
+class Shared {
+    synchronized void doWait() throws InterruptedException {
+        System.out.println(Thread.currentThread().getName() + " waiting");
+        wait();
+        System.out.println(Thread.currentThread().getName() + " resumed");
+    }
+}
+Shared s = new Shared();
+Runnable r = () -> { try { s.doWait(); } catch (Exception e) {} };
+Thread t1 = new Thread(r, "T1");
+Thread t2 = new Thread(r, "T2");
+t1.start(); t2.start();
+
+synchronized(s) {
+    s.notify();
+}
+
+What is guaranteed?
+
+
+
+Question-4:
+
+ExecutorService ex = Executors.newSingleThreadExecutor();
+
+Future<String> f = ex.submit(() -> {
+    if (true) throw new IllegalStateException("Fail");
+    return "Done";
+});
+try {
+    System.out.println(f.get());
+} catch (Exception e) {
+    System.out.println(e.getClass());
+}
+
+ex.shutdown();
+
+What is printed?
+
+
+
+Question-5: What is the output?
+
+class Counter {
+    private int count = 0;
+    public synchronized void increment() {
+        count++;
+        notifyAll();
+    }
+    public synchronized void waitForValue(int target) throws InterruptedException {
+        while (count < target) {
+            wait();
+        }
+        System.out.println("Reached " + target);
+    }
+}
+
+Counter c = new Counter();
+new Thread(() -> {
+    try { c.waitForValue(5); } catch (Exception e) {}
+}).start();
+
+for (int i = 0; i < 5; i++) {
+    Thread.sleep(100);
+    c.increment();
+}
+
+
+
+Question-6:
+
+final Object A = new Object();
+final Object B = new Object();
+Thread t1 = new Thread(() -> {
+    synchronized (A) {
+        sleep(50);
+        synchronized (B) { System.out.println("T1 got A then B"); }
+    }
+});
+Thread t2 = new Thread(() -> {
+    synchronized (B) {
+        sleep(50);
+        synchronized (A) { System.out.println("T2 got B then A"); }
+    }
+});
+t1.start(); t2.start();
+
+(Assume sleep wraps Thread.sleep and swallows checked exceptions.)
+
+ What is most accurate?
+
+
+
+Question-7: What output pattern is correct?
+
+ExecutorService ex = Executors.newFixedThreadPool(2);
+
+Runnable r1 = () -> {   };
+Runnable r2 = () -> { throw new RuntimeException("boom"); };
+Callable<String> c1 = () -> "ok";
+Callable<String> c2 = () -> { throw new IllegalStateException("bad"); };
+
+Future<?> fr1 = ex.submit(r1);
+Future<?> fr2 = ex.submit(r2);
+Future<String> fc1 = ex.submit(c1);
+Future<String> fc2 = ex.submit(c2);
+
+try { System.out.println(fr1.get()); } catch (Exception e) { System.out.println("R1:" + e); }
+try { System.out.println(fr2.get()); } catch (Exception e) { System.out.println("R2:" + e.getClass()); }
+try { System.out.println(fc1.get()); } catch (Exception e) { System.out.println("C1:" + e); }
+try { System.out.println(fc2.get()); } catch (Exception e) { System.out.println("C2:" + e.getClass()); }
+
+ex.shutdown();
+
+
+
+Question-8:  What is printed by the worker thread?
+
+Object lock = new Object();
+
+Thread t = new Thread(() -> {
+    synchronized (lock) {
+        try {
+            lock.wait();  
+            System.out.println("woke normally");
+        } catch (InterruptedException e) {
+            System.out.println("interrupted");
+            System.out.println(Thread.currentThread().isInterrupted());
+        }
+    }
+});
+t.start();
+
+Thread.sleep(100);
+t.interrupt();
+
+
+Question-9:    What is true about the behavior?
+class Box {
+    private boolean ready = false;
+    private final Object m1 = new Object();
+    private final Object m2 = new Object();
+
+    void awaitReady() throws InterruptedException {
+        synchronized (m1) {
+            if (!ready) m1.wait();  
+        }
+        System.out.println("go");
+    }
+    void signalReady() {
+        synchronized (m2) {
+            ready = true;
+            m2.notifyAll();       
+        }
+    }
+}
+
+Box b = new Box();
+new Thread(() -> { try { b.awaitReady(); } catch (Exception ignored) {} }).start();
+Thread.sleep(100);
+b.signalReady();
