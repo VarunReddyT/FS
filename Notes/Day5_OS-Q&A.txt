@@ -1,0 +1,209 @@
+1. In a paged memory system, increasing the page size generally: 
+A. Increases internal fragmentation but reduces page table size 
+B. Decreases internal fragmentation and increases page table size 
+C. Has no impact on page table size 
+D. Eliminates page faults completely
+ANSWER: A
+
+2. Which of the following is least likely to cause a page fault? 
+A. Accessing a page for the first time
+B. Accessing a page already in main memory 
+C. Accessing a swapped-out page 
+D. Accessing a memory location not mapped to any page
+ANSWER: B
+
+3. In a system using demand paging, the effective access time (EAT) is: 
+A. Always equal to main memory access time 
+B. Weighted sum of memory access time and page fault service time 
+C. Sum of main memory access time and page fault service time 
+D. Main memory access time multiplied by hit ratio
+ANSWER: B
+
+4. The “working set” model helps in: 
+A. Preventing segmentation faults 
+B. Estimating the minimum number of frames needed to avoid thrashing 
+C. Reducing internal fragmentation 
+D. Improving CPU scheduling
+ANSWER: B
+
+5. Belady’s anomaly occurs in: 
+A. FIFO page replacement 
+B. LRU page replacement 
+C. Optimal page replacement 
+D. All of the above
+ANSWER: A
+
+6. Shared memory IPC is generally: 
+A. Slower than message passing 
+B. Faster than message passing 
+C. Always OS-dependent and slower than sockets 
+D. Not possible in Linux
+ANSWER: B
+
+7. In UNIX System V shared memory, shmat() is used for: 
+A. Creating a shared memory segment
+B. Attaching a existing shared memory segment 
+C. Removing a shared memory segment 
+D. Locking shared memory
+ANSWER: B
+
+8. The biggest challenge with shared memory IPC is: 
+A. High latency 
+B. Synchronization between processes 
+C. Lack of portability 
+D. Expensive system calls per read/write
+ANSWER: B
+
+9. In POSIX shared memory, shm_open() returns: 
+A. A pointer to the shared memory 
+B. A file descriptor 
+C. A memory-mapped address immediately 
+D. A semaphore handle
+ANSWER: B
+
+10. A binary semaphore differs from a mutex because: 
+A. Mutex is faster 
+B. Binary semaphore can be signaled by a thread that didn’t acquire it 
+C. Mutex can be acquired multiple times by the same thread without blocking 
+D. Binary semaphore has no synchronization use
+ANSWER: B
+
+11. A counting semaphore initialized to N allows: 
+A. Exactly N processes to be in the critical section simultaneously 
+B. Unlimited processes in critical section 
+C. At most N processes waiting 
+D. Exactly N processes to wait
+ANSWER: A
+
+12. The P and V operations on semaphores: 
+A. Increment and decrement the semaphore count respectively 
+B. P → wait (decrement), V → signal (increment) 
+C. Both increment 
+D. Both decrement
+ANSWER: B
+
+13. Priority inversion in semaphore usage occurs when: 
+A. Low priority thread holds semaphore needed by a high priority thread 
+B. High priority thread holds semaphore needed by a low priority thread 
+C. Semaphore count is negative 
+D. Semaphore value overflows
+ANSWER: A
+
+14. Which socket type guarantees message boundaries? 
+A. TCP 
+B. UDP 
+C. RAW 
+D. None of these
+ANSWER: B
+
+15. The listen() call in TCP server sockets: 
+A. Actively starts connection establishment 
+B. Passively waits for incoming connections 
+C. Sends data to client 
+D. Binds the socket to a port
+ANSWER: B
+
+16. In TCP, the TIME_WAIT state is important because: 
+A. It reduces latency for new connections
+B. It ensures old duplicate packets don’t get misinterpreted 
+C. It frees ports quickly 
+D. It’s only for servers
+ANSWER: B
+
+17. Which is NOT true about select()? 
+A. Can monitor multiple sockets 
+B. Blocks until at least one socket is ready or timeout expires 
+C. Returns immediately if no socket is ready 
+D. Can monitor sockets for read, write, and exceptions
+ANSWER: C
+
+18. In preemptive scheduling: 
+A. A running process cannot be interrupted 
+B. Scheduler can stop a process to run another 
+C. Only batch jobs run 
+D. No context switch occurs
+ANSWER: B
+
+19. Which scheduling algorithm may cause starvation? 
+A. Round Robin 
+B. Shortest Job First (SJF)
+C. Priority Scheduling 
+D. FCFS
+ANSWER: C
+
+20. Context switch time is: 
+A. Counted as CPU utilization 
+B. Pure overhead 
+C. Always zero 
+D. Negative in some cases
+ANSWER: B
+
+21. The scheduler that adjusts priorities dynamically to prevent starvation is: 
+A. FCFS 
+B. Multi-level feedback queue 
+C. SJF 
+D. Lottery scheduling
+ANSWER: B
+
+22. The main cost of handling a page fault is: 
+A. OS scheduler run time 
+B. Disk I/O to load the page
+C. CPU cache invalidation 
+D. TLB flush
+ANSWER: B
+
+23. In demand paging, the initial access to a large array: 
+A. Has uniform access time for all elements 
+B. May cause multiple page faults until the array is paged in 
+C. Never causes page faults if array is allocated 
+D. Causes only one page fault
+ANSWER: B
+
+24. Copy-on-write is used to: 
+A. Avoid race conditions 
+B. Delay copying of a page until it is modified
+C. Improve mutex performance 
+D. Avoid swapping
+ANSWER: B
+
+25. Thrashing occurs when: 
+A. Disk is faster than memory 
+B. Processes spend more time paging than executing 
+C. The system has high CPU utilization 
+D. Page size is too small
+ANSWER: B
+
+26. TLB miss penalty is reduced by: 
+A. Increasing page size 
+B. Increasing associativity of TLB 
+C. Disabling demand paging 
+D. Using FCFS scheduling
+ANSWER: B
+
+27. In producer-consumer using shared memory, semaphores must: 
+A. Ensure mutual exclusion only 
+B. Ensure synchronization and mutual exclusion 
+C. Be avoided for performance 
+D. Be replaced with sleep calls
+ANSWER: B
+
+28. Non-blocking sockets are primarily useful for: 
+A. Low-latency event-driven servers 
+B. High-throughput batch jobs 
+C. Reducing memory fragmentation 
+D. Eliminating TIME_WAIT
+ANSWER: A
+
+29. The “dirty bit” in a page table entry is used to: 
+A. Indicate page is in memory 
+B. Indicate page has been modified since being loaded 
+C. Indicate page has been swapped 
+D. Indicate page is locked in memory
+ANSWER: B
+
+30. When two processes communicate via sockets on the same machine: 
+A. Data always goes through the NIC 
+B. OS may optimize by using loopback interface and kernel memory 
+C. Performance is same as shared memory 
+D. It’s not possible
+ANSWER: B
