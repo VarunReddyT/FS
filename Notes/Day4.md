@@ -211,10 +211,30 @@ public class Main {
         Future<?> fr2 = ex.submit(r2);
         Future<String> fc1 = ex.submit(c1);
         Future<String> fc2 = ex.submit(c2);
-        try { System.out.println(fr1.get()); } catch (ExecutionException e) { System.out.println("R1 : " + e); }
-        try { System.out.println(fr2.get()); } catch (ExecutionException e) { System.out.println("R2 : " + e.getClass()); }
-        try { System.out.println(fc1.get()); } catch (ExecutionException e) { System.out.println("C1 : " + e); }
-        try { System.out.println(fc2.get()); } catch (ExecutionException e) { System.out.println("C2 : " + e.getCause()); }
+        try { 
+            System.out.println(fr1.get());  // null
+        } 
+        catch (ExecutionException e) { 
+            System.out.println("R1 : " + e); 
+        }
+        try { 
+            System.out.println(fr2.get()); 
+        } 
+        catch (ExecutionException e) { 
+            System.out.println("R2 : " + e.getClass());    // ExecutionException (getClass)
+        }
+        try { 
+            System.out.println(fc1.get());       // ok
+        } 
+        catch (ExecutionException e) { 
+            System.out.println("C1 : " + e); 
+        }
+        try { 
+            System.out.println(fc2.get()); 
+        } 
+        catch (ExecutionException e) { 
+            System.out.println("C2 : " + e.getCause());   // IllegalStateException (getCause)   
+        }
         ex.shutdown();
     }
 }
