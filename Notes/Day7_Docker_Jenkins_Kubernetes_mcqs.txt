@@ -1,0 +1,174 @@
+1. Which Kubernetes component is the “single source of truth” for cluster state?
+A. kubelet
+B. kube-scheduler
+C. etcd
+D. kube-proxy
+ANSWER: C
+
+2. What happens if the kube-apiserver goes down?
+A. Pods stop running
+B. Existing workloads run, but no new changes can be applied
+C. Scheduler takes over API tasks
+D. kube-proxy replaces apiserver
+ANSWER: B
+
+3. What is the role of the kube-scheduler?
+A. Runs pods
+B. Decides node placement for pods
+C. Manages network rules
+D. Stores cluster state
+ANSWER: B
+
+4. Which best describes the kubelet?
+A. Stores cluster data
+B. Assigns pods to nodes
+C. Ensures containers on a node run as specified
+D. Manages traffic routing
+ANSWER: C
+
+5. What does kube-proxy do?
+A. Schedules pods to nodes
+B. Stores cluster metadata
+C. Implements Services by routing traffic to pod IPs
+D. Monitors pod health
+ANSWER: C
+
+6. Which describes the function of a CNI plugin like Calico or Flannel?
+A. Runs containers
+B. Provides pod networking across nodes
+C. Schedules workloads
+D. Monitors logs
+ANSWER: B
+
+7. Which Service type is only reachable inside the cluster?
+A. ClusterIP
+B. NodePort
+C. LoadBalancer
+D. ExternalName
+ANSWER: A
+
+8. What role does CoreDNS play in Kubernetes?
+A. Stores logs
+B. Provides pod-to-pod networking
+C. Resolves service names to ClusterIPs
+D. Runs system metrics
+ANSWER: C
+
+9. How are ConfigMaps and Secrets different?
+A. ConfigMaps are for sensitive data, Secrets for non-sensitive
+B. Secrets can be encrypted, ConfigMaps are plain configs
+C. ConfigMaps are stored in files, Secrets are not
+D. ConfigMaps can’t be mounted into pods
+ANSWER: B
+
+10. What is the difference between a Deployment and a StatefulSet?
+A. Deployments are for stateless apps; StatefulSets provide stable identity and storage
+B. StatefulSets scale faster
+C. Deployments only support 1 replica
+D. StatefulSets don’t need volumes
+ANSWER: A
+
+11. When an external client accesses a NodePort Service, which component first processes the packet on the node?
+A. kubelet
+B. kube-proxy
+C. Ingress
+D. container runtime
+ANSWER: B
+
+12. In a LoadBalancer Service, what is the correct sequence?
+A. LB → NodePort → kube-proxy → Pod IP
+B. LB → kubelet → Pod
+C. LB → kube-proxy → Service → Pod
+D. LB → Ingress → Pod
+ANSWER: A
+
+13. How does kube-proxy decide which pod to send a request to?
+A. By hashing client IP
+B. Round-robin or IPVS load-balancing
+C. Randomly chosen by kubelet
+D. DNS chooses pod directly
+ANSWER: B
+
+14. A request reaches a pod but no response returns. What is the likely issue?
+A. Service not created
+B. Readiness probe failed
+C. Misconfigured CNI return path
+D. kube-proxy missing
+ANSWER: C
+
+15. What is the correct trajectory for an in-cluster pod-to-service request?
+A. Pod → DNS (CoreDNS) → ClusterIP → kube-proxy → Pod
+B. Pod → kubelet → Pod directly
+C. Pod → kube-proxy → DNS → Pod
+D. Pod → Ingress → ClusterIP → Pod
+ANSWER: A
+
+16. In Kubernetes, a Pod can contain:
+A. Exactly 1 container
+B. Multiple containers sharing the same network namespace
+C. Only sidecar containers
+D. Containers that must run on different nodes
+ANSWER: B
+
+17. What is the default restart policy for a Kubernetes Pod?
+A. Never
+B. OnFailure
+C. Always
+D. Manual
+ANSWER: C
+
+18. Which object in Kubernetes ensures a set of identical Pods are always running?
+A. Pod
+B. ReplicaSet
+C. Service
+D. ConfigMap
+ANSWER: B
+
+19. Kubernetes Service of type `ClusterIP` is accessible:
+A. Only within the cluster
+B. From external network
+C. Only from Pod’s namespace
+D. Nowhere unless exposed
+ANSWER: A
+
+20. Which Kubernetes controller is responsible for rolling updates and rollbacks?
+A. ReplicaSet
+B. Deployment
+C. StatefulSet
+D. DaemonSet
+ANSWER: B
+
+21. Which Kubernetes component is responsible for scheduling Pods to nodes?
+A. Controller Manager
+B. Scheduler
+C. Kubelet
+D. API Server
+ANSWER: B
+
+22. ConfigMap vs Secret: which statement is correct?
+A. Both are encrypted by default
+B. Secrets are base64-encoded, ConfigMaps store plain text
+C. ConfigMaps require RBAC, Secrets do not
+D. Secrets cannot be mounted in Pods
+ANSWER: B
+
+23. If a Pod crashes, which component detects it and attempts to restart it?
+A. Scheduler
+B. Kubelet
+C. Controller Manager
+D. etcd
+ANSWER: B
+
+24. Which Kubernetes object ensures only one Pod is scheduled per node?
+A. DaemonSet
+B. StatefulSet
+C. Job
+D. Deployment
+ANSWER: A
+
+25. Kubernetes Ingress is used to:
+A. Load balance between Pods within a namespace
+B. Manage traffic rules and expose services externally
+C. Replace Service objects completely
+D. Create persistent storage
+ANSWER: B

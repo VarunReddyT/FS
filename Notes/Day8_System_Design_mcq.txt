@@ -1,0 +1,209 @@
+In a Token Bucket system with a fill rate of 5 tokens/sec and a bucket size of 20, what happens if 50 requests arrive instantly at t=0?
+A. All requests pass
+B. 20 requests pass, 30 delayed/rejected
+C. 25 requests pass, 25 delayed
+D. All rejected
+ANSWER: B
+
+Why is the Token Bucket preferred over the Leaky Bucket for API rate limiting?
+A. Handles only uniform traffic
+B. Supports traffic bursts up to bucket capacity
+C. Consumes fewer resources
+D. Ensures zero packet loss
+ANSWER: B
+
+Which of the following is a direct drawback of Token Bucket under high sustained load?
+A. Token starvation leading to request throttling
+B. Over-acceptance of requests
+C. Memory overhead due to token storage
+D. Unfairness between clients
+ANSWER: A
+
+Why does Offset pagination degrade for large datasets?
+A. CPU limits
+B. Full table scan with skipped rows
+C. Index corruption
+D. Cursor invalidation
+ANSWER: B
+
+Cursor pagination is more suitable than offset pagination in:
+A. Analytics queries
+B. Real-time feeds (e.g., Twitter, FB)
+C. Small static datasets
+D. Batch processing
+ANSWER: B
+
+Which issue is most likely avoided by cursor pagination?
+A. Phantom reads
+B. Duplicate/missing rows due to inserts/deletes
+C. Slow writes
+D. Deadlocks
+ANSWER: B
+
+At which OSI layer does an Application Load Balancer operate?
+A. Layer 2
+B. Layer 3
+C. Layer 4
+D. Layer 7
+ANSWER: D
+
+Which algorithm ensures that clients with the same IP always hit the same server?
+A. Round Robin
+B. Least Connections
+C. IP Hash
+D. Random
+ANSWER: C
+
+Which is not a common load balancer feature?
+A. SSL termination
+B. Health checks
+C. Circuit breaking
+D. Caching
+ANSWER: C
+
+When the circuit breaker is in half-open state, it:
+A. Rejects all requests
+B. Allows all requests
+C. Allows limited test requests
+D. Closes permanently
+ANSWER: C
+
+Which failure scenario motivates using a circuit breaker?
+A. High CPU usage
+B. Downstream timeout propagation
+C. Duplicate requests
+D. Cache misses
+ANSWER: B
+
+Circuit breakers primarily prevent:
+A. Network congestion
+B. Cascading failures
+C. Deadlocks
+D. Resource starvation
+ANSWER: B
+
+In a network partition, a system cannot provide both:
+A. Consistency and Latency
+B. Consistency and Availability
+C. Partition tolerance and Latency
+D. Durability and Partition tolerance
+ANSWER: B
+
+DynamoDB is classified as:
+A. CP
+B. AP
+C. CA
+D. PC
+ANSWER: B
+
+A financial system requiring strict account balances across replicas would likely prefer:
+A. CP system
+B. AP system
+C. Eventually consistent
+D. BASE model
+ANSWER: A
+
+PACELC extends CAP by adding which tradeoff when no partition exists?
+A. Durability vs Performance
+B. Latency vs Consistency
+C. Partition vs Availability
+D. Fault tolerance vs Throughput
+ANSWER: B
+
+Google Spanner is classified as:
+A. PA/EL
+B. PC/EC
+C. CP/AP
+D. CA
+ANSWER: B
+
+Which theorem better represents real-world distributed DBs?
+A. CAP
+B. PACELC
+C. FLP
+D. BASE
+ANSWER: B
+
+Why is POST usually non-idempotent?
+A. Multiple calls create duplicates
+B. Stateless nature of HTTP
+C. Caching conflicts
+D. Authentication required
+ANSWER: A
+
+How does an Idempotency-Key prevent duplicate booking?
+A. Server ignores POST body
+B. Server checks key before creating resource
+C. Client retries endlessly
+D. Cache invalidation
+ANSWER: B
+
+In payment systems, idempotent POSTs prevent:
+A. Overwrites
+B. Double charges
+C. Session expiry
+D. Network delay
+ANSWER: B
+
+Which status code is returned if cached content is still valid?
+A. 200 OK
+B. 202 Accepted
+C. 304 Not Modified
+D. 503 Service Unavailable
+ANSWER: C
+
+A stale cache is refreshed using which mechanisms?
+A. ETag, Last-Modified
+B. SSL handshake
+C. CDN hashing
+D. DNS lookup
+ANSWER: A
+
+Edge caching reduces:
+A. Database consistency issues
+B. Bandwidth and latency
+C. Authentication overhead
+D. CAP tradeoffs
+ANSWER: B
+
+You design a news feed API requiring real-time, no duplicates. Which pagination?
+A. Offset
+B. Cursor
+C. Random sampling
+D. Keyset
+ANSWER: B
+
+A service hits a downstream dependency with 95% timeouts. Which resilience pattern helps first?
+A. Circuit breaker
+B. Load balancing
+C. Edge caching
+D. PACELC
+ANSWER: A
+
+An API gateway enforces 10 requests/sec per user. Which mechanism fits?
+A. CAP theorem
+B. Token Bucket
+C. Idempotent POST
+D. Circuit breaker
+ANSWER: B
+
+CDN responds instantly to a video request from India. Likely cause?
+A. Cache miss
+B. Cache hit at edge
+C. Token Bucket
+D. PACELC
+ANSWER: B
+
+Which system is most likely AP under CAP?
+A. Spanner
+B. HBase
+C. DynamoDB
+D. Mongo (in strong consistency mode)
+ANSWER: C
+
+If consistency is preferred over latency in normal conditions, the system follows:
+A. PA/EL
+B. PC/EC
+C. AP/EC
+D. CP
+ANSWER: B
