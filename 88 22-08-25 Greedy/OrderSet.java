@@ -46,3 +46,22 @@
 // Student show 7.
 // Since all the cards revealed are in increasing order, the answer is correct.
 
+import java.util.*;
+
+public class OrderSet{
+    public static ArrayList<Integer> getOrderSet(int[] arr, int n){
+        ArrayList<Integer> res = new ArrayList<>();
+
+        return res;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(getOrderSet(arr,n));
+        sc.close();
+    }
+}

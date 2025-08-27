@@ -55,3 +55,54 @@
 // In row-1, we can fit for 1 family-group
 // In row-2, we can fit for 1 family-group
 // In row-3, we can fit for 2 family-groups
+
+import java.util.*;
+
+public class MaxFamilyGroups{
+    public static boolean isFree(boolean[] row, int start, int end){
+        for(int i = start;i<=end;i++){
+            if(row[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int getFamilyRowCount(boolean[] row){
+        int count = 0;
+        
+        // Possible cases
+        // 2 3 4 5
+        // 4 5 6 7
+        // 6 7 8 9
+
+        boolean case1 = isFree(row,1,4);
+        boolean case2 = isFree(row,3,6);
+        boolean case3 = isFree(row,5,8);
+
+        if(case1) count++;
+        if(case3) count++;
+        if(!case1 && !case3 && case2) count++;
+
+        return count;
+    }
+    public static int maxFamilyGroups(boolean[][] booked){
+        int res = 0;
+        for(boolean[] i : booked){
+            res += getFamilyRowCount(i);
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int b = sc.nextInt();
+        boolean[][] booked = new boolean[n][10];
+        for (int i = 0; i < b; i++) {
+            int row = sc.nextInt() - 1;
+            int seat = sc.nextInt() - 1;
+            booked[row][seat] = true;
+        }
+        System.out.println(maxFamilyGroups(booked));
+        sc.close();
+    }
+}
