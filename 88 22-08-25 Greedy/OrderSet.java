@@ -33,6 +33,10 @@
 // ----------------
 // 1 6 2 5 3 7 4
 
+// 7 6 5 1 2 3 4
+
+// 
+
 // Explanation: 
 // ---------------
 // Given a set in the order 7 6 5 1 2 3 4
@@ -47,12 +51,20 @@
 // Since all the cards revealed are in increasing order, the answer is correct.
 
 import java.util.*;
+import java.util.LinkedList;
 
 public class OrderSet{
-    public static ArrayList<Integer> getOrderSet(int[] arr, int n){
-        ArrayList<Integer> res = new ArrayList<>();
+    public static void getOrderSet(int[] arr, int n){
 
-        return res;
+        Deque<Integer> dq = new LinkedList<>();
+        for(int i : arr){
+            dq.add(i);
+        }
+        while(!dq.isEmpty()){
+            
+        }
+        
+
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -61,7 +73,7 @@ public class OrderSet{
         for(int i = 0;i<n;i++){
             arr[i] = sc.nextInt();
         }
-        System.out.println(getOrderSet(arr,n));
+        getOrderSet(arr,n);
         sc.close();
     }
 }
