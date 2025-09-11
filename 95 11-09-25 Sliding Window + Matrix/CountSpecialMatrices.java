@@ -87,10 +87,7 @@ public class CountSpecialMatrices{
             rowSum += mat[i][col];
         }
         for(int row = i+1;row<i+3;row++){
-            int tempRowSum = 0;
-            for(int col = j;col<j+3;col++){
-                tempRowSum += mat[row][col];
-            }
+            int tempRowSum = mat[row][j] + mat[row][j+1] + mat[row][j+2];
             if(tempRowSum != rowSum){
                 return false;
             }
@@ -99,10 +96,7 @@ public class CountSpecialMatrices{
             colSum += mat[row][j];
         }
         for(int col = j+1;col<j+3;col++){
-            int tempColSum = 0;
-            for(int row = i;row<i+3;row++){
-                tempColSum += mat[row][col];
-            }
+            int tempColSum = mat[i][col] + mat[i+1][col] + mat[i+2][col];
             if(tempColSum != colSum){
                 return false;
             }
@@ -119,7 +113,6 @@ public class CountSpecialMatrices{
             return false;
         }
         return true;
-
     }
     public static int getSpecialMatrices(int[][] mat, int n, int m){
         if(n < 3 || m < 3){
