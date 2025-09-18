@@ -1,5 +1,5 @@
-from mcp.server import Server
-from mcp.types import Tool, Schema, ToolCall
+from mcp.server import Server # type: ignore
+from mcp.types import Tool, Schema, ToolCall # type: ignore
 # ---------- Define Tools ----------
 docsearch_tool = Tool(
 	name="DocSearch",
