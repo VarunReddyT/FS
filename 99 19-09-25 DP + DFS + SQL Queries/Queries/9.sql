@@ -51,3 +51,8 @@ stock_movements
 
 use inv_mgmt;
 
+select w.warehouse_id, w.name from warehouses w join stock_movements s on w.warehouse_id = s.warehouse_id
+join products p on s.product_id = p.product_id
+where p.category = 'Peripherals' AND s.qty > 0
+group by w.warehouse_id, w.name
+having COUNT(DISTINCT p.product_id) = (select COUNT(*) from products where category = 'Peripherals');

@@ -57,3 +57,16 @@ stock_movements
 */
 
 use inv_mgmt;
+
+
+WITH prod_last AS (
+    SELECT p.product_id, p.sku, p.category, MAX(s.movement_date) AS last_mv
+    FROM products p JOIN stock_movements s USING (product_id)
+    GROUP BY p.product_id, p.sku, p.category
+)
+SELECT pl.product_id, pl.sku
+FROM prod_last pl
+WHERE pl.last_mv <= (
+    SELECT MIN(other.last_mv) FROM prod_last other
+    WHERE other.category = pl.category
+);
