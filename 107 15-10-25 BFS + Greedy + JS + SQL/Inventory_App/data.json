@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Notebook A5",
+    "category": "Stationery",
+    "price": 99,
+    "stock": 120,
+    "description": "200-page ruled notebook."
+  },
+  {
+    "id": 2,
+    "name": "Gel Pen 0.7",
+    "category": "Stationery",
+    "price": 25,
+    "stock": 500,
+    "description": "Smooth writing gel ink pen."
+  },
+  {
+    "id": 3,
+    "name": "USB-C Cable 1m",
+    "category": "Electronics",
+    "price": 299,
+    "stock": 80,
+    "description": "Fast charge and data sync."
+  },
+  {
+    "id": 4,
+    "name": "Mouse Wireless",
+    "category": "Electronics",
+    "price": 899,
+    "stock": 40,
+    "description": "Ergonomic design, 2.4GHz."
+  },
+  {
+    "id": 5,
+    "name": "Coffee Mug 350ml",
+    "category": "Home",
+    "price": 199,
+    "stock": 150,
+    "description": "Ceramic mug, dishwasher safe."
+  },
+  {
+    "id": 6,
+    "name": "LED Desk Lamp",
+    "category": "Home",
+    "price": 1299,
+    "stock": 35,
+    "description": "Adjustable brightness and angle."
+  }
+]

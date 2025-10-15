@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory Cards - Light</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Inventory</h1>
+      <span class="badge">Cart Items: <strong id="cartCount">0</strong></span>
+    </header>
+    <section id="grid" class="grid"></section>
+    <section class="cart">
+      <h2>Cart</h2>
+      <p class="muted small">Click an item to reduce count by 1. If it reaches 0, it will be removed.</p>
+      <div id="cartList" class="cart-list"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
