@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="category-title"></h1>
+    <a href="index.html" class="back-link">⬅ Back to Categories</a>
+  </header>
+
+  <section class="controls">
+    <label for="sort-select">Sort by:</label>
+    <select id="sort-select" onchange="sortProducts()">
+      <option value="default">-- Select --</option>
+      <option value="name">Name (A-Z)</option>
+      <option value="price-asc">Price (Low to High)</option>
+      <option value="price-desc">Price (High to Low)</option>
+    </select>
+
+    <label for="filter-select">Filter by Brand:</label>
+    <select id="filter-select" onchange="filterProducts()">
+      <option value="all">All Brands</option>
+      <option value="Apple">Apple</option>
+      <option value="Banana">Banana</option>
+      <option value="Mango">Mango</option>
+      <option value="Samsung">Samsung</option>
+      <option value="Nike">Nike</option>
+    </select>
+  </section>
+
+  <section id="product-list" class="product-list"></section>
+
+  <h2>🛒 Cart</h2>
+  <table id="cart">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items"></tbody>
+  </table>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
