@@ -1,7 +1,9 @@
+// Check if the given topological order is unique
+
 import java.util.*;
 import java.util.LinkedList;
 
-public class Solution{
+public class UniqueTopoSort{
     static List<List<Integer>> arr = new ArrayList<>(); 
     public static boolean solve(int[] nums, int n){
         int[] indegree = new int[n+1];
