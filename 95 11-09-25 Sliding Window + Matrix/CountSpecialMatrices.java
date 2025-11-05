@@ -116,7 +116,6 @@ public class CountSpecialMatrices{
     }
     public static int getSpecialMatrices(int[][] mat, int n, int m){
         if(n < 3 || m < 3){
-            System.out.println(0);
             return 0;
         }
         int res = 0;
