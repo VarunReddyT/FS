@@ -1,0 +1,34 @@
+A ClusterIP Service routes requests among multiple pods. Which component actually implements the load balancing?
+A. kube-apiserver
+B. kube-scheduler
+C. kube-proxy
+D. etcd
+ANSWER: C
+
+Which statement best describes how etcd ensures Kubernetes’ data consistency?
+A. It uses a simple master-slave replication model.
+B. It uses the Raft consensus algorithm for leader election and log replication.
+C. It uses eventual consistency similar to NoSQL databases.
+D. It uses transactional SQL ACID compliance through SQLite backend.
+ANSWER: B
+
+When a container in a pod repeatedly crashes and Kubernetes continuously restarts it, which field determines the interval before each retry?
+A. livenessProbe.initialDelaySeconds
+B. terminationGracePeriodSeconds
+C. restartPolicy
+D. backoffLimit in CrashLoopBackOff
+ANSWER: D
+
+If a NetworkPolicy is applied that allows only ingress from pods with label role=frontend, what happens to all other ingress traffic?
+A. It is ignored by the policy and allowed.
+B. It is denied because Kubernetes enforces a “default deny” once any policy exists.
+C. It depends on the CNI plugin.
+D. It is rerouted through kube-proxy.
+ANSWER: B
+
+When updating a DaemonSet with the RollingUpdate strategy, what determines how pods are replaced?
+A. The update order is random.
+B. One node is updated at a time; the next only starts after the previous is ready.
+C. All nodes are updated simultaneously if they have capacity.
+D. The new DaemonSet pods are deployed first, then old pods are deleted.
+ANSWER: B

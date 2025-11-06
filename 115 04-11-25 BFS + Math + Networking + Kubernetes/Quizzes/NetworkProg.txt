@@ -1,0 +1,69 @@
+When a TCP socket is created using: socket.socket(socket.AF_INET, socket.SOCK_STREAM). which of the following accurately describes the socket’s default behavior?
+A. It is non-blocking and immediately ready for read/write.
+B. It is blocking and requires bind() and listen() before accept().
+C. It is non-blocking and connects automatically.
+D. It is blocking and automatically connects to localhost.
+ANSWER: B
+
+What happens if you call sock.recv(1024) on a non-blocking socket when there’s no data to read?
+A. The function returns an empty byte string.
+B. It blocks until data arrives.
+C. It raises BlockingIOError.
+D. It raises EOFError.
+ANSWER: C
+
+In Python’s selectors module, which object type does the register() method return?
+A. SelectorEvent
+B. SelectorKey
+C. SelectorResult
+D. PollEvent
+ANSWER: B
+
+Which method should be used to allow multiple concurrent clients in a TCP server using threads?
+A. socket.listen(1)
+B. socket.listen(5)
+C. Spawn a new thread per client inside the accept() loop.
+D. Use socket.connect_ex() inside a loop.
+ANSWER: C
+
+Which of the following statements about UDP sockets in Python is false?
+A. They are connectionless.
+B. You can use sendto() and recvfrom().
+C. Calling connect() fixes the destination for future send() calls.
+D. UDP guarantees delivery order.
+ANSWER: D
+
+When using asyncio for socket operations, which call integrates sockets into the event loop for asynchronous use?
+A. loop.add_socket()
+B. loop.sock_accept()
+C. asyncio.open_connection()
+D. socket.create_connection_async()
+ANSWER: C
+
+In a high-performance Python network server, why might one prefer selectors over threading?
+A. Threads are slower for single-client workloads.
+B. Selectors allow handling thousands of sockets using one thread via multiplexing.
+C. Selectors automatically handle SSL negotiation.
+D. Selectors create new threads for each I/O event.
+ANSWER: B
+
+What happens if you call bind() on a TCP socket that is already bound?
+A. It rebinds to the new address.
+B. It raises OSError: [Errno 22] Invalid argument.
+C. It closes the old socket automatically.
+D. It silently overwrites the old binding.
+ANSWER: B
+
+Which of the following correctly describes the role of: sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+A. It disables the Nagle algorithm.
+B. It allows multiple sockets to listen on the same port concurrently.
+C. It allows a socket to bind to a port in TIME_WAIT state.
+D. It enables non-blocking mode.
+ANSWER: C
+
+What is the correct way to make a secure SSL-wrapped socket client in Python?
+A. ssl.wrap_socket(socket)
+B. ssl.SSLSocket(socket)
+C. ssl.create_default_context().wrap_socket(socket, server_hostname='example.com')
+D. ssl.connect(socket, cert=True)
+ANSWER: C
