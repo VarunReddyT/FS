@@ -1,0 +1,979 @@
+1. Which Dockerfile instruction is used to define the executable that always runs inside the container?
+A. RUN
+B. CMD
+C. ENTRYPOINT
+D. EXEC
+ANSWER: C
+
+2. The main difference between ENTRYPOINT and CMD is:
+A. ENTRYPOINT sets default args; CMD defines the main command
+B. CMD overrides ENTRYPOINT
+C. ENTRYPOINT defines the main command; CMD provides default arguments
+D. They are identical
+ANSWER: C
+
+3. To reduce final image size and avoid including build dependencies, you should use:
+A. ARG variables
+B. Multi-stage builds
+C. ENV variables
+D. Docker volumes
+ANSWER: B
+
+4. The EXPOSE instruction in a Dockerfile:
+A. Opens the container port on the host automatically
+B. Documents the port the container listens on
+C. Starts a web server
+D. Enables NAT forwarding
+ANSWER: B
+
+5. The WORKDIR instruction:
+A. Creates a new shell session
+B. Sets the default working directory for subsequent instructions
+C. Copies files to /workdir
+D. Changes directory only during docker run
+ANSWER: B
+
+6. What happens when both ENTRYPOINT and CMD are defined?
+A. Only CMD runs
+B. Only ENTRYPOINT runs
+C. ENTRYPOINT runs with CMD as its arguments
+D. Docker throws an error
+ANSWER: C
+
+7. To persist container data across restarts:
+A. Use docker commit after every run
+B. Use volumes or bind mounts
+C. Use docker save
+D. Use --rm flag
+ANSWER: B
+
+8. Which command removes all stopped containers, networks, and dangling images?
+A. docker prune
+B. docker system prune
+C. docker container prune
+D. docker rmi -f
+ANSWER: B
+
+9. Docker images are stored by default:
+A. On Docker Hub
+B. In /var/lib/docker/
+C. In /usr/share/docker
+D. In /opt/docker/data
+ANSWER: B
+
+10. The Docker daemon communicates with clients through:
+A. REST API over Unix socket or TCP
+B. SSH
+C. RPC only
+D. HTTP without sockets
+ANSWER: A
+
+11. Which network driver provides default container isolation using NAT?
+A. none
+B. host
+C. bridge
+D. overlay
+ANSWER: C
+
+12. Which network driver is used for multi-host communication in Docker Swarm?
+A. bridge
+B. overlay
+C. macvlan
+D. host
+ANSWER: B
+
+13. The default restart policy for a container is:
+A. always
+B. unless-stopped
+C. on-failure
+D. no
+ANSWER: D
+
+14. Which command lists only running containers?
+A. docker ps -a
+B. docker ps
+C. docker images
+D. docker ls
+ANSWER: B
+
+15. To build an image from a Dockerfile in the current directory and tag it myapp:v1:
+A. docker build myapp:v1 .
+B. docker build -t myapp:v1 .
+C. docker image myapp:v1 build
+D. docker build . myapp:v1
+ANSWER: B
+
+16. To start an interactive shell in a running container:
+A. docker run -it
+B. docker attach
+C. docker exec -it <container> /bin/bash
+D. docker start -a
+ANSWER: C
+
+17. Which instruction is best to define environment variables for runtime configuration?
+A. ENV
+B. ARG
+C. LABEL
+D. RUN
+ANSWER: A
+
+18. The ARG instruction is available:
+A. Only during build time
+B. Only at runtime
+C. Both build and runtime
+D. Only in base images
+ANSWER: A
+
+19. What does the command docker run --rm do?
+A. Deletes image after run
+B. Removes container after it exits
+C. Removes all volumes
+D. Stops all containers
+ANSWER: B
+
+20. To ensure container logs are viewable with docker logs, the process must:
+A. Write logs to /logs
+B. Run in background
+C. Write to stdout/stderr
+D. Use syslog
+ANSWER: C
+
+21. What does docker commit do?
+A. Push image to registry
+B. Save container changes as a new image
+C. Save volumes to disk
+D. Export container logs
+ANSWER: B
+
+22. Which command pulls the latest nginx image and runs it on port 8080 mapped to 80?
+A. docker run nginx:latest 8080:80
+B. docker run -p 8080:80 nginx
+C. docker start nginx -p 8080:80
+D. docker pull nginx && docker run nginx 8080
+ANSWER: B
+
+23. When using Docker Compose, environment variables can be loaded from:
+A. .env file
+B. dockerfile.env
+C. Only shell environment
+D. YAML metadata
+ANSWER: A
+
+24. In Docker Compose, depends_on:
+A. Waits for service readiness
+B. Only controls start order
+C. Restarts containers
+D. Defines network ports
+ANSWER: B
+
+25. To set container health status, you use which instruction?
+A. HEALTHCHECK
+B. STOPSIGNAL
+C. EXPOSE
+D. STATUS
+ANSWER: A
+
+26. To limit CPU usage of a container to 1.5 cores:
+A. --cpus=1.5
+B. --cpu-quota=1.5
+C. --cpu-limit=1.5
+D. --cpu=150
+ANSWER: A
+
+27. Minimal base image for static binaries:
+A. alpine
+B. ubuntu
+C. scratch
+D. distroless
+ANSWER: C
+
+28. To copy local files into an image preserving permissions:
+A. ADD
+B. COPY
+C. RUN cp
+D. MOVE
+ANSWER: B
+
+29. To push a local image to Docker Hub:
+A. docker deploy
+B. docker push <repo>:<tag>
+C. docker upload
+D. docker publish
+ANSWER: B
+
+30. Which command shows real-time resource usage by containers?
+A. docker inspect
+B. docker stats
+C. docker info
+D. docker top
+ANSWER: B
+
+What does the command ulimit -n display or modify?
+A. Maximum number of threads per process
+B. Maximum number of open file descriptors per process
+C. Maximum file size in bytes
+D. Number of processes system-wide
+ANSWER: B
+
+Which command will continuously monitor the last 20 lines of a log file and refresh in real time?
+A. cat -n logfile.log
+B. less logfile.log
+C. tail -n 20 -f logfile.log
+D. grep logfile.log
+ANSWER: C
+
+In Linux, what is the difference between soft link and hard link?
+A. Both reference the same inode
+B. Hard link references the same inode, soft link stores path to target file
+C. Soft links cannot cross filesystems
+D. Both are identical
+ANSWER: B
+
+What does the nice command do?
+A. Changes priority of a process (lower value = higher priority)
+B. Displays user permissions
+C. Terminates zombie processes
+D. Restricts CPU cores for execution
+ANSWER: A
+
+Which Linux command combination lists open ports with associated processes?
+A. ps aux | grep port
+B. netstat -tulnp
+C. lsof -i :80
+D. Both B and C
+ANSWER: D
+
+What does git reset --soft HEAD~1 do?
+A. Removes last commit and deletes changes permanently
+B. Removes last commit but keeps changes staged
+C. Removes last commit and un-stages changes
+D. Creates a new branch from last commit
+ANSWER: B
+
+Which Git command permanently deletes all untracked files and directories?
+A. git clean -fd
+B. git reset --hard
+C. git prune
+D. git rm -r *
+ANSWER: A
+
+What does git rebase -i HEAD~3 allow you to do?
+A. Merge last 3 commits into one interactive commit history editor
+B. Delete the last 3 commits permanently
+C. Push last 3 commits to remote directly
+D. Fetch commits from the last 3 branches
+ANSWER: A
+
+What happens when you fork a repository on GitHub?
+A. You clone it locally
+B. You create an independent copy under your GitHub account
+C. You merge it automatically with the original
+D. You get push access to the original repo
+ANSWER: B
+
+In Git, what does the command git remote -v display?
+A. All remote branches
+B. URLs of all remote repositories associated with the local repo
+C. Commits on the remote repo
+D. Current remote tracking branch
+ANSWER: B
+
+In Docker, what is the difference between ENTRYPOINT and CMD?
+A. ENTRYPOINT defines default executable; CMD provides default arguments
+B. CMD overrides ENTRYPOINT
+C. Both are equivalent
+D. ENTRYPOINT runs after CMD
+ANSWER: A
+
+What happens when you run docker run -d -p 8080:80 nginx?
+A. Starts nginx detached and maps host port 8080 to container port 80
+B. Builds a new image
+C. Mounts /var/www/html automatically
+D. Runs nginx in host network mode
+ANSWER: A
+
+What does docker exec -it mycontainer /bin/bash do?
+A. Restarts container
+B. Opens an interactive terminal session inside a running container
+C. Rebuilds container
+D. Stops all running containers
+ANSWER: B
+
+What is the purpose of Docker Compose?
+A. It installs Docker
+B. It manages multiple containers as one application using YAML configuration
+C. It is a replacement for Dockerfile
+D. It runs only on Kubernetes
+ANSWER: B
+
+Which Dockerfile instruction reduces image size the most effectively?
+A. Using multiple RUN layers for each command
+B. Combining related commands in one RUN layer
+C. Using COPY for dependencies repeatedly
+D. Avoiding .dockerignore
+ANSWER: B
+
+In Jenkins, what does a “pipeline” represent?
+A. A single shell command
+B. A series of automated stages (build, test, deploy) defined as code
+C. A manual job chain
+D. A backup configuration
+ANSWER: B
+
+What is the difference between a Declarative and Scripted pipeline?
+A. Scripted uses JSON; Declarative uses YAML
+B. Scripted = Groovy-based flexible; Declarative = structured and easy syntax
+C. Both identical
+D. Declarative supports conditional logic only
+ANSWER: B
+
+Which Jenkins plugin enables integration with Docker?
+A. Docker Pipeline Plugin
+B. Docker API Connector
+C. Docker Executor Plugin
+D. Docker Manager
+ANSWER: A
+
+In Jenkins, what is the function of a “node”?
+A. A version control repository
+B. A machine (agent) where Jenkins executes builds
+C. A job configuration template
+D. A log collector
+ANSWER: B
+
+Which Jenkins directive defines what to do after pipeline success or failure?
+A. stages
+B. post
+C. agent
+D. environment
+ANSWER: B
+
+31. What does the command ulimit -n display or modify?
+A. Maximum number of threads per process
+B. Maximum number of open file descriptors per process
+C. Maximum file size in bytes
+D. Number of processes system-wide
+ANSWER: B
+
+32. Which command will continuously monitor the last 20 lines of a log file and refresh in real time?
+A. cat -n logfile.log
+B. less logfile.log
+C. tail -n 20 -f logfile.log
+D. grep logfile.log
+ANSWER: C
+
+33. In Linux, what is the difference between soft link and hard link?
+A. Both reference the same inode
+B. Hard link references the same inode, soft link stores path to target file
+C. Soft links cannot cross filesystems
+D. Both are identical
+ANSWER: B
+
+34. What does the nice command do?
+A. Changes priority of a process (lower value = higher priority)
+B. Displays user permissions
+C. Terminates zombie processes
+D. Restricts CPU cores for execution
+ANSWER: A
+
+35. Which Linux command combination lists open ports with associated processes?
+A. ps aux | grep port
+B. netstat -tulnp
+C. lsof -i :80
+D. Both B and C
+ANSWER: D
+
+36. What does git reset --soft HEAD~1 do?
+A. Removes last commit and deletes changes permanently
+B. Removes last commit but keeps changes staged
+C. Removes last commit and un-stages changes
+D. Creates a new branch from last commit
+ANSWER: B
+
+37. Which Git command permanently deletes all untracked files and directories?
+A. git clean -fd
+B. git reset --hard
+C. git prune
+D. git rm -r *
+ANSWER: A
+
+38. What does git rebase -i HEAD~3 allow you to do?
+A. Merge last 3 commits into one interactive commit history editor
+B. Delete the last 3 commits permanently
+C. Push last 3 commits to remote directly
+D. Fetch commits from the last 3 branches
+ANSWER: A
+
+39. What happens when you fork a repository on GitHub?
+A. You clone it locally
+B. You create an independent copy under your GitHub account
+C. You merge it automatically with the original
+D. You get push access to the original repo
+ANSWER: B
+
+40. In Git, what does the command git remote -v display?
+A. All remote branches
+B. URLs of all remote repositories associated with the local repo
+C. Commits on the remote repo
+D. Current remote tracking branch
+ANSWER: B
+
+41. In Docker, what is the difference between ENTRYPOINT and CMD?
+A. ENTRYPOINT defines default executable; CMD provides default arguments
+B. CMD overrides ENTRYPOINT
+C. Both are equivalent
+D. ENTRYPOINT runs after CMD
+ANSWER: A
+
+42. What happens when you run docker run -d -p 8080:80 nginx?
+A. Starts nginx detached and maps host port 8080 to container port 80
+B. Builds a new image
+C. Mounts /var/www/html automatically
+D. Runs nginx in host network mode
+ANSWER: A
+
+43. What does docker exec -it mycontainer /bin/bash do?
+A. Restarts container
+B. Opens an interactive terminal session inside a running container
+C. Rebuilds container
+D. Stops all running containers
+ANSWER: B
+
+44. What is the purpose of Docker Compose?
+A. It installs Docker
+B. It manages multiple containers as one application using YAML configuration
+C. It is a replacement for Dockerfile
+D. It runs only on Kubernetes
+ANSWER: B
+
+45. Which Dockerfile instruction reduces image size the most effectively?
+A. Using multiple RUN layers for each command
+B. Combining related commands in one RUN layer
+C. Using COPY for dependencies repeatedly
+D. Avoiding .dockerignore
+ANSWER: B
+
+46. In Jenkins, what does a “pipeline” represent?
+A. A single shell command
+B. A series of automated stages (build, test, deploy) defined as code
+C. A manual job chain
+D. A backup configuration
+ANSWER: B
+
+47. What is the difference between a Declarative and Scripted pipeline?
+A. Scripted uses JSON; Declarative uses YAML
+B. Scripted = Groovy-based flexible; Declarative = structured and easy syntax
+C. Both identical
+D. Declarative supports conditional logic only
+ANSWER: B
+
+48. Which Jenkins plugin enables integration with Docker?
+A. Docker Pipeline Plugin
+B. Docker API Connector
+C. Docker Executor Plugin
+D. Docker Manager
+ANSWER: A
+
+49. In Jenkins, what is the function of a “node”?
+A. A version control repository
+B. A machine (agent) where Jenkins executes builds
+C. A job configuration template
+D. A log collector
+ANSWER: B
+
+50. Which Jenkins directive defines what to do after pipeline success or failure?
+A. stages
+B. post
+C. agent
+D. environment
+ANSWER: B
+
+51. What is Kubernetes primarily used for?
+A. Container orchestration – automating deployment, scaling, and management
+B. Virtual machine management
+C. Database backup automation
+D. Cloud cost optimization
+ANSWER: A
+
+52. What is a Kubernetes cluster composed of?
+A. One control plane and one worker node only
+B. Control plane and one or more worker nodes
+C. Multiple control planes only
+D. Independent standalone nodes
+ANSWER: B
+
+53. Which Kubernetes component runs on every worker node and is responsible for running containers?
+A. kube-scheduler
+B. kubelet
+C. etcd
+D. controller-manager
+ANSWER: B
+
+54. What is the role of the kube-apiserver?
+A. Exposes the Kubernetes API and handles communication between components
+B. Stores all cluster data persistently
+C. Schedules Pods onto nodes
+D. Manages node networking
+ANSWER: A
+
+55. What does etcd store in a Kubernetes cluster?
+A. Container logs
+B. Cluster state and configuration data
+C. Node metrics only
+D. User accounts
+ANSWER: B
+
+56. Which Kubernetes object represents a single running instance of a containerized application?
+A. Node
+B. Pod
+C. Deployment
+D. Service
+ANSWER: B
+
+57. Which Kubernetes object ensures that a specified number of Pod replicas are running?
+A. ReplicaSet
+B. StatefulSet
+C. Job
+D. DaemonSet
+ANSWER: A
+
+58. What is a Namespace used for in Kubernetes?
+A. Physical isolation of nodes
+B. Logical grouping and isolation of resources
+C. Network routing between clusters
+D. Load balancing
+ANSWER: B
+
+59. Which command lists all Pods in the default namespace?
+A. kubectl get nodes
+B. kubectl get all
+C. kubectl get pods
+D. kubectl get deployments
+ANSWER: C
+
+60. What is the function of a Service in Kubernetes?
+A. Builds Docker images
+B. Exposes Pods to network traffic and provides stable networking
+C. Deploys containers automatically
+D. Monitors logs
+ANSWER: B
+
+61. Which Service type exposes the application externally using the node’s IP and a static port?
+A. ClusterIP
+B. NodePort
+C. LoadBalancer
+D. ExternalName
+ANSWER: B
+
+62. Which Kubernetes object automatically replaces failed Pods to maintain availability?
+A. StatefulSet
+B. Deployment
+C. Job
+D. ConfigMap
+ANSWER: B
+
+63. What is the purpose of a ConfigMap?
+A. Store sensitive credentials securely
+B. Inject configuration data (non-sensitive) into Pods
+C. Schedule Pods on nodes
+D. Monitor container health
+ANSWER: B
+
+64. What should you use to securely store secrets like API keys or passwords?
+A. ConfigMap
+B. Secret
+C. Deployment
+D. Volume
+ANSWER: B
+
+65. What is the command to describe detailed information about a specific Pod?
+A. kubectl show pod <pod-name>
+B. kubectl inspect pod <pod-name>
+C. kubectl describe pod <pod-name>
+D. kubectl explain pod <pod-name>
+ANSWER: C
+
+66. Which Kubernetes object manages persistent storage for Pods?
+A. PersistentVolume and PersistentVolumeClaim
+B. ReplicaSet
+C. Secret
+D. StatefulSet
+ANSWER: A
+
+67. Which command is used to deploy a YAML configuration file in Kubernetes?
+A. kubectl create pod.yaml
+B. kubectl run -f pod.yaml
+C. kubectl apply -f pod.yaml
+D. kubectl build -f pod.yaml
+ANSWER: C
+
+68. What is the function of the kube-scheduler?
+A. Determines which node a Pod should run on
+B. Manages networking rules
+C. Updates kubelet status
+D. Monitors cluster health
+ANSWER: A
+
+69. Which Kubernetes resource allows you to run a task to completion instead of continuously running?
+A. Deployment
+B. DaemonSet
+C. Job
+D. ReplicaSet
+ANSWER: C
+
+70. What is the purpose of a DaemonSet?
+A. Ensures one Pod runs on every node
+B. Ensures even load balancing across all Pods
+C. Stores cluster configuration
+D. Creates a single instance of a Pod
+ANSWER: A
+
+71. What is Amazon S3 primarily used for?
+A. Compute resource provisioning
+B. Object storage for any amount of data
+C. Relational database management
+D. Block-level storage for EC2
+ANSWER: B
+
+72. What is the maximum size of a single object that can be uploaded to S3 using a single PUT operation?
+A. 1 GB
+B. 2 GB
+C. 5 GB
+D. 10 GB
+ANSWER: C
+
+73. Which of the following provides versioning and object-level recovery in S3?
+A. S3 Transfer Acceleration
+B. S3 Versioning
+C. S3 Lifecycle Rules
+D. S3 Replication
+ANSWER: B
+
+74. How can you host a static website using S3?
+A. Enable “Static Website Hosting” on the bucket properties
+B. Use EC2 instances to serve HTML
+C. Enable AWS Lambda integration
+D. Attach an Elastic IP to the bucket
+ANSWER: A
+
+75. Which S3 storage class is best suited for long-term archival with retrieval times of several hours?
+A. S3 Standard
+B. S3 Standard-IA
+C. S3 One Zone-IA
+D. S3 Glacier Deep Archive
+ANSWER: D
+
+76. What is the purpose of S3 Object Lock?
+A. To replicate objects across regions
+B. To prevent objects from being deleted or overwritten
+C. To encrypt data at rest
+D. To enable cross-region logging
+ANSWER: B
+
+77. Which feature allows a Lambda function to automatically process new objects uploaded to an S3 bucket?
+A. S3 Replication
+B. S3 Event Notification
+C. S3 Lifecycle Rules
+D. S3 Versioning
+ANSWER: B
+
+78. What is the maximum execution time for an AWS Lambda function?
+A. 1 minute
+B. 5 minutes
+C. 15 minutes
+D. 30 minutes
+ANSWER: C
+
+79. How is Lambda billed?
+A. By number of function calls and execution time
+B. By reserved CPU cores
+C. By EC2 instance hours
+D. By fixed monthly subscription
+ANSWER: A
+
+80. Which AWS service provides serverless compute for running code without provisioning servers?
+A. EC2
+B. Lambda
+C. ECS
+D. Lightsail
+ANSWER: B
+
+81. What is the default networking mode for Lambda functions?
+A. Private subnet only
+B. Public subnet only
+C. AWS-managed VPC if no VPC is specified
+D. Requires NAT Gateway by default
+ANSWER: C
+
+82. When a Lambda function is attached to a private subnet, how can it access the internet?
+A. Through Internet Gateway
+B. Through NAT Gateway or NAT Instance
+C. Through VPC Peering
+D. It cannot access the internet
+ANSWER: B
+
+83. Which EC2 pricing model provides the lowest cost but may be interrupted by AWS?
+A. On-Demand Instances
+B. Reserved Instances
+C. Spot Instances
+D. Dedicated Hosts
+ANSWER: C
+
+84. Which EC2 feature allows you to preserve a static public IP across instance stops and starts?
+A. Dynamic IP
+B. Elastic IP
+C. Elastic Load Balancer
+D. Route 53 Alias
+ANSWER: B
+
+85. How many Elastic IPs can you have per AWS account per region by default?
+A. 1
+B. 3
+C. 5
+D. 10
+ANSWER: C
+
+86. What is the purpose of Elastic IP in AWS?
+A. Provides permanent private IP for EC2
+B. Provides static public IP address that can be remapped to instances
+C. Dynamically allocates DNS name for a bucket
+D. Provides internal DNS resolution
+ANSWER: B
+
+87. Which component enables instances in private subnets to access the internet securely?
+A. Internet Gateway
+B. NAT Gateway
+C. Elastic IP
+D. VPC Endpoint
+ANSWER: B
+
+88. NAT Gateways are:
+A. Region-wide and fault tolerant by default
+B. AZ-specific and should be deployed per Availability Zone
+C. Deployed automatically by AWS per VPC
+D. Used for inbound access from the internet
+ANSWER: B
+
+89. Which service should be used to avoid sending private subnet traffic to the internet when accessing S3?
+A. NAT Gateway
+B. S3 VPC Gateway Endpoint
+C. Internet Gateway
+D. Transit Gateway
+ANSWER: B
+
+90. What type of VPC Endpoint uses PrivateLink to connect to AWS services via ENIs?
+A. Gateway Endpoint
+B. Interface Endpoint
+C. NAT Endpoint
+D. Internet Endpoint
+ANSWER: B
+
+91. Which AWS service stores and replicates configuration data for applications at global scale?
+A. S3
+B. Lambda
+C. Parameter Store
+D. Systems Manager
+ANSWER: C
+
+92. Which EC2 placement group type provides the lowest network latency between instances?
+A. Cluster
+B. Partition
+C. Spread
+D. Dedicated
+ANSWER: A
+
+93. Which EC2 feature allows automatic recovery of instances in case of hardware failure?
+A. Auto Scaling
+B. Elastic Beanstalk
+C. EC2 Auto Recovery
+D. Snapshot
+ANSWER: C
+
+94. How can you reduce data transfer costs between EC2 and S3 within the same region?
+A. Use private IP communication
+B. Use S3 Gateway Endpoint
+C. Enable NAT Gateway
+D. Use Internet Gateway
+ANSWER: B
+
+95. Which AWS Lambda concept allows execution environments to remain initialized between invocations to reduce latency?
+A. Reserved Concurrency
+B. Provisioned Concurrency
+C. Cold Start
+D. Execution Context
+ANSWER: B
+
+96. Which IAM entity does a Lambda function assume when accessing other AWS services?
+A. Service Role
+B. Inline Policy
+C. Resource Policy
+D. User Access Key
+ANSWER: A
+
+97. What is the default timeout for a new Lambda function?
+A. 1 second
+B. 3 seconds
+C. 60 seconds
+D. 300 seconds
+ANSWER: B
+
+98. To allow a Lambda function to access a database in a private subnet, which must be configured?
+A. Attach Internet Gateway
+B. Configure appropriate VPC, subnet, and security groups
+C. Add public IP to Lambda
+D. Use S3 endpoint
+ANSWER: B
+
+99. Which AWS component routes requests from clients to multiple EC2 instances for scalability?
+A. Elastic Load Balancer
+B. Auto Scaling Group
+C. Route 53
+D. Elastic IP
+ANSWER: A
+
+100. Which AWS service automatically scales EC2 instances based on defined metrics?
+A. CloudWatch
+B. Elastic Beanstalk
+C. Auto Scaling
+D. Load Balancer
+ANSWER: C
+
+101. What is Docker Compose primarily used for?
+A. Building Docker images automatically
+B. Defining and running multi-container Docker applications using YAML
+C. Replacing Dockerfile functionality
+D. Monitoring container health
+ANSWER: B
+
+102. What is the default filename Docker Compose looks for?
+A. compose.yaml
+B. docker-compose.yml
+C. dockerfile.yml
+D. docker.yml
+ANSWER: B
+
+103. Which command starts all services defined in a Compose file?
+A. docker-compose run
+B. docker-compose start
+C. docker-compose up
+D. docker-compose build
+ANSWER: C
+
+104. What does docker-compose up -d do?
+A. Builds images only
+B. Starts containers in the foreground
+C. Starts containers in detached mode
+D. Stops all running containers
+ANSWER: C
+
+105. Which Docker Compose command stops and removes all containers and networks?
+A. docker-compose rm
+B. docker-compose down
+C. docker-compose stop
+D. docker-compose clean
+ANSWER: B
+
+106. In a Compose file, which key specifies the image to use for a service?
+A. container_name
+B. image
+C. build
+D. depends_on
+ANSWER: B
+
+107. What does the build directive in docker-compose.yml specify?
+A. Docker Hub repository name
+B. Directory containing a Dockerfile to build an image
+C. Default port mapping
+D. Runtime environment variables
+ANSWER: B
+
+108. Which directive defines environment variables in a Compose service?
+A. env_file
+B. environment
+C. vars
+D. config
+ANSWER: B
+
+109. Which Compose command lists the current running services?
+A. docker-compose ps
+B. docker-compose list
+C. docker ps
+D. docker info
+ANSWER: A
+
+110. In Docker Compose, what does the depends_on directive do?
+A. Waits for dependent service health checks before starting
+B. Ensures startup order of services
+C. Links containers permanently
+D. Mounts dependent container volumes
+ANSWER: B
+
+111. Which Compose directive is used to define persistent data storage?
+A. networks
+B. volumes
+C. env_file
+D. ports
+ANSWER: B
+
+112. How can multiple Docker Compose files be merged?
+A. docker-compose -combine
+B. docker-compose -f file1.yml -f file2.yml up
+C. docker-compose merge file1.yml file2.yml
+D. Not supported
+ANSWER: B
+
+113. In Docker Compose, the default network driver used between services is:
+A. overlay
+B. host
+C. bridge
+D. macvlan
+ANSWER: C
+
+114. Which Compose command rebuilds images before starting containers?
+A. docker-compose start
+B. docker-compose up --build
+C. docker-compose restart
+D. docker-compose update
+ANSWER: B
+
+115. What is the main advantage of using Docker Compose for local development?
+A. It automatically scales containers across regions
+B. It simplifies running multi-container environments with one command
+C. It replaces Kubernetes for production
+D. It increases container memory allocation
+ANSWER: B
+
+116. Which Git command creates a new local branch named feature?
+A. git checkout feature
+B. git branch feature
+C. git init feature
+D. git switch -d feature
+ANSWER: B
+
+117. What does git stash do?
+A. Commits current changes
+B. Temporarily saves uncommitted changes for later use
+C. Deletes untracked files
+D. Reverts the last commit
+ANSWER: B
+
+118. Which Git command merges another branch into the current branch?
+A. git rebase
+B. git checkout
+C. git merge
+D. git pull
+ANSWER: C
+
+119. What does git pull origin main do?
+A. Pulls all branches from origin
+B. Fetches and merges changes from the main branch on remote
+C. Deletes local commits
+D. Pushes local changes to remote
+ANSWER: B
+
+120. Which Git command reverts a specific commit without changing history of other commits?
+A. git reset --hard <commit>
+B. git revert <commit>
+C. git remove <commit>
+D. git stash pop
+ANSWER: B

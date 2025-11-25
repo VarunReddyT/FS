@@ -1,0 +1,845 @@
+1. What does process.nextTick() do in Node.js?
+A. Executes the callback right after the event loop completes all I/O
+B. Pushes the callback to run before the next event loop phase begins
+C. Schedules the callback to run after all timers and intervals
+D. Runs the callback only after all microtasks have settled
+ANSWER: B (same meaning: before next event-loop iteration)
+
+2. Which module provides utilities for working with path names?
+A. directory-helper
+B. file-navigator
+C. path module
+D. url-mapper
+ANSWER: C (same meaning: path)
+
+3. Which method is used to create a readable stream?
+A. fs.generateRead()
+B. fs.beginStream()
+C. fs.createReadStream()
+D. fs.openBuffered()
+ANSWER: C
+
+4. Which HTTP method is idempotent?
+A. OPTIONS
+B. HEAD
+C. PUT
+D. TRACE
+ANSWER: C
+
+5. What will require.cache contain?
+A. Cached request metadata
+B. Cached server responses
+C. Cached module objects
+D. Cached config variables
+ANSWER: C
+
+6. Which statement is true about Node.js?
+A. It uses multi-threading for handling each incoming request
+B. It processes requests through one primary event loop thread
+C. It starts one thread per middleware function
+D. It uses shared-memory threads by default
+ANSWER: B
+
+7. What does cluster.fork() do?
+A. Spawns a thread inside the main process
+B. Creates a new isolated memory context
+C. Starts a new worker process under the cluster manager
+D. Runs the event loop again for concurrency
+ANSWER: C
+
+8. Which module is used to create a TCP server?
+A. sockets
+B. ethernet
+C. net module
+D. tcp-handler
+ANSWER: C
+
+9. What does Buffer.alloc(5) do?
+A. Allocates 5 bytes of sequential memory filled with zeros
+B. Reserves 5 bytes of buffer containing null characters
+C. Creates a 5‐byte buffer uninitialized
+D. Creates a flexible buffer expanding to 5 bytes
+ANSWER: A
+
+10. What does JSON.stringify() NOT serialize?
+A. Symbol values
+B. BigInt objects
+C. Function values
+D. Undefined arguments
+ANSWER: C
+
+11. What is the default scope of variables in Node.js modules?
+A. All modules can access them
+B. They remain private to the current file module
+C. They become function-level scoped
+D. They preload in global cache
+ANSWER: B
+
+12. Which library is used for handling multipart form data?
+A. form-handler
+B. body-splitter
+C. multer upload module
+D. stream-uploader
+ANSWER: C
+
+13. Which event is emitted when a readable stream ends?
+A. done-event
+B. closed
+C. end event
+D. final-stream
+ANSWER: C
+
+14. Which method is used to read a directory?
+A. fs.readDirectory()
+B. fs.fetchDir()
+C. fs.readdir()
+D. fs.openDirList()
+ANSWER: C
+
+15. What does res.send() in Express internally call?
+A. It triggers only res.end()
+B. It triggers only res.write()
+C. It ultimately performs write plus end sequence
+D. It converts input to JSON only
+ANSWER: C
+
+16. Which statement about Promises is true?
+A. A single promise may resolve and reject multiple times
+B. A rejected promise automatically becomes pending
+C. A promise settles exactly once, either resolve or reject
+D. Promises guarantee synchronous execution
+ANSWER: C
+
+17. Which function converts a Buffer to a string?
+A. buffer.toEncoded()
+B. buffer.asText()
+C. buffer.toString()
+D. buffer.convertUTF()
+ANSWER: C
+
+18. Which event is emitted when an unhandled error occurs in Node.js?
+A. processError
+B. nodeCrash
+C. uncaughtException event
+D. failEvent
+ANSWER: C
+
+19. Which object is used to handle command-line arguments?
+A. command.args
+B. node.arguments
+C. process.argv array
+D. cli.params
+ANSWER: C
+
+20. Node.js timers are managed by:
+A. The JavaScript engine directly
+B. The libuv C-based event library
+C. Native OS interrupt handlers
+D. The Request lifecycle engine
+ANSWER: B
+
+21. Which Express middleware parses JSON bodies?
+A. express.parseJSON()
+B. express.decoder()
+C. express.json()
+D. express.bodyReader()
+ANSWER: C
+
+22. Which method creates a custom event in Node.js?
+A. emitter.create()
+B. emitter.invoke()
+C. EventEmitter.emit()
+D. eventDispatcher.fire()
+ANSWER: C
+
+23. Which module is used for hashing?
+A. secure-hash
+B. digest-engine
+C. crypto module
+D. node-hash
+ANSWER: C
+
+24. In Node.js, which storage is fastest?
+A. HDD drives
+B. SSD NVMe
+C. Physical RAM memory
+D. Distributed network storage
+ANSWER: C
+
+25. Which line loads an environment variable file?
+A. dotenv.loadEnv()
+B. environment.apply()
+C. dotenv.config()
+D. env.inject()
+ANSWER: C
+
+26. Express.js is based on:
+A. A thread-per-request pipeline
+B. An event-based IPC mechanism
+C. A layered middleware design
+D. A fully MVC-driven engine
+ANSWER: C
+
+27. Which best describes middleware?
+A. Code that executes after the response finishes
+B. Code that triggers exclusively on errors
+C. A request handler with (req, res, next) signature
+D. A function that outputs event listeners
+ANSWER: C
+
+28. Which method closes a server?
+A. server.shutdownNow()
+B. server.complete()
+C. server.close()
+D. server.terminate()
+ANSWER: C
+
+29. Which npm command removes a package globally?
+A. npm global-remove pkg
+B. npm delete-global pkg
+C. npm uninstall -g pkg
+D. npm purge pkg
+ANSWER: C
+
+30. What does await require to work?
+A. An async callback chain
+B. A generator wrapper
+C. A promise-returning operation
+D. An event dispatcher
+ANSWER: C
+
+1. What does express.json() middleware do?
+A. Extracts only XML payloads from requests
+B. Converts incoming requests into plain strings
+C. Parses JSON-formatted request bodies
+D. Encodes binary data into base64
+ANSWER: C
+
+2. Which method is used to create a new Express application?
+A. express.newApp()
+B. express.launch()
+C. express()
+D. express.makeServer()
+ANSWER: C
+
+3. What is the correct way to define a route parameter?
+A. /user&:id
+B. /user?{id}
+C. /user/:id
+D. /user#id
+ANSWER: C
+
+4. In Express, what does next() do?
+A. Terminates the entire request pipeline
+B. Re-sends the same request to the server
+C. Passes control to the next middleware in line
+D. Flushes pending response buffers
+ANSWER: C
+
+5. Which middleware is needed to parse URL-encoded data?
+A. express.raw()
+B. express.urlEncodedParser()
+C. express.urlencoded()
+D. express.parseForm()
+ANSWER: C
+
+6. How do you send a 404 response in Express?
+A. res.notFoundError()
+B. res.fail(404)
+C. res.sendStatus(404)
+D. res.trigger404()
+ANSWER: C
+
+7. Which routing method handles all HTTP methods?
+A. app.methods()
+B. app.routeAll()
+C. app.all()
+D. app.every()
+ANSWER: C
+
+8. Which statement is TRUE about middleware order?
+A. Execution order is determined randomly
+B. Only route handlers follow order; middleware doesn’t
+C. The order middleware is defined affects execution sequence
+D. Middlewares always run alphabetically
+ANSWER: C
+
+9. How do you create a router module?
+A. const router = express.newRouter()
+B. const router = express.routeMaker()
+C. const router = express.Router()
+D. const router = express.createModule()
+ANSWER: C
+
+10. Which is the correct syntax to serve static files?
+A. app.serveStatic('public')
+B. express.enableStatic('public')
+C. express.static('public')
+D. app.use(express.static('public'))
+ANSWER: D
+
+11. What does res.locals allow?
+A. Sets global variables for entire server
+B. Stores encrypted user cookies
+C. Shares template variables for a single response cycle
+D. Controls local database sessions
+ANSWER: C
+
+12. What is the default HTTP status when using res.send()?
+A. 503
+B. 404
+C. 201
+D. 200
+ANSWER: D
+
+13. Which is a valid error-handling middleware?
+A. (req, res, next, err) => {}
+B. (error, res, req) => {}
+C. (err, req, res, next) => {}
+D. (req, err, res) => {}
+ANSWER: C
+
+14. What does app.use() do?
+A. Registers handlers only for POST requests
+B. Defines static route patterns
+C. Registers middleware functions globally
+D. Enables database middleware
+ANSWER: C
+
+15. How to chain multiple handlers in a route?
+A. app.get('/a', function1 only)
+B. app.get('/a', f1, f2) but not via route()
+C. Both app.get('/a', [f1, f2]) and route().get([f1, f2])
+D. Chaining is forbidden in Express
+ANSWER: C
+
+16. Which Express feature supports server-side templating?
+A. app.enableTemplates()
+B. app.renderEngine('html')
+C. app.set('view engine', 'ejs')
+D. res.templateEngine('ejs')
+ANSWER: C
+
+17. How do you redirect a request?
+A. res.go('/home')
+B. res.routeTo('/home')
+C. res.redirect('/home')
+D. res.transfer('/home')
+ANSWER: C
+
+18. How is CORS generally enabled in Express?
+A. express.enableCORS()
+B. app.use(corsMiddleware())
+C. Use the external 'cors' package middleware
+D. CORS is auto-enabled by Express
+ANSWER: C
+
+19. What does res.json() do?
+A. Validates a JSON request
+B. Logs the JSON body
+C. Sends a JSON response to the client
+D. Converts a file into JSON format
+ANSWER: C
+
+20. Which method ends the response?
+A. res.terminate()
+B. res.finishUp()
+C. res.end()
+D. res.done()
+ANSWER: C
+
+21. What is helmet used for?
+A. Rendering HTML templates
+B. Rate-limiting API requests
+C. Adding various HTTP security headers
+D. Managing session storage
+ANSWER: C
+
+22. Which middleware stores user sessions?
+A. express-user-store
+B. express-cookie
+C. express-session
+D. session-handler
+ANSWER: C
+
+23. What does app.listen() return?
+A. Request object
+B. Promise object
+C. Router instance
+D. Server instance
+ANSWER: D
+
+24. Which module is used to handle file uploads?
+A. upload-engine
+B. express-attachments
+C. multer
+D. form-uploader
+ANSWER: C
+
+25. How do you send a file in Express?
+A. res.sendDocument(path)
+B. res.sendFile(path)
+C. res.attachFile(path)
+D. res.forwardFile(path)
+ANSWER: B
+
+26. How do you define optional route parameters?
+A. /user/(id)
+B. /user/id?
+C. /user/:id?
+D. /user?{id}
+ANSWER: C
+
+27. Which method retrieves a route parameter?
+A. req.data.id
+B. req.body.id
+C. req.params.id
+D. req.requested.id
+ANSWER: C
+
+28. Which middleware is useful for logging HTTP requests?
+A. chalk
+B. logger-pro
+C. morgan
+D. trace-it
+ANSWER: C
+
+29. How do you apply middleware to specific routes only?
+A. app.use(middleware, '/path')
+B. middleware.applyTo('/path')
+C. app.get('/path', middleware, handler)
+D. express.middleware('/path', handler)
+ANSWER: C
+
+30. Which function handles unmatched routes?
+A. app.unhandled()
+B. req.fallback()
+C. Middleware placed last in the stack
+D. res.notFound()
+ANSWER: C
+
+1. Which query returns all documents where age is greater than 25?A. db.users.find({ age: { $above: 25 } })
+B. db.users.find({ ageGreater: 25 })
+C. db.users.find({ ageCondition: 25 })
+D. db.users.find({ age: { $gt: 25 } })
+ANSWER: D
+
+
+2. Which query returns documents where status is either "A" or "B"?A. db.orders.find({ status: { $matchAny: ["A", "B"] } })
+B. db.orders.find({ status: { $equalTo: ["A", "B"] } })
+C. db.orders.find({ status: { $in: ["A", "B"] } })
+D. db.orders.find({ status: { $select: ["A", "B"] } })
+ANSWER: C
+
+
+3. Which query finds documents where score exists?A. db.tests.find({ score: { $propertyExists: true } })
+B. db.tests.find({ score: { $isPresent: true } })
+C. db.tests.find({ scoreField: true })
+D. db.tests.find({ score: { $exists: true } })
+ANSWER: D
+
+
+4. Which query sorts documents by price descending?A. db.items.find().sort({ priceOrder: -1 })
+B. db.items.find().sort({ price: "down" })
+C. db.items.find().sort({ priceSort: "desc" })
+D. db.items.find().sort({ price: -1 })
+ANSWER: D
+
+
+5. Which query returns only name and age fields?A. db.users.find({}, { only: ["name", "age"] })
+B. db.users.find({}).select(["name", "age"])
+C. db.users.find({}, { name: 1, age: 1 })
+D. db.users.find().project(["name", "age"])
+ANSWER: C
+
+
+6. Which query finds documents where tags array contains "red"?A. db.products.find({ tags: { $includes: "red" } })
+B. db.products.find({ tags: { $arrayContains: ["red"] } })
+C. db.products.find({ tags: "red" })
+D. db.products.find({ tagsList: "red" })
+ANSWER: C
+
+
+7. Query to update a user’s age to 30?A. db.users.alter({ age: 30 })
+B. db.users.updateUser({ $setAge: 30 })
+C. db.users.updateOne({}, { $set: { age: 30 } })
+D. db.users.modifyAge(30)
+ANSWER: C
+
+
+8. Which operator increments a value?A. $addMore
+B. $increaseBy
+C. $inc
+D. $raise
+ANSWER: C
+
+
+9. Query to find documents where salary is between 5000 and 10000?A. db.emp.find({ salary: [5000..10000] })
+B. db.emp.find({ salary: { $range: [5000, 10000] } })
+C. db.emp.find({ salary: { $gte: 5000, $lte: 10000 } })
+D. db.emp.findRange(5000, 10000)
+ANSWER: C
+
+
+10. Which query finds documents with EXACT array match [1,2,3]?A. db.nums.find({ arr: { $exactMatch: [1,2,3] } })
+B. db.nums.find({ arrList: [1,2,3] })
+C. db.nums.find({ arr: [1,2,3] })
+D. db.nums.findExact({ arr: [1,2,3] })
+ANSWER: C
+
+
+11. Which operator matches ANY array element greater than 50?A. $arrayAny
+B. $matchElement
+C. $elemMatch
+D. $checkElem
+ANSWER: C
+
+
+12. Which query removes field address?A. db.users.updateField({ address: null })
+B. db.users.stripField("address")
+C. db.users.updateMany({}, { $unset: { address: "" } })
+D. db.users.removeProp("address")
+ANSWER: C
+
+
+13. Which query finds documents containing BOTH "A" and "B" in array roles?A. db.users.find({ rolesAll: ["A", "B"] })
+B. db.users.find({ roles: { $combine: ["A", "B"] } })
+C. db.users.find({ roles: { $all: ["A", "B"] } })
+D. db.users.find({ roles: { $containsAll: ["A", "B"] } })
+ANSWER: C
+
+
+14. Which query returns first 5 documents?A. db.items.find().limitFirst(5)
+B. db.items.limitDocs(5)
+C. db.items.find().limit(5)
+D. db.items.top(5)
+ANSWER: C
+
+
+15. Which operator is used for regex search?A. $pattern
+B. $regex
+C. $like
+D. $searchExp
+ANSWER: B
+
+
+16. Which aggregation stage groups documents?A. $cluster
+B. $group
+C. $collect
+D. $bundle
+ANSWER: B
+
+
+17. Which query finds documents where name starts with "A"?A. db.users.find({ name: { $regexStarts: "A" } })
+B. db.users.find({ name: /^A/ })
+C. db.users.find({ name: "A*" })
+D. db.users.find({ nameInitial: "A" })
+ANSWER: B
+
+
+18. Which operator returns unique values of a field?A. $uniqueValues
+B. $distinct
+C. db.unique()
+D. $uniqueSet
+ANSWER: B
+
+
+19. Which query performs a LEFT JOIN in MongoDB?A. db.items.leftJoin()
+B. $lookup
+C. $outerJoin
+D. db.join()
+ANSWER: B
+
+
+20. Query to push a new value into array skills?A. $arrayPush
+B. $appendVal
+C. $push
+D. $addToSet
+ANSWER: C
+
+
+21. Query to remove last element from array?A. db.arr.removeLast()
+B. { $pop: { arr: 1 } }
+C. { $delete: { arr: "last" } }
+D. db.arr.pullLast()
+ANSWER: B
+
+
+22. Which query renames a field?A. { $renameField: old:new }
+B. db.users.renameField()
+C. { $adjust: { field: newName } }
+D. { $rename: { oldField: "newField" } }
+ANSWER: D
+
+
+23. Query to find documents NOT equal to "A"?A. db.items.find({ type: { $notequal: "A" } })
+B. db.items.find({ type: { $notMatch: "A" } })
+C. db.items.find({ type: { $ne: "A" } })
+D. db.items.find({ type: { $exclude: "A" } })
+ANSWER: C
+
+
+24. Which query returns documents where age is 20 OR 30?A. db.users.find({ age: { $orValues: [20, 30] } })
+B. db.users.find({ orAge: [20,30] })
+C. db.users.find({ $or: [{ age: 20 }, { age: 30 }] })
+D. db.users.find({ age: { $matchOr: [20,30] } })
+ANSWER: C
+
+
+25. Query to count documents?A. db.items.countDocumentsOnly()
+B. db.items.aggregateCount()
+C. db.items.runCount()
+D. All of the above
+ANSWER: D
+
+
+26. Which operator removes matching array elements?A. $strip
+B. $pop
+C. $pull
+D. $remove
+ANSWER: C
+
+
+27. Which query returns documents where field marks is an array?A. db.students.find({ marks: { $format: "array" } })
+B. db.students.find({ marksArray: true })
+C. db.students.find({ marks: { $type: "array" } })
+D. db.students.find({ marksKind: "list" })
+ANSWER: C
+
+
+28. Which aggregation operator calculates sum?A. $plus
+B. $sum
+C. $addUp
+D. $calcSum
+ANSWER: B
+
+
+29. Query to skip first 10 documents?A. db.items.skipDocs(10)
+B. db.items.find({ skip: 10 })
+C. db.items.find().skip(10)
+D. db.items.skipStart(10)
+ANSWER: C
+
+
+30. Which query returns documents where height/weight ratio > 0.5?A. db.people.find({ ratio: "height/weight > 0.5" })
+B. db.people.find({ $expr: { $ratio: [ "$height", "$weight" ] } })
+C. db.people.find({ $expr: { $gt: [ { $divide: [ "$height", "$weight" ] }, 0.5 ] } })
+D. db.people.find({ $matchRatio: 0.5 })
+ANSWER: C
+
+1. Which command shows all databases in MongoDB?
+A. list all dbs
+B. database.show()
+C. show dbs
+D. getDatabases()
+ANSWER: C
+
+2. Which index type supports geospatial queries?
+A. geoIndexType
+B. spatialIndex
+C. 2dSphere index
+D. coordinateIndex
+ANSWER: C
+
+3. In MongoDB, documents inside a collection must:
+A. Be strictly typed by schema
+B. Be stored as plain JSON
+C. Be BSON records internally
+D. Follow an XML-like structure
+ANSWER: C
+
+4. Which operator updates only if a field does NOT exist?
+A. $applyIfMissing
+B. $overrideOnce
+C. $setOnInsert
+D. $setIfAbsent
+ANSWER: C
+
+5. Which aggregation stage filters documents?
+A. $refine
+B. $filterBy
+C. $match
+D. $verify
+ANSWER: C
+
+6. What is the default write concern?
+A. write:confirmed
+B. w:auto
+C. w:1
+D. write:basic
+ANSWER: C
+
+7. Which command creates a collection?
+A. db.initCollection()
+B. db.makeCollection()
+C. db.createCollection()
+D. db.buildCollection()
+ANSWER: C
+
+8. The oplog in MongoDB is used for:
+A. Storing document history
+B. Tracking audit operations
+C. Replication between nodes
+D. Maintaining schema validation
+ANSWER: C
+
+9. Which stage is used to reshape documents?
+A. $structure
+B. $format
+C. $project
+D. $reshape
+ANSWER: C
+
+10. What does db.collection.drop() do?
+A. Purges only expired documents
+B. Removes indexes but keeps data
+C. Deletes the entire collection
+D. Flattens sub-documents
+ANSWER: C
+
+11. Which command removes duplicates using aggregation?
+A. filterUnique()
+B. uniqueDocs()
+C. distinct()
+D. dropDuplicates()
+ANSWER: C
+
+12. What does the $in operator do?
+A. Selects fields by inclusion
+B. Filters by data location
+C. Matches any value from a list
+D. Checks if document exists in a set
+ANSWER: C
+
+13. Which is NOT a valid index type?
+A. hybrid index
+B. sparse index
+C. compound index
+D. multi-key index
+ANSWER: A (You want “not valid”, answer remains D in your doc but we'll preserve original answer: D = “Bi-directional index” in doc. Adjusting to match option rewrite but preserve meaning.)
+
+Revised for consistency:
+A. directional index
+B. sparse index
+C. compound index
+D. bi-directional index
+ANSWER: D
+
+14. What is the function of a shard key?
+A. To encrypt distributed data
+B. To track collection metadata
+C. To distribute documents across shards
+D. To prioritize queries
+ANSWER: C
+
+15. What does $unwind do in aggregation?
+A. Joins two arrays
+B. Merges array fields
+C. Breaks array into separate documents
+D. Converts array to string
+ANSWER: C
+
+16. Which storage engine is default in MongoDB?
+A. SpeedEngine
+B. IndexDrive
+C. WiredTiger
+D. TurboStore
+ANSWER: C
+
+17. How to rename a collection?
+A. renameCollectionTo()
+B. renameThisCollection()
+C. db.collection.rename()
+D. db.rename.collection()
+ANSWER: C
+
+18. Transactions in MongoDB require:
+A. Local instance only
+B. Cached data structure
+C. Replica set or sharded cluster
+D. Enabled journaling
+ANSWER: C
+
+19. Which modifier removes a field from a document?
+A. $stripField
+B. $delete
+C. $unset
+D. $removeField
+ANSWER: C
+
+20. Sharding in MongoDB is used for:
+A. Scaling vertically
+B. Caching queries
+C. Achieving horizontal scaling
+D. Compressing large datasets
+ANSWER: C
+
+21. Which operator groups documents?
+A. $groupBy
+B. $categorize
+C. $group
+D. $clusters
+ANSWER: C
+
+22. What is the purpose of db.collection.explain()?
+A. To auto-fix query execution
+B. To show query logs
+C. To analyze index and query plan
+D. To generate aggregate results
+ANSWER: C
+
+23. TTL indexes are used for:
+A. Protecting archived documents
+B. Keeping data permanently
+C. Automatically deleting data after expiry
+D. Detecting stale records
+ANSWER: C
+
+24. Which operator checks if a field exists?
+A. $detect
+B. $isPresent
+C. $exists
+D. $field
+ANSWER: C
+
+25. What happens when you insert a document without _id?
+A. The insert is rejected
+B. MongoDB generates an ObjectId
+C. _id defaults to zero
+D. _id is added manually later
+ANSWER: B
+
+26. What does $lookup do?
+A. Connects to external databases
+B. Generates summary logs
+C. Performs a left outer join
+D. Validates matching schemas
+ANSWER: C
+
+27. What is the size of an ObjectId?
+A. 4 bytes
+B. 20 bytes
+C. 12 bytes
+D. 32 bytes
+ANSWER: C
+
+28. In MongoDB, what does isMaster (hello) check?
+A. Whether the node is writable
+B. Whether the node is secondary
+C. Whether the node is primary
+D. Whether the node is up-to-date
+ANSWER: C
+
+29. Which command clones a database?
+A. db.cloneTo()
+B. cloneDatabase()
+C. db.copyDatabase()
+D. db.mirrorDB()
+ANSWER: C
+
+30. Which operator is used for regex search?
+A. $patternMatch
+B. $searchExpr
+C. $regex
+D. $matchRegex
+ANSWER: C

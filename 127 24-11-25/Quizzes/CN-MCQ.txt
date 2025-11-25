@@ -1,0 +1,1051 @@
+In ATM networks, small fixed-size cells (53 bytes) are used mainly to:
+A. Reduce jitter in real-time traffic
+B. Increase error detection
+C. Save bandwidth
+D. Simplify routing tables
+ANSWER: A
+
+The leaky bucket algorithm is used for:
+A. Flow control
+B. Error detection
+C. Congestion control & traffic shaping
+D. ARQ retransmission
+ANSWER: C
+
+Which is a limitation of ALOHA protocol?
+A. Requires synchronous clocks
+B. Efficiency is limited to ~18%
+C. Requires large packet buffers
+D. Only supports wired LANs
+ANSWER: B
+
+Which factor affects throughput efficiency most in long-distance satellite communication?
+A. Transmission rate
+B. Propagation delay
+C. Bandwidth allocation
+D. Error correction scheme
+ANSWER: B
+
+In hybrid ARQ, the main advantage is:
+A. No retransmission required
+B. Combines error correction and retransmission
+C. Requires smaller window size
+D. Works only with UDP
+ANSWER: B
+
+Which of the following uses port 53 for both TCP and UDP?
+A. DHCP
+B. DNS
+C. SNMP
+D. Telnet
+ANSWER: B
+
+Which statement correctly differentiates TCP from UDP?
+A. TCP is connectionless, UDP is connection-oriented
+B. TCP guarantees delivery, UDP does not
+C. TCP supports multiplexing, UDP does not
+D. TCP is faster than UDP
+ANSWER: B
+
+A switch operates at which OSI layer and makes decisions based on?
+A. Layer 2, MAC addresses
+B. Layer 3, IP addresses
+C. Layer 4, Port numbers
+D. Layer 7, Application headers
+ANSWER: A
+
+Which protocol uses port 443 and provides encryption using SSL/TLS?
+A. HTTP
+B. HTTPS
+C. SSH
+D. FTPS
+ANSWER: B
+
+Routers primarily differ from switches because routers:
+A. Forward frames within the same LAN
+B. Work only on MAC addresses
+C. Interconnect different networks using IP addressing
+D. Operate only at physical layer
+ANSWER: C
+
+Which OSI layer is primarily responsible for ensuring reliable end-to-end communication?
+A. Session
+B. Transport
+C. Network
+D. Data Link
+ANSWER: B
+
+In the TCP/IP model, the Application layer corresponds to which OSI layers?
+A. Application + Presentation + Session
+B. Transport + Application
+C. Application only
+D. Network + Data Link
+ANSWER: A
+
+Which OSI layer is responsible for converting logical addresses to physical addresses?
+A. Data Link
+B. Network
+C. Transport
+D. Session
+ANSWER: A
+
+Which of the following is NOT a function of the Data Link layer?
+A. Error detection
+B. Framing
+C. Flow control
+D. Routing
+ANSWER: D
+
+Which TCP/IP layer ensures proper sequencing and retransmission of lost packets?
+A. Application
+B. Network
+C. Transport
+D. Data Link
+ANSWER: C
+
+Which type of network typically spans a single building or campus?
+A. WAN
+B. LAN
+C. MAN
+D. PAN
+ANSWER: B
+
+Which of the following best describes a MAN (Metropolitan Area Network)?
+A. Interconnects devices in a home
+B. Spans a city using high-speed backbone links
+C. Connects multiple countries
+D. Connects IoT devices only
+ANSWER: B
+
+Which topology has the highest fault tolerance but higher cost?
+A. Star
+B. Bus
+C. Ring
+D. Mesh
+ANSWER: D
+
+Which network is MOST suitable for wearable devices like smartwatches?
+A. WAN
+B. PAN
+C. LAN
+D. VPN
+ANSWER: B
+
+In VPNs, tunneling is typically achieved using:
+A. HTTPS
+B. GRE or IPsec
+C. SMTP
+D. FTP
+ANSWER: B
+
+Which protocol is used to securely transfer files over SSH?
+A. FTP
+B. FTPS
+C. SFTP
+D. TFTP
+ANSWER: C
+
+Which protocol is responsible for resolving IP to MAC addresses?
+A. DNS
+B. ARP
+C. RARP
+D. ICMP
+ANSWER: B
+
+Which port does HTTPS use by default?
+A. 25
+B. 80
+C. 443
+D. 21
+ANSWER: C
+
+Which protocol uses port 25 and is primarily used for sending emails?
+A. POP3
+B. IMAP
+C. SMTP
+D. SNMP
+ANSWER: C
+
+Which of the following is a connectionless protocol?
+A. TCP
+B. FTP
+C. UDP
+D. SMTP
+ANSWER: C
+
+Which protocol is used when a diskless workstation requests its IP from a server?
+A. ARP
+B. RARP
+C. DHCP
+D. ICMP
+ANSWER: B
+
+Which of the following is TRUE about SSH compared to Telnet?
+A. SSH uses encryption, Telnet does not
+B. Both use port 22
+C. Telnet is more secure than SSH
+D. SSH operates at the Network layer
+ANSWER: A
+
+Which protocol helps to report errors in IP datagrams?
+A. ICMP
+B. SNMP
+C. FTP
+D. ARP
+ANSWER: A
+
+Which protocol provides network device monitoring and management?
+A. SMTP
+B. SNMP
+C. SSH
+D. ICMP
+ANSWER: B
+
+Which transport protocol does DNS primarily use?
+A. TCP
+B. UDP
+C. Both TCP and UDP
+D. ICMP
+ANSWER: C
+
+A network 192.168.10.0/24 is subnetted with /26. How many hosts per subnet?
+A. 30
+B. 62
+C. 64
+D. 126
+ANSWER: B
+
+What is the subnet mask for a /20 network?
+A. 255.255.255.0
+B. 255.255.240.0
+C. 255.255.248.0
+D. 255.255.255.240
+ANSWER: B
+
+Which subnet includes the IP 10.1.4.67/20?
+A. 10.1.0.0 – 10.1.15.255
+B. 10.1.4.0 – 10.1.4.255
+C. 10.1.4.0 – 10.1.19.255
+D. 10.1.0.0 – 10.1.4.255
+ANSWER: A
+
+In CIDR, how many subnets can be created from 172.16.0.0/16 using /20?
+A. 4
+B. 8
+C. 16
+D. 64
+ANSWER: C
+
+An organization requires 500 IP addresses. Which mask is most suitable?
+A. /23
+B. /24
+C. /25
+D. /26
+ANSWER: A
+
+Which DNS record type maps a domain name to an IP address?
+A. CNAME
+B. MX
+C. A
+D. PTR
+ANSWER: C
+
+Which DNS record type specifies the mail server for a domain?
+A. CNAME
+B. MX
+C. TXT
+D. AAAA
+ANSWER: B
+
+Which DNS record is used to verify ownership of a domain in services like SPF or DKIM?
+A. TXT
+B. CNAME
+C. SRV
+D. NS
+ANSWER: A
+
+What is the primary role of a DNS resolver?
+A. Store authoritative zone data
+B. Forward queries to root servers
+C. Maintain mail routing tables
+D. Assign IP addresses to clients
+ANSWER: B
+
+In DNS, which of the following servers has the final authority for a given domain?
+A. Recursive resolver
+B. Caching server
+C. Authoritative server
+D. Root server
+ANSWER: C
+
+If a device is not receiving an IP address via DHCP over Ethernet, what layer should be investigated?
+A. Application
+B. Presentation
+C. Network
+D. Data Link
+ANSWER: D
+
+What type of messages are used by ICMP to inform senders of network issues?
+A. Query messages
+B. Error-reporting messages
+C. Routing-update messages
+D. Service-quality messages
+ANSWER: B
+
+Which IP protocol version uses 128-bit addresses?
+A. IPv4
+B. IPv6
+C. ARP
+D. RARP
+ANSWER: B
+
+How do routers utilize ICMP messages within the IP framework?
+A. To encrypt data packets
+B. To prioritize packets
+C. To diagnose routing issues
+D. To compress data packets
+ANSWER: C
+
+What is the main difference between IPv4 and IPv6?
+A. Address size
+B. Error detection mechanisms
+C. Encryption capabilities
+D. Transport layer integration
+ANSWER: A
+
+Which feature of IPv6 eliminates the need for NAT (Network Address Translation)?
+A. Auto-configuration
+B. Built-in encryption
+C. The vast address space
+D. Multicast
+ANSWER: C
+
+What is the function of an IP subnet mask?
+A. To separate the network address from the host address
+B. To encrypt IP addresses
+C. To detect IP conflicts
+D. To assign IP addresses automatically
+ANSWER: A
+
+In IPv6, what is the equivalent of ARP (Address Resolution Protocol) used in IPv4?
+A. DHCPv6
+B. ICMPv6
+C. Neighbor Discovery Protocol (NDP)
+D. IGMPv6
+ANSWER: C
+
+What mechanism does IPv6 use to ensure data integrity and authentication?
+A. ESP (Encapsulating Security Payload)
+B. AH (Authentication Header)
+C. ICMPv6
+D. RARP
+ANSWER: B
+
+A computer can access IPv4 websites but not IPv6 websites. What should be checked first?
+A. IPv6 configuration on the computer
+B. Router's IPv6 support
+C. IPv6 DNS settings
+D. Firewall settings for IPv6
+ANSWER: A
+
+What is the primary purpose of routing protocols in a network?
+A. To encrypt data
+B. To compress data
+C. To determine optimal data paths
+D. To manage user permissions
+ANSWER: C
+
+What is the main difference between TCP and UDP?
+A. TCP is connectionless, while UDP is connection-oriented
+B. TCP is connection-oriented, while UDP is connectionless
+C. TCP is faster than UDP
+D. UDP is more secure than TCP
+ANSWER: B
+
+Which protocol is typically used for streaming media?
+A. TCP
+B. UDP
+C. SCTP
+D. RTP
+ANSWER: B
+
+How does TCP ensure data is delivered reliably and in the correct order?
+A. By using error detection codes
+B. By using sequence numbers and acknowledgments
+C. By compressing data packets
+D. By encrypting data packets
+ANSWER: B
+
+What is the purpose of a TCP three-way handshake?
+A. To establish a secure connection
+B. To synchronize sequence numbers and acknowledge the connection
+C. To compress data
+D. To encrypt data
+ANSWER: B
+
+How does UDP handle error checking?
+A. It uses sequence numbers and acknowledgments
+B. It includes a checksum for error detection
+C. It encrypts data packets
+D. It compresses data packets
+ANSWER: B
+
+How can you check open TCP ports on a Windows machine?
+A. netstat -an
+B. ipconfig /all
+C. ifconfig -a
+D. traceroute
+ANSWER: A
+
+What is the main advantage of using FTP over HTTP for file transfer?
+A. Higher security
+B. Better compression
+C. Support for directory listing and manipulation
+D. Faster data transfer
+ANSWER: C
+
+How does FTP ensure data is transferred securely?
+A. By using SSL/TLS for encryption
+B. By compressing data
+C. By using checksums for integrity
+D. By using UDP
+ANSWER: A
+
+What is the primary purpose of a firewall in network security?
+A. To detect and remove viruses
+B. To manage network traffic based on rules
+C. To encrypt data transmissions
+D. To authenticate users
+ANSWER: B
+
+What is the primary security concern addressed by HTTPS?
+A. Data corruption
+B. Identity theft
+C. Data interception during transmission
+D. Unauthorized access to network resources
+ANSWER: C
+
+What is SNMP primarily used for in network management?
+A. Encrypting network traffic
+B. Authenticating network users
+C. Monitoring and managing network devices
+D. Routing network traffic
+ANSWER: C
+
+Which SNMP component is responsible for collecting data from managed devices?
+A. SNMP manager
+B. SNMP agent
+C. SNMP MIB (Management Information Base)
+D. SNMP trap
+ANSWER: B
+
+What type of SNMP message is sent by an agent to notify a manager of an event?
+A. GET
+B. SET
+C. TRAP
+D. ACK
+ANSWER: C
+
+Which network topology requires a central controller or hub?
+A. Ring
+B. Bus
+C. Star
+D. Mesh
+ANSWER: C
+
+Which of the following networks extends a private network across public networks?
+A. virtual private network
+B. local area network
+C. storage area network
+D. enterprise private network
+ANSWER: A
+
+Which topology requires a multipoint connection?
+A. Ring
+B. Bus
+C. Star
+D. Mesh
+ANSWER: B
+
+What is the term for an endpoint of an inter-process communication flow across a computer network?
+A. port
+B. machine
+C. socket
+D. pipe
+ANSWER: C
+
+How is a single channel shared by multiple signals in a computer network?
+A. multiplexing
+B. phase modulation
+C. analog modulation
+D. digital modulation
+ANSWER: A
+
+Which of the following devices forwards packets between networks by processing the routing information included in the packet?
+A. firewall
+B. bridge
+C. hub
+D. router
+ANSWER: D
+
+Shannon’s Capacity formula indicates that channel capacity increases with:
+A. Decreasing bandwidth
+B. Increasing noise power
+C. Increasing SNR
+D. Increasing propagation delay
+ANSWER: C
+
+Which technique is used in Ethernet to detect collisions?
+A. ALOHA
+B. CSMA
+C. CSMA/CD
+D. CSMA/CA
+ANSWER: C
+
+Which queueing discipline guarantees no packet starvation?
+A. FIFO
+B. Priority Scheduling
+C. Round Robin
+D. Weighted Fair Queueing
+ANSWER: D
+
+In circuit switching, the main inefficiency arises due to:
+A. Fixed resource reservation
+B. Packet delay variation
+C. Error propagation
+D. Shared bandwidth
+ANSWER: A
+
+Which technique provides collision avoidance in Wi-Fi?
+A. CSMA/CD
+B. CSMA/CA
+C. Polling
+D. Token Passing
+ANSWER: B
+
+If a 1000-byte packet is sent over a link with 10 Mbps bandwidth, transmission delay is:
+A. 0.8 ms
+B. 0.64 ms
+C. 1 ms
+D. 1.28 ms
+ANSWER: B
+
+Propagation delay in optical fiber primarily depends on:
+A. Wavelength of light
+B. Refractive index of fiber
+C. Length of fiber and speed of light in medium
+D. Modulation scheme
+ANSWER: C
+
+In Go-Back-N ARQ, if window size = N, the sequence number space must be at least:
+A. N
+B. N+1
+C. 2N
+D. 2N+1
+ANSWER: C
+
+Which encoding scheme avoids long runs of 0s and 1s to aid clock synchronization?
+A. NRZ
+B. Manchester
+C. 4B/5B
+D. RZ
+ANSWER: B
+
+Which algorithm helps manage congestion collapse in TCP?
+A. Slow Start & Congestion Avoidance
+B. Fast Retransmit
+C. Sliding Window
+D. Leaky Bucket
+ANSWER: A
+
+In a sliding window protocol with a window size of 4, how many unacknowledged frames can the sender transmit before stopping?
+A. 2
+B. 3
+C. 4
+D. 5
+ANSWER: C
+
+Which of the following is true about Stop-and-Wait ARQ?
+A. It has higher throughput compared to Go-Back-N.
+B. It introduces high utilization on long-delay links.
+C. It requires sequence numbers modulo 2.
+D. It eliminates retransmissions completely.
+ANSWER: C
+
+In packet switching, which issue does store-and-forward delay directly depend on?
+A. Propagation speed of the medium
+B. Processing speed of the router
+C. Packet length and transmission rate
+D. Queuing policy of the router
+ANSWER: C
+
+Which type of multiplexing allows combining signals based on frequency ranges?
+A. TDM
+B. FDM
+C. WDM
+D. CDMA
+ANSWER: B
+
+In WDM, increasing the number of channels primarily increases:
+A. Bandwidth utilization
+B. Signal-to-noise ratio
+C. Propagation delay
+D. Error rate
+ANSWER: A
+
+What does bit stuffing in data transmission help prevent?
+A. Collisions in Ethernet
+B. Misinterpretation of control flags
+C. Channel noise
+D. Propagation delay
+ANSWER: B
+
+Which of the following is a limitation of CSMA/CD?
+A. It cannot be used in half-duplex channels
+B. It is inefficient at low traffic
+C. It cannot be used in wireless networks
+D. It ensures no collisions occur
+ANSWER: C
+
+In Stop-and-Wait ARQ, if transmission time = 1 ms and propagation delay = 4 ms, channel utilization is approximately:
+A. 20%
+B. 25%
+C. 50%
+D. 80%
+ANSWER: B
+
+Which parameter mainly influences jitter in real-time applications?
+A. Bandwidth
+B. Transmission delay
+C. Variation in packet arrival time
+D. Window size in flow control
+ANSWER: C
+
+Which ARQ mechanism requires retransmission of only the erroneous frame?
+A. Stop-and-Wait
+B. Go-Back-N
+C. Selective Repeat
+D. Sliding Window
+ANSWER: C
+
+What is the main purpose of using VLANs in a data center network?
+A. To increase physical cable count
+B. To separate broadcast domains logically on the same switch
+C. To improve routing performance at Layer 3
+D. To encrypt traffic between devices
+ANSWER: B
+
+Which IEEE standard defines VLAN tagging?
+A. 802.3
+B. 802.11
+C. 802.1Q
+D. 802.1D
+ANSWER: C
+
+In a VLAN configuration, what is the function of a trunk port?
+A. It connects end devices like PCs or NAS directly.
+B. It carries traffic for multiple VLANs between switches or to servers.
+C. It blocks untagged frames automatically.
+D. It provides routing between VLANs.
+ANSWER: B
+
+When a device in VLAN 10 wants to communicate with a device in VLAN 20, what is required?
+A. A Layer-2 switch
+B. A trunk cable
+C. A router or Layer-3 switch (inter-VLAN routing)
+D. A VLAN tag removal process
+ANSWER: C
+
+What happens if two switches connected via a trunk link are configured with mismatched VLAN IDs?
+A. They automatically synchronize VLAN IDs.
+B. Traffic may be dropped or delivered to the wrong VLAN.
+C. The switches create a single combined VLAN.
+D. VLAN tagging is ignored and all frames are untagged.
+ANSWER: B
+
+Which layer is responsible for reliable communication?
+A. Network
+B. Data Link
+C. Transport
+D. Application
+ANSWER: C
+
+HTTP uses which protocol at transport layer?
+A. UDP
+B. TCP
+C. FTP
+D. SMTP
+ANSWER: B
+
+The IP address 192.168.0.1 belongs to:
+A. Class A
+B. Class B
+C. Class C
+D. Class D
+ANSWER: C
+
+What does TTL in IP packet stand for?
+A. Total Time Lag
+B. Time To Live
+C. Transfer Type Level
+D. Transport Type Link
+ANSWER: B
+
+Which protocol is used to find MAC address?
+A. IP
+B. ARP
+C. ICMP
+D. DNS
+ANSWER: B
+
+What is the maximum size of an IPv4 packet?
+A. 512 bytes
+B. 65535 bytes
+C. 64 KB
+D. 1024 bytes
+ANSWER: B
+
+What is the purpose of ICMP?
+A. Email delivery
+B. Host resolution
+C. Error reporting
+D. File transfer
+ANSWER: C
+
+The port number for DNS is:
+A. 80
+B. 25
+C. 53
+D. 443
+ANSWER: C
+
+Which address is used in ARP request?
+A. IP address
+B. MAC address
+C. Port number
+D. Protocol ID
+ANSWER: A
+
+Which switching technique is used in the Internet?
+A. Circuit Switching
+B. Packet Switching
+C. Message Switching
+D. Line Switching
+ANSWER: B
+
+A user reports that they can open websites using IP addresses but not using domain names. Which protocol is most likely failing?
+A. DHCP
+B. FTP
+C. DNS
+D. ARP
+ANSWER: C
+
+An application needs to send a video stream with minimal delay, even if some packets are lost. Which protocol should it use?
+A. TCP
+B. FTP
+C. UDP
+D. ICMP
+ANSWER: C
+
+A system admin wants to monitor the CPU usage and disk status of multiple routers and switches remotely. Which protocol is most suitable?
+A. SNMP
+B. FTP
+C. RARP
+D. IMAP
+ANSWER: A
+
+A client sends a request to download a file from a remote server. The transfer needs authentication and uses two separate connections (control and data). Which protocol is being used?
+A. HTTP
+B. FTP
+C. SMTP
+D. SSH
+ANSWER: B
+
+You’re designing a messaging app. You want to ensure every message is delivered in order and without loss. Which protocol will you use for transport?
+A. UDP
+B. ARP
+C. TCP
+D. FTP
+ANSWER: C
+
+A device on a network knows its MAC address but not its IP address. Which protocol helps it discover its own IP address?
+A. DNS
+B. RARP
+C. ARP
+D. ICMP
+ANSWER: B
+
+A networked device wants to send a packet to another device on the same LAN. It knows the IP address but not the MAC address. What will it use?
+A. DHCP
+B. RARP
+C. ARP
+D. SNMP
+ANSWER: C
+
+A company has a website that must be accessed securely by users. Which protocol should be used to encrypt the communication?
+A. HTTP
+B. TCP
+C. HTTPS
+D. DNS
+ANSWER: C
+
+A developer builds an email client that sends emails using port 25 and retrieves them using port 110. Which two protocols are being used?
+A. SMTP and IMAP
+B. IMAP and POP3
+C. SMTP and POP3
+D. FTP and SNMP
+ANSWER: C
+
+A server receives thousands of requests per second from different clients. It needs a fast and stateless protocol that minimizes handshake and overhead. Which is most suitable?
+A. TCP
+B. UDP
+C. SMTP
+D. SSH
+ANSWER: B
+
+In TCP's three-way handshake, what is the purpose of the SYN-ACK packet?
+A. To acknowledge the receipt of the SYN and establish one-way communication
+B. To terminate an existing session
+C. To synchronize both parties' sequence numbers and acknowledge SYN
+D. To confirm port numbers are correct
+ANSWER: C
+
+Which of the following statements correctly describes TCP congestion control?
+A. It retransmits packets on every timeout without window adjustment
+B. It increases window exponentially during slow start
+C. It uses fixed window size regardless of network conditions
+D. It waits for NACKs before retransmission
+ANSWER: B
+
+Which field in the IP header is used to prevent packets from looping indefinitely in the network?
+A. Flags
+B. TTL (Time To Live)
+C. Fragment Offset
+D. Identification
+ANSWER: B
+
+Which application-layer protocol allows full-duplex communication and is used for real-time updates (e.g., chat apps)?
+A. HTTPS
+B. FTP
+C. WebSocket
+D. SNMP
+ANSWER: C
+
+In the DNS hierarchy, what role does a root name server play?
+A. Resolves all queries by itself
+B. Stores cached records of all domains
+C. Refers the resolver to the appropriate TLD server
+D. Assigns IP addresses to domain names
+ANSWER: C
+
+What is the role of the “Control Connection” in active FTP?
+A. It transfers files between the server and the client
+B. It handles the DNS resolution of the client
+C. It maintains a command link over TCP port 21
+D. It encrypts the data sent during authentication
+ANSWER: C
+
+Which of the following accurately describes the function of SNMP's MIB?
+A. It encrypts SNMP packets
+B. It filters SNMP messages
+C. It defines the schema of managed objects in a database-like structure
+D. It maps MAC addresses to IP addresses
+ANSWER: C
+
+If a TCP packet is lost in transit, what mechanism ensures its retransmission?
+A. UDP checksum
+B. ICMP redirect
+C. TCP timer and ACK tracking
+D. ARP request
+ANSWER: C
+
+In the TCP/IP model, which of the following is NOT part of the Application Layer?
+A. HTTP
+B. FTP
+C. TCP
+D. SMTP
+ANSWER: C
+
+When an IP packet is fragmented, which header field helps the receiver reassemble the original packet?
+A. Protocol
+B. TTL
+C. Fragment Offset
+D. Header Length
+ANSWER: C
+
+A TCP connection is established between Host A and Host B. Host A sends 3 packets, but only 2 ACKs are received. What happens next?
+A. Host A terminates the connection.
+B. Host A immediately resends all 3 packets.
+C. Host A retransmits only the missing packet after timeout or triple duplicate ACK.
+D. Host B resets the connection.
+ANSWER: C
+
+Which of the following scenarios would most likely cause UDP to fail but not TCP?
+A. A firewall blocks incoming connections.
+B. A DNS query is delayed by 2 seconds.
+C. A packet is dropped on the network path.
+D. The server takes time to respond.
+ANSWER: C
+
+You're testing FTP in passive mode, but the connection is refused. What is the most probable cause?
+A. TCP port 21 is blocked.
+B. Server's data port range is not open in firewall.
+C. FTP client does not support encryption.
+D. DNS server is misconfigured.
+ANSWER: B
+
+HTTP/1.1 keeps connections alive by default. Which header disables this behavior?
+A. Keep-Alive: off
+B. Connection: close
+C. Cache-Control: no-cache
+D. Content-Length: 0
+ANSWER: B
+
+A DNS recursive resolver queries an unknown domain. What does it do first?
+A. Sends the query to a root name server
+B. Looks in its local zone file
+C. Broadcasts an ARP request
+D. Contacts the authoritative DNS server directly
+ANSWER: A
+
+In SNMP, a device is not responding to GET requests. However, it's sending TRAP messages. What does this indicate?
+A. SNMP version mismatch
+B. Read-only community string is incorrect
+C. Firewall is blocking SNMP port 162
+D. SNMP agent is configured for push-only monitoring
+ANSWER: D
+
+Which of the following best describes the behavior of TCP when out-of-order packets arrive?
+A. TCP drops the packets and requests retransmission
+B. TCP reorders packets and delivers them in sequence to the application
+C. TCP buffers packets but delivers them in arrival order
+D. TCP switches to UDP fallback
+ANSWER: B
+
+Which protocol will succeed even if the destination host does not respond?
+A. TCP
+B. FTP
+C. UDP
+D. SNMP GET
+ANSWER: C
+
+ARP replies can be sent without receiving an ARP request. What is this called?
+A. Proxy ARP
+B. Gratuitous ARP
+C. Reverse ARP
+D. Spoofed ARP
+ANSWER: B
+
+A user accesses a secure website and sees the lock icon. Which of the following best describes what actually happens in the browser?
+A. The site is using HTTP and encrypted HTML
+B. The TCP connection is encrypted using UDP fallback
+C. The server uses SSL/TLS to secure the TCP connection
+D. DNS resolution was skipped
+ANSWER: C
+
+Additional IP / Subnetting / CIDR Questions:
+
+An IPv4 address with prefix /26 has how many usable host addresses?
+A. 62
+B. 64
+C. 30
+D. 32
+ANSWER: A
+
+What is the default subnet mask for a Class C IPv4 network?
+A. 255.0.0.0
+B. 255.255.0.0
+C. 255.255.255.0
+D. 255.255.255.128
+ANSWER: C
+
+Which of the following is a valid host IP address in the network 192.168.5.0/24?
+A. 192.168.5.0
+B. 192.168.5.255
+C. 192.168.5.1
+D. 192.168.6.1
+ANSWER: C
+
+You have the network 10.0.0.0/24 and you want 4 equal-sized subnets. What will be the new prefix?
+A. /25
+B. /26
+C. /27
+D. /28
+ANSWER: B
+
+What is the broadcast address of the subnet 172.16.8.0/21?
+A. 172.16.8.255
+B. 172.16.15.255
+C. 172.16.7.255
+D. 172.16.9.255
+ANSWER: B
+
+Which of the following is the network address of the host 192.168.12.77/27?
+A. 192.168.12.64
+B. 192.168.12.0
+C. 192.168.12.32
+D. 192.168.12.96
+ANSWER: A
+
+A company is assigned 192.168.10.0/24 and needs subnets with at least 50 hosts each. What is the best subnet mask?
+A. /25
+B. /26
+C. /27
+D. /28
+ANSWER: B
+
+Which of these is a valid CIDR notation?
+A. 192.168.1.0/33
+B. 10.0.0.1/8
+C. 172.16.0.1/0
+D. 192.168.0.0/2.4
+ANSWER: B
+
+What is the usable host range of the subnet 192.168.100.0/25?
+A. 192.168.100.0 – 192.168.100.127
+B. 192.168.100.1 – 192.168.100.126
+C. 192.168.100.1 – 192.168.100.127
+D. 192.168.100.2 – 192.168.100.126
+ANSWER: B
+
+Which IP address is a private address according to RFC1918?
+A. 11.0.0.1
+B. 172.32.0.1
+C. 192.168.200.1
+D. 8.8.8.8
+ANSWER: C
+
+You have a /29 subnet. How many usable host IPs does it provide?
+A. 2
+B. 4
+C. 6
+D. 8
+ANSWER: C
+
+What is the subnet mask for /30 in dotted decimal notation?
+A. 255.255.255.192
+B. 255.255.255.252
+C. 255.255.255.248
+D. 255.255.255.254
+ANSWER: B
+
+Which of the following best describes CIDR?
+A. A method to use only Class C networks
+B. A method for classful addressing
+C. A method to aggregate or split IP address blocks using variable-length prefixes
+D. A protocol for routing updates
+ANSWER: C
+
+An ISP assigns you the block 203.0.113.0/26. Which of the following is a valid host in this block?
+A. 203.0.113.0
+B. 203.0.113.63
+C. 203.0.113.1
+D. 203.0.113.64
+ANSWER: C
+
+For the network 10.10.32.0/20, which statement is TRUE?
+A. It contains 256 total addresses
+B. Usable host range is 10.10.32.1 – 10.10.47.254
+C. Broadcast address is 10.10.39.255
+D. It is equivalent to /24
+ANSWER: B

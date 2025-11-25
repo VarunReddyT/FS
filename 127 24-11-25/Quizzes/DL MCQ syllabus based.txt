@@ -1,0 +1,751 @@
+1. In a convolution layer, which factor contributes MOST to the effective receptive field during backpropagation?
+A. Kernel size only
+B. Stride only
+C. Network depth & stacking of small kernels
+D. Number of filters
+ANSWER: C
+
+2. Suppose you replace all 3×3 convolutions in VGG with a single 7×7 convolution. What is the major downside?
+A. The model becomes deeper
+B. The model loses translation invariance
+C. The number of parameters increases drastically
+D. Gradient norms collapse
+ANSWER: C
+
+3. Why does LeNet-5 avoid ReLU activations?
+A. ReLU was not invented yet and tanh fits its weight distribution
+B. ReLU breaks pooling
+C. tanh stabilizes gradients better for deep networks
+D. ReLU prevents weight sharing
+ANSWER: A
+
+4. A 3×3 convolution with dilation=2 has an effective receptive field of:
+A. 3×3
+B. 5×5
+C. 7×7
+D. 9×9
+ANSWER: B
+
+5. Which scenario MOST likely leads to gradient explosion in CNNs?
+A. Too many pooling layers
+B. Repeated multiplication by large weights in deep residual blocks
+C. Very small learning rate
+D. BatchNorm before activation
+ANSWER: B
+
+6. In CIFAR10 training, why does VGG generally underperform compared to ResNet?
+A. VGG uses too much padding
+B. ResNet alleviates degradation through identity mappings
+C. VGG cannot use BatchNorm
+D. CIFAR10 images are too large
+ANSWER: B
+
+7. When training VGG13 on CIFAR10, which component MOST helps reduce overfitting?
+A. Increasing feature maps
+B. Adding BatchNorm to every conv layer
+C. Removing pooling
+D. Using only 1×1 convolutions
+ANSWER: B
+
+8. A key difference between DenseNet and ResNet is:
+A. DenseNet uses summation while ResNet uses concatenation
+B. ResNet uses summation while DenseNet uses concatenation
+C. DenseNet has no BatchNorm
+D. ResNet does not use global average pooling
+ANSWER: B
+
+9. Which CNN architecture has the smallest number of parameters relative to depth?
+A. VGG
+B. ResNet
+C. DenseNet
+D. LeNet
+ANSWER: C
+
+10. In convolution, weight sharing helps MOST with:
+A. Reducing vanishing gradients
+B. Enforcing spatial invariance
+C. Reducing learning rate
+D. Preventing parameter overfitting
+ANSWER: B
+
+11. A 1×1 convolution is mathematically equivalent to:
+A. A fully connected layer across channels
+B. A max pooling operation
+C. A shallow MLP
+D. A strided convolution
+ANSWER: A
+
+12. The degradation problem occurs because deeper networks:
+A. Always overfit
+B. Have lower training accuracy due to optimization difficulty
+C. Cannot compute gradients
+D. Lose spatial features
+ANSWER: B
+
+13. Why do skip connections help reduce loss landscape sharpness?
+A. They add more parameters
+B. They create smoother optimization paths
+C. They force gradients to zero
+D. They increase gradient noise
+ANSWER: B
+
+14. In DenseNet, if the growth rate is doubled, what increases MOST?
+A. Number of layers
+B. Number of feature maps concatenated
+C. Depth of residual pathways
+D. Pooling frequency
+ANSWER: B
+
+15. Which operation is differentiable and commonly used in CNNs?
+A. Argmax pooling
+B. Max pooling
+C. Average pooling
+D. Hard thresholding
+ANSWER: C
+
+16. Why does BatchNorm allow higher learning rates?
+A. It increases gradient variance
+B. It stabilizes distribution of layer inputs
+C. It reduces parameter count
+D. It removes nonlinearities
+ANSWER: B
+
+17. In representation learning, deeper layers of CNNs typically learn:
+A. Colors and edges
+B. Texture and low-level blobs
+C. High-level concepts like object parts
+D. Convolution masks
+ANSWER: C
+
+18. Which step in LeNet-5 causes information compression?
+A. First convolution
+B. Subsampling layer
+C. Final fully connected layer
+D. tanh activation
+ANSWER: B
+
+19. The main reason VGG uses many small kernels (3×3) is:
+A. To increase stride
+B. To reduce parameter count while increasing effective depth
+C. To eliminate pooling
+D. To replace BatchNorm
+ANSWER: B
+
+20. The “identity mapping” in ResNet works best when:
+A. Input and output dimensions match
+B. There is no BatchNorm
+C. Kernel sizes are 7×7
+D. Model depth is shallow
+ANSWER: A
+
+21. DenseNet’s memory footprint is high because:
+A. It has too many linear layers
+B. It stores outputs of all preceding layers
+C. BatchNorm outputs require double precision
+D. It does not use pooling
+ANSWER: B
+
+22. In stride=2 convolutions, the main effect is:
+A. Doubling channels
+B. Halving spatial resolution
+C. Increasing parameter count
+D. Reducing filter width
+ANSWER: B
+
+23. Why do very deep CNNs without residual blocks perform worse even on training data?
+A. Overfitting
+B. Optimization difficulties caused by vanishing gradients
+C. Underfitting
+D. High dropout
+ANSWER: B
+
+24. A CNN with no pooling must rely on:
+A. Dilation or stride for reduction
+B. BatchNorm for dimension reduction
+C. Fully connected layers
+D. Residual blocks only
+ANSWER: A
+
+25. In CIFAR-10, what is the biggest architectural challenge?
+A. Large resolution
+B. Small resolution limiting spatial abstractions
+C. Too many classes
+D. No RGB channels
+ANSWER: B
+
+26. Doubling the number of filters in a convolution layer:
+A. Halves parameters
+B. Doubles parameters
+C. Quadruples parameters
+D. Has no effect
+ANSWER: C
+
+27. Which architecture is MOST prone to overfitting?
+A. LeNet
+B. ResNet-18
+C. VGG-16
+D. DenseNet-121
+ANSWER: C
+
+28. Why does DenseNet improve gradient flow more than ResNet?
+A. It uses more pooling
+B. It concatenates all previous feature maps
+C. Its skip connections use summation
+D. It uses SVM loss
+ANSWER: B
+
+29. VGG networks are inefficient because:
+A. They use too many skip connections
+B. They rely on massive fully connected layers
+C. They avoid BatchNorm
+D. They only use 1×1 convolutions
+ANSWER: B
+
+30. What is the biggest risk of using large filters such as 11×11?
+A. Vanishing gradients
+B. Exploding gradients
+C. Too many parameters and lost locality
+D. Inability to pool
+ANSWER: C
+
+31. In a classical convolution, translation equivariance fails when:
+A. Stride > 1
+B. Kernel is odd-sized
+C. BatchNorm is applied
+D. Activation is nonlinear
+ANSWER: A
+
+32. Gradient propagation in ResNet can still fail if:
+A. Skip connections use summation
+B. Too many identity blocks are stacked without bottlenecks
+C. BatchNorm is removed
+D. Kernel size is 3×3
+ANSWER: B
+
+33. In DenseNet, growth rate defines:
+A. Number of layers per block
+B. How many new features each layer contributes
+C. The number of skip connections
+D. Pooling frequency
+ANSWER: B
+
+34. Which architecture uses “bottleneck blocks” to reduce channel dimensions?
+A. VGG
+B. ResNet
+C. DenseNet
+D. LeNet
+ANSWER: B
+
+35. A 7×7 filter in the first conv layer is often avoided in CIFAR-10 because:
+A. It creates huge receptive fields for tiny images
+B. It causes vanishing gradients
+C. It breaks padding
+D. It cannot backpropagate
+ANSWER: A
+
+36. Why is the identity shortcut in ResNet NOT learnable?
+A. It reduces model capacity
+B. It allows direct gradient flow
+C. It implements max pooling
+D. It replaces activations
+ANSWER: B
+
+37. Which architecture is MOST parameter-efficient for very deep models?
+A. VGG
+B. LeNet
+C. DenseNet
+D. ResNet
+ANSWER: C
+
+38. The theoretical purpose of pooling is to:
+A. Reduce model depth
+B. Introduce local translation invariance
+C. Increase channels
+D. Normalize gradients
+ANSWER: B
+
+39. If BatchNorm is placed before activation instead of after, the effect is:
+A. Slightly improved stability
+B. Worse convergence in practice
+C. No change
+D. Elimination of gradient noise
+ANSWER: B
+
+40. DenseNet’s concatenation can cause issues when:
+A. GPUs have low memory
+B. Growth rate is small
+C. Pooling is used often
+D. Convolutions are 3×3
+ANSWER: A
+
+41. Which architecture naturally encourages feature reuse?
+A. VGG
+B. LeNet
+C. DenseNet
+D. ResNet
+ANSWER: C
+
+42. Which CNN block yields the deepest networks effectively?
+A. Simple Conv-ReLU
+B. Bottleneck Residual Block
+C. 5×5 Conv Block
+D. Subsampling + tanh
+ANSWER: B
+
+43. A feature map of size 32×32 reduced by 3 stride-2 layers becomes:
+A. 4×4
+B. 8×8
+C. 16×16
+D. 2×2
+ANSWER: B
+
+44. Gradient vanishing is MOST severe when:
+A. Activation saturates
+B. Stride is 2
+C. Batch size is small
+D. Pooling is used
+ANSWER: A
+
+45. The optimal CIFAR10 training trick for VGG-like networks is:
+A. Remove dropout
+B. Add BatchNorm and reduce fully connected layers
+C. Remove pooling
+D. Increase kernel sizes
+ANSWER: B
+
+46. ResNet uses identity connections to approximate:
+A. Linear transformations
+B. Constant mappings
+C. Orthogonal projections
+D. Identity function
+ANSWER: D
+
+47. DenseNet’s major benefit is:
+A. Fewer layers
+B. Better feature propagation & reduced vanishing gradients
+C. Smaller filters
+D. Faster inference
+ANSWER: B
+
+48. In VGG, stacking two 3×3 convolutions approximates:
+A. A 5×5 convolution
+B. A 1×1 convolution
+C. A pooling layer
+D. A dense block
+ANSWER: A
+
+49. In training ResNet, a common failure mode is:
+A. Skip connections dominate and network learns identity
+B. Kernel size vanishing
+C. No gradient noise
+D. Dense blocks collapse
+ANSWER: A
+
+50. Deep CNNs often use residual blocks because:
+A. They reduce model depth
+B. They allow gradients to flow across long distances
+C. They eliminate need for convolution
+D. They increase overfitting
+ANSWER: B
+
+🔵 SECTION 2 – 50 DIFFICULT RNN / LSTM / GRU MCQs (Full Questions, Full Options)
+51. In a standard RNN, the hidden state update 
+ℎ
+𝑡
+=
+tanh
+⁡
+(
+𝑊
+ℎ
+ℎ
+𝑡
+−
+1
++
+𝑊
+𝑥
+𝑥
+𝑡
++
+𝑏
+)
+h
+t
+	​
+
+=tanh(W
+h
+	​
+
+h
+t−1
+	​
+
++W
+x
+	​
+
+x
+t
+	​
+
++b) leads to vanishing gradients because—
+A. 
+tanh
+⁡
+tanh derivative saturates toward 0
+B. 
+𝑊
+𝑥
+W
+x
+	​
+
+ is too small
+C. Bias terms dominate the output
+D. Softmax is not used
+ANSWER: A
+
+52. The fundamental reason RNN gradients vanish is that backprop multiplies through:
+A. Linearly increasing operators
+B. A chain of derivatives < 1
+C. A chain of derivatives > 1
+D. Sigmoid inputs only
+ANSWER: B
+
+53. Exploding gradients occur when the Jacobian of the RNN recurrence relation has:
+A. Singular values < 1
+B. Singular values > 1
+C. Only diagonal terms
+D. Zero values
+ANSWER: B
+
+54. For long sequences, which constraint in basic RNN architecture most limits long-term memory?
+A. Weight sharing
+B. Multiplicative recurrence
+C. Nonlinearities
+D. Embedding dimension
+ANSWER: B
+
+55. In LSTMs, the cell state avoids vanishing gradients primarily because:
+A. It uses convolution
+B. It has an additive path with gated scaling
+C. It uses ReLU activations
+D. It is detached from the computational graph
+ANSWER: B
+
+56. Which gate in LSTM prevents overwriting of important long-term information?
+A. Input gate
+B. Forget gate
+C. Output gate
+D. Reset gate
+ANSWER: B
+
+57. The output gate in LSTM influences:
+A. Gradient value only
+B. Which part of the cell state transfers to the hidden state
+C. Embedding dimensionality
+D. Sequence length
+ANSWER: B
+
+58. In GRU, the update gate plays the combined role of which LSTM gates?
+A. Forget + output
+B. Input + output
+C. Input + forget
+D. Reset + output
+ANSWER: C
+
+59. GRU can outperform LSTM on smaller datasets due to:
+A. Smaller parameter space preventing overfitting
+B. More aggressive gating
+C. Higher-order recurrence
+D. Better dropout compatibility
+ANSWER: A
+
+60. The GRU reset gate allows:
+A. Complete deletion of hidden state
+B. Selective combination of current input with short-term history
+C. Output suppression
+D. Freezing of hidden state
+ANSWER: B
+
+61. In sequence representation, word embeddings outperform one-hot encodings because they:
+A. Reduce training time only
+B. Encode semantic similarity in dense space
+C. Produce uniform norms
+D. Support only fixed vocabulary
+ANSWER: B
+
+62. The Backpropagation Through Time (BPTT) complexity grows with:
+A. Vocabulary size
+B. Sequence length
+C. Hidden unit count only
+D. Number of gates
+ANSWER: B
+
+63. Truncated BPTT mainly helps by:
+A. Reducing forward pass
+B. Limiting gradient flow through long timesteps
+C. Improving sentence accuracy
+D. Replacing gating
+ANSWER: B
+
+64. Vanishing gradient is MOST severe when:
+A. Activations use ReLU
+B. Sigmoid/tanh neurons saturate
+C. Sequence length decreases
+D. Input embeddings are normalized
+ANSWER: B
+
+65. LSTM allows information to flow across long distances because its cell state uses:
+A. Pure multiplication
+B. Additive update + multiplicative gates
+C. Dropout paths
+D. Averaging
+ANSWER: B
+
+66. In LSTM, if the forget gate outputs values close to 0 consistently:
+A. Cell state explodes
+B. Memory resets periodically
+C. Hidden states saturate
+D. Sequence length increases
+ANSWER: B
+
+67. GRU’s architecture is computationally cheaper because it removes:
+A. Output activation
+B. Explicit cell state
+C. Hidden state
+D. Bias parameters
+ANSWER: B
+
+68. In sentiment classification, bidirectional RNNs outperform unidirectional RNNs because:
+A. They work on longer sequences
+B. They incorporate future context along with past
+C. They require fewer embeddings
+D. They apply dropout automatically
+ANSWER: B
+
+69. The biggest weakness of GRU compared to LSTM in complex language tasks is:
+A. Limited capacity to model extremely long dependencies
+B. More parameters
+C. Poor gradient stability
+D. No reset mechanism
+ANSWER: A
+
+70. In PyTorch, when using an RNN with num_layers > 1, deeper layers receive:
+A. Outputs from the first layer only
+B. Hidden states from previous layers
+C. Embeddings directly
+D. Gradients only
+ANSWER: B
+
+71. Vanishing gradients significantly impair which part of an RNN’s learning process?
+A. Learning short-term dependencies
+B. Learning long-range dependencies across many timesteps
+C. Updating embeddings
+D. Normalizing hidden states
+ANSWER: B
+
+72. Exploding gradients are effectively controlled with which commonly used technique?
+A. Batch Normalization
+B. Weight Decay
+C. Gradient Clipping
+D. Average Pooling
+ANSWER: C
+
+73. If an RNN hidden size is too small, which aspect of the model suffers MOST?
+A. Softmax computation
+B. Ability to store and represent sequence information
+C. Dropout effectiveness
+D. Training speed
+ANSWER: B
+
+74. In many NLP tasks, LSTMs outperform vanilla RNNs primarily because:
+A. LSTMs use convolution layers
+B. LSTMs store long-term dependencies via cell states
+C. RNNs cannot represent tokens
+D. LSTMs require less training data
+ANSWER: B
+
+75. Long sequences cause basic RNNs to fail because:
+A. Softmax gradients explode
+B. Gradients vanish when multiplied across many timesteps
+C. There is too much dropout
+D. Hidden states are not normalized
+ANSWER: B
+
+76. The mathematical cause of vanishing gradient in RNNs is that the recurrent Jacobian has eigenvalues:
+A. Much greater than 1
+B. Much smaller than 1
+C. Exactly 1
+D. Purely imaginary
+ANSWER: B
+
+77. The fundamental operation of the RNN recurrence equation represents:
+A. A convolution mapping
+B. A nonlinear dynamic system evolving in time
+C. A residual block
+D. A pooling mechanism
+ANSWER: B
+
+78. If the update gate in GRU remains close to 1 for long durations, what happens?
+A. GRU frequently resets its memory
+B. GRU retains previous hidden state for long-term dependencies
+C. GRU becomes unstable
+D. GRU ignores new input permanently
+ANSWER: B
+
+79. The tanh activation in the candidate LSTM cell state produces values in what range?
+A. 0 to 1
+B. -1 to 1
+C. Only positive values
+D. Unbounded real numbers
+ANSWER: B
+
+80. Applying dropout directly on recurrent (hidden-to-hidden) connections is discouraged because:
+A. Dropout does not work with tanh
+B. It disrupts temporal continuity and harms sequence memory
+C. It removes gradient clipping
+D. It prevents backpropagation
+ANSWER: B
+
+81. In GRU, when the reset gate approaches zero, the unit:
+A. Completely ignores earlier hidden state history
+B. Stores memory indefinitely
+C. Halts gradient updates
+D. Outputs constant values
+ANSWER: A
+
+82. A major structural advantage of RNNs in sequence learning is:
+A. They learn sparse representations
+B. They share weights across time steps
+C. They remove temporal dependence
+D. They avoid nonlinearities
+ANSWER: B
+
+83. In LSTM, if the input gate outputs values near zero consistently, what effect occurs?
+A. New information cannot be added to the cell state
+B. Old memory is erased
+C. Cell state explodes
+D. Output is unbounded
+ANSWER: A
+
+84. LSTM uses sigmoid for gating because:
+A. Sigmoid creates binary-like decisions (retain vs discard)
+B. Sigmoid is faster than tanh
+C. Sigmoid is non-differentiable
+D. Sigmoid normalizes hidden state
+ANSWER: A
+
+85. The core hidden-state update in GRU blends:
+A. Only new information
+B. Old and new information using a convex combination
+C. Convolution and pooling
+D. Memory from future timesteps
+ANSWER: B
+
+86. Which architecture has the fewest internal gates?
+A. LSTM
+B. GRU
+C. Vanilla RNN
+D. BiLSTM
+ANSWER: C
+
+87. In sentiment classification tasks, long sentences require models with:
+A. Higher dropout
+B. Strong long-term memory capability
+C. Fewer parameters
+D. Lower embedding dimension
+ANSWER: B
+
+88. The reset gate in GRU controls:
+A. Whether old information is filtered out before creating candidate activation
+B. Whether hidden state is passed to next layer
+C. Whether to apply output activation
+D. Whether sequences are padded
+ANSWER: A
+
+89. When training LSTMs or GRUs, shuffling word order in training samples:
+A. Improves generalization
+B. Breaks temporal relationships and destroys learning
+C. Reduces vanishing gradient
+D. Improves dropout regularization
+ANSWER: B
+
+90. The cell state gradient in LSTM passes through time mainly through:
+A. Pure multiplication
+B. Additive accumulation modulated by forget gate
+C. Gradient normalization
+D. Output gate transformations
+ANSWER: B
+
+91. If the forget gate is always 1 and input gate always 0, the LSTM becomes:
+A. A GRU
+B. A perfect long-term memory buffer retaining information indefinitely
+C. A CNN
+D. A transformer
+ANSWER: B
+
+92. Bidirectional RNNs are typically NOT suitable for:
+A. Machine translation
+B. Real-time streaming speech recognition
+C. Sentiment analysis
+D. Text summarization
+ANSWER: B
+
+93. During training, RNN hidden states are usually initialized to:
+A. Random values
+B. All zeros
+C. All ones
+D. Previous batch’s final state
+ANSWER: B
+
+94. Vanishing gradients in RNNs most strongly affect which timesteps?
+A. The most recent timesteps
+B. The earliest timesteps in the sequence
+C. The middle timesteps
+D. Only padded timesteps
+ANSWER: B
+
+95. A significant disadvantage of LSTM compared to GRU is:
+A. LSTM lacks long-term memory
+B. LSTM is computationally expensive due to more parameters
+C. LSTM cannot learn sentiment tasks
+D. LSTM cannot process long sequences
+ANSWER: B
+
+96. Removing the output gate from LSTM results in:
+A. GRU-like behavior
+B. Full exposure of cell state at each timestep
+C. Gradient explosion
+D. No hidden state
+ANSWER: B
+
+97. GRU is more computationally efficient than LSTM because it:
+A. Ignores embeddings
+B. Has 2 gates instead of 3
+C. Uses convolution
+D. Uses no hidden state
+ANSWER: B
+
+98. In a deep RNN stack, lower layers typically learn:
+A. Sentence-level meaning
+B. Local word-level or phrase-level patterns
+C. Entire document semantics
+D. Only punctuation
+ANSWER: B
+
+99. The “constant error carousel (CEC)” in LSTM refers to:
+A. A mechanism that amplifies gradient through time
+B. An additive connection allowing gradient to persist across timesteps
+C. A dropout module
+D. A max pooling mechanism
+ANSWER: B
+
+100. GRU is preferred for inference on mobile devices because:
+A. It uses fewer matrix multiplications and requires less memory
+B. It always outperforms LSTM
+C. It removes backpropagation
+D. It uses no nonlinear functions
+ANSWER: A
