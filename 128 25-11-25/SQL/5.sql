@@ -21,4 +21,4 @@ use sndb;
 -- write your query here
 select d.dept_name from departments d join students s on s.dept_id = d.dept_id
 group by d.dept_name
-having COUNT(CASE when s.gender = "Male" then 1 end) > 0 and COUNT(CASE when s.gender = "Female" then 1 end) > 0;
+having COUNT(CASE when s.gender = "Male" then 1 end) > 0 and COUNT(CASE when s.gender = "Female" then 1 end) > 0;t

@@ -1,0 +1,67 @@
+/*Mr Ashoka planted N trees in a land around the Flag Post which is at the center 
+of the land, i.e., (0,0) position. You will be given the positions of N trees
+as trees[], where tree[i]=[Xi,Yi], where Xi, Yi are the positions of i-th tree
+with respect to X-axis and Y-axis. And you are also an integer C.
+
+The distance between any two trees on the land plane is the Euclidean distance 
+(i.e., sqrt((x1 - x2)^2 + (y1 - y2)^2).
+
+Your task is to return positions of the C trees Nearest to the Flag post. 
+The answer is supposed to be sorted based on distance, if the distances 
+are same keep the original order of the trees[].
+
+
+Input Format:
+-------------
+Line-1: Two space separate integers, N and C
+Next N Lines: Two space separated integers, x,y
+
+Output Format:
+--------------
+Print the positionf of C Nearest Trees.
+
+Sample Input-1:
+---------------
+4 4
+-3 -3
+3 -3
+3 3
+-3 3
+
+Sample Output-1:
+----------------
+[-3, -3] [3, -3] [3, 3] [-3, 3]
+
+
+Sample Input-2:
+---------------
+4 3
+2 -1
+1 2
+2 4
+3 2
+
+Sample Output-2:
+----------------
+[2, -1] [1, 2] [3, 2]
+ */
+
+import java.util.*;
+
+public class CNearest{
+    public static void main (String[] args) {
+        Scanner cin = new Scanner(System.in);
+        int n = cin.nextInt();
+        int c = cin.nextInt();
+        int arr[][] = new int[n][2];
+        for(int i = 0; i < n; i++){
+            arr[i][0] = cin.nextInt();
+            arr[i][1] = cin.nextInt();
+        }
+        Arrays.sort(arr,(a,b)->(a[0]*a[0]+a[1]*a[1])-(b[0]*b[0]+b[1]*b[1]));
+        for(int i = 0; i < c; i++){
+            System.out.print(Arrays.toString(arr[i])+" ");
+        }
+        cin.close();
+    }
+}
