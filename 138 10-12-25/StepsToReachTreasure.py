@@ -49,3 +49,37 @@
 # Sample Output-2:
 # ----------------
 # 7
+
+from collections import deque
+
+n = int(input())
+floor = [list(map(int, input().split())) for _ in range(n)]
+
+def is_valid(x, y):
+    return 0 <= x < n and 0 <= y < n and floor[x][y] == 0
+
+def min_steps_to_treasure():
+    if floor[0][0] == 1 or floor[n-1][n-1] == 1:
+        return -1
+    
+    dirX = [-1, -1, -1, 0, 0, 1, 1, 1]
+    dirY = [-1, 0, 1, -1, 1, -1, 0, 1]
+    visited = [[False] * n for _ in range(n)]
+    queue = deque([(0, 0, 1)])  # (x, y, steps)
+    visited[0][0] = True
+    
+    while queue:
+        x,y,steps = queue.popleft()
+        
+        if x == n-1 and y == n-1:
+            return steps
+        
+        for i in range(8):
+            newX, newY = x + dirX[i], y + dirY[i]
+            if is_valid(newX, newY) and not visited[newX][newY]:
+                visited[newX][newY] = True
+                queue.append((newX, newY, steps + 1))
+    
+    return -1
+
+print(min_steps_to_treasure())
